@@ -27,6 +27,7 @@
     ></script>
   </head>
   <body class="font-sans bg-gradient-to-b from-mooxdark to-mooxblue min-h-screen text-white">
+<canvas id="starfield" class="fixed inset-0 w-full h-full pointer-events-none z-0"></canvas>
     <header
       x-data="{ mobileMenu: false, desktopProduct: false, desktopCompany: false, mobileProduct: false, mobileCompany: false }"
     >
@@ -600,3 +601,48 @@
     </header>
   </body>
 </html>
+<script>
+const canvas = document.getElementById('starfield');
+const ctx = canvas.getContext('2d');
+let stars = [];
+const STAR_COUNT = 2000;
+function resize() {
+  canvas.width = window.innerWidth;
+  canvas.height = window.innerHeight;
+}
+function createStars() {
+  stars = [];
+  for (let i = 0; i < STAR_COUNT; i++) {
+    const x = Math.random() * canvas.width;
+    const y = Math.random() * canvas.height;
+    const r = Math.random() * 1.2 + 0.3;
+    const baseAlpha = Math.random() * 0.5 + 0.3;
+    const twinkleSpeed = Math.random() * 1.5 + 0.5;
+    const twinklePhase = Math.random() * Math.PI * 2;
+    stars.push({ x, y, r, baseAlpha, twinkleSpeed, twinklePhase });
+  }
+}
+function drawStars(time) {
+  ctx.clearRect(0, 0, canvas.width, canvas.height);
+  for (const star of stars) {
+    const twinkle = 0.55 + 0.25 * Math.sin(time * 0.001 * star.twinkleSpeed + star.twinklePhase);
+    ctx.globalAlpha = star.baseAlpha * twinkle;
+    ctx.beginPath();
+    ctx.arc(star.x, star.y, star.r, 0, Math.PI * 2);
+    ctx.fillStyle = '#fff';
+    ctx.fill();
+  }
+  ctx.globalAlpha = 1;
+}
+function animate(time) {
+  drawStars(time);
+  requestAnimationFrame(animate);
+}
+resize();
+createStars();
+window.addEventListener('resize', () => {
+  resize();
+  createStars();
+});
+requestAnimationFrame(animate);
+</script>
