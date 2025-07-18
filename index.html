@@ -4,7 +4,10 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Moox - CMS for Filament, Laravel and PHP</title>
+    <link rel="icon" href="https://moox.heco.si/img/moox-icon.png" type="image/png">
     <link href="https://fonts.googleapis.com/css2?family=Exo+2:wght@400;600;700&display=swap" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet">
+    <link rel="stylesheet" href="https://unpkg.com/simple-icons-font@v15/font/simple-icons.min.css" type="text/css">
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
       tailwind.config = {
@@ -14,20 +17,33 @@
               sans: ["'Exo 2'", 'ui-sans-serif', 'system-ui', 'sans-serif']
             },
             colors: {
-              mooxdark: '#020E30',
-              mooxblue: '#092271'
+              mooxdark: '#01081C',
+              mooxblue: '#050C57'
             }
           }
         }
       }
     </script>
+    <style>
+      .gradient-text-default {
+        background: linear-gradient(45deg, #ec2c8c, #6122f4);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+    }
+    
+          
+
+    </style>
     <script
       defer
       src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"
     ></script>
+    <script src="https://unpkg.com/motion@10.16.2/dist/motion.min.js"></script>
+
   </head>
-  <body class="font-sans bg-gradient-to-b from-mooxdark to-mooxblue min-h-screen text-white">
-<canvas id="starfield" class="fixed inset-0 w-full h-full pointer-events-none z-0"></canvas>
+  <body class="font-sans bg-gradient-to-br from-mooxdark to-mooxblue min-h-screen text-white">
+    <canvas id="starfield" class="fixed inset-0 w-full h-full pointer-events-none -z-10"></canvas>
     <header
       x-data="{ mobileMenu: false, desktopProduct: false, desktopCompany: false, mobileProduct: false, mobileCompany: false }"
     >
@@ -70,19 +86,21 @@
           </button>
         </div>
         <div class="hidden lg:flex lg:gap-x-12">
+          <a href="index.html" class="text-lg font-semibold text-white">Home</a>
           <div
             class="relative"
             x-data="{ open: false }"
             @mouseenter="desktopProduct = true"
             @mouseleave="desktopProduct = false"
           >
+
             <button
               type="button"
               class="flex items-center gap-x-1 text-lg font-semibold text-white"
               :aria-expanded="desktopProduct"
               @click="desktopProduct = !desktopProduct"
             >
-              Product
+              Packages
               <svg
                 class="size-5 flex-none text-gray-400"
                 viewBox="0 0 20 20"
@@ -138,11 +156,11 @@
                   </div>
                   <div class="flex-auto">
                     <a href="#" class="block font-semibold text-gray-900">
-                      Analytics
+                      The Laravel CMS Framework
                       <span class="absolute inset-0"></span>
                     </a>
                     <p class="mt-1 text-gray-600">
-                      Get a better understanding of your traffic
+                      Pages, Contents, News and Media.
                     </p>
                   </div>
                 </div>
@@ -170,11 +188,11 @@
                   </div>
                   <div class="flex-auto">
                     <a href="#" class="block font-semibold text-gray-900">
-                      Engagement
+                      A Laravel Shop System
                       <span class="absolute inset-0"></span>
                     </a>
                     <p class="mt-1 text-gray-600">
-                      Speak directly to your customers
+                      Products, Cart, Orders, Wishlist, Checkout, etc.
                     </p>
                   </div>
                 </div>
@@ -393,7 +411,7 @@
         </div>
         <div class="hidden lg:flex lg:flex-1 lg:justify-end">
           <a href="#" class="text-lg font-semibold text-white"
-            >Log in <span aria-hidden="true">&rarr;</span></a
+            >Demo <span aria-hidden="true">&rarr;</span></a
           >
         </div>
       </nav>
@@ -591,7 +609,7 @@
                 <a
                   href="#"
                   class="-mx-3 block rounded-lg px-3 py-2.5 text-base/7 font-semibold text-gray-900 hover:bg-gray-50"
-                  >Log in</a
+                  >Demo</a
                 >
               </div>
             </div>
@@ -600,25 +618,43 @@
       </div>
     </header>
 
-    <div class="relative isolate pt-14">
-        <div class="absolute inset-x-0 -top-40 -z-10 transform-gpu overflow-hidden blur-3xl sm:-top-80" aria-hidden="true">
+      <div class="absolute inset-x-0 -top-40 -z-10 transform-gpu overflow-hidden blur-3xl sm:-top-80" aria-hidden="true">
           <div class="relative left-[calc(50%-11rem)] aspect-1155/678 w-144.5 -translate-x-1/2 rotate-30 bg-linear-to-tr from-[#ff80b5] to-[#9089fc] opacity-30 sm:left-[calc(50%-30rem)] sm:w-288.75" style="clip-path: polygon(74.1% 44.1%, 100% 61.6%, 97.5% 26.9%, 85.5% 0.1%, 80.7% 2%, 72.5% 32.5%, 60.2% 62.4%, 52.4% 68.1%, 47.5% 58.3%, 45.2% 34.5%, 27.5% 76.7%, 0.1% 64.9%, 17.9% 100%, 27.6% 76.8%, 76.1% 97.7%, 74.1% 44.1%)"></div>
-        </div>
-        <div class="py-24 sm:py-32 lg:pb-40">
-          <div class="mx-auto max-w-7xl px-6 lg:px-8">
-            <div class="mx-auto max-w-2xl text-center">
-              <h1 class="text-5xl font-semibold tracking-tight text-balance text-white sm:text-7xl">Data to enrich your online business</h1>
-              <p class="mt-8 text-lg font-medium text-pretty text-gray-500 sm:text-xl/8">Anim aute id magna aliqua ad ad non deserunt sunt. Qui irure qui lorem cupidatat commodo. Elit sunt amet fugiat veniam occaecat.</p>
-              <div class="mt-10 flex items-center justify-center gap-x-6">
-                <a href="#" class="rounded-md bg-indigo-600 px-3.5 py-2.5 text-sm font-semibold text-white shadow-xs hover:bg-indigo-500 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600">Get started</a>
-                <a href="#" class="text-sm/6 font-semibold text-gray-900">Learn more <span aria-hidden="true">→</span></a>
+      </div>
+      <div class="py-24 sm:py-32 lg:pb-40">
+          <div class="mx-auto max-w-7xl">
+            <div class="mx-auto">
+
+            <div class="relative isolate lg:pt-14">
+              <div class="flex justify-center gap-10">
+                <div class="ml-10 -mt-10 mr-5 pb-5 w-2/5 hidden lg:block">
+
+
+                  <div class="relative">
+                    <img id="rocket-bot" src="https://moox.heco.si/web/robot.png" alt="Moox Bot" class="w-auto" style="transform: rotate(15deg);">
+                  </div>
+                </div>
+                <div class="w-3/5 mt-10 lg:mr-20 lg:pr-20">
+                  <h1 class="font-semibold tracking-tight text-balance gradient-text-default sm:text-6xl text-4xl">The new Laravel Ecosystem</h1>
+                  <p class="mt-8 text-lg font-medium text-pretty text-gray-300 sm:text-xl/8">A collection of powerful Laravel and Filament packages, designed for the modern Web & App Developer.</p>
+                  <div class="mt-10 flex items-center gap-x-6">
+                    <a href="/" class="relative px-4 py-2 rounded flex items-center gap-2 group">
+                      <div class="absolute inset-0 rounded bg-gradient-to-r from-pink-600 via-purple-600 to-violet-600"></div>
+                      <div class="absolute inset-[1px] rounded bg-indigo-950/90"></div>
+                      <span class="material-symbols-rounded text-md relative z-10 text-gray-200">rocket_launch</span>
+                      <span class="relative z-10 text-gray-200">Get started</span>
+                    </a>
+                    <a href="#" class="ml-5 text-gray-200 hidden lg:block">Learn more <span aria-hidden="true">→</span></a>
+                  </div>
+                </div>
               </div>
             </div>
+         
             <div class="mt-16 flow-root sm:mt-24">
               <div class="-m-2 rounded-xl p-2 ring-1 ring-gray-900/10 ring-inset lg:-m-4 lg:rounded-2xl lg:p-4">
                 <img src="https://moox.heco.si/web/mac.png" alt="App screenshot" width="2432" height="1442" />
 
-                <div class="-mt-80">
+                <div class="-mt-40 lg:-mt-80">
                     <div class="mx-auto max-w-7xl px-6 lg:px-8">
                       <div class="mx-auto max-w-2xl lg:max-w-none">
                         <dl class="mt-16 grid grid-cols-1 gap-0.5 overflow-hidden rounded-2xl text-center sm:grid-cols-2 lg:grid-cols-4">
@@ -646,12 +682,125 @@
 
               </div>
             </div>
+
           </div>
         </div>
+      </div>
+
+    <div class="max-w-7xl mx-auto m-10 p-10">
+      <div class="-px-10 -my-10 rounded-3xl flex justify-center mt-16 bg-[url(banner-bg.jpg)] bg-cover bg-center mx-auto overflow-hidden">
+
+      <div class="m-10">
+          <div class="grid grid-cols-2 gap-10">
+              <div>
+                  <div class="p-6 bg-slate-950/40 rounded-lg border border-pink-500/10">
+                      <h3 class="text-xl font-bold text-gray-200 flex items-center gap-3 mr-10 mb-7">
+                          <span class="material-symbols-rounded text-pink-500">tips_and_updates</span>
+                          Requirements
+                      </h3>
+                      <div class="mt-6 ml-4 flex gap-11 mb-2">
+                          <div class="flex items-center gap-3 group">
+                              <span class="material-symbols-rounded text-transparent bg-clip-text bg-gradient-to-r from-pink-500 to-violet-500 transition-transform duration-200 group-hover:scale-110">check_circle</span>
+                              <div class="text-gray-300 group-hover:text-gray-200 transition-colors duration-200">PHP 8.3+</div>
+                          </div>
+                          <div class="flex items-center gap-3 group">
+                              <span class="material-symbols-rounded text-transparent bg-clip-text bg-gradient-to-r from-pink-500 to-violet-500 transition-transform duration-200 group-hover:scale-110">check_circle</span>
+                              <div class="text-gray-300 group-hover:text-gray-200 transition-colors duration-200">Laravel 11+</div>
+                          </div>
+                          <div class="flex items-center gap-3 group">
+                              <span class="material-symbols-rounded text-transparent bg-clip-text bg-gradient-to-r from-pink-500 to-violet-500 transition-transform duration-200 group-hover:scale-110">check_circle</span>
+                              <div class="text-gray-300 group-hover:text-gray-200 transition-colors duration-200">Filament 4.0</div>
+                          </div>
+                      </div>
+                  </div>
+                  <div class="bg-slate-950/40 rounded-lg p-6 border border-pink-500/10 mt-5">
+                      <h3 class="text-xl font-bold text-gray-200 mb-8 flex items-center gap-3">
+                          <span class="material-symbols-rounded text-pink-500">terminal</span>
+                          1. Install via Composer
+                      </h3>
+                      <div class="bg-gray-900 p-4 rounded font-mono text-gray-300 relative group">
+                          <code id="composer-command">composer require moox/core</code>
+                          <button onclick="copyToClipboard('composer-command')" data-copy-target="composer-command" class="absolute right-2 top-1/2 -translate-y-1/2 opacity-0 group-hover:opacity-100 transition-opacity duration-200">
+                              <span class="material-symbols-rounded text-gray-400 hover:text-pink-500">content_copy</span>
+                          </button>
+                      </div>
+                  </div>
+                  <div class="bg-slate-950/40 rounded-lg p-6 border border-pink-500/10 mt-5">
+                      <h3 class="text-xl font-bold text-gray-200 mb-8 flex items-center gap-3">
+                          <span class="material-symbols-rounded text-pink-500">rocket_launch</span>
+                          2. Run the Installer
+                      </h3>
+                      <div class="bg-gray-900 p-4 rounded font-mono text-gray-300 relative group">
+                          <code id="artisan-command">php artisan moox:install</code>
+                          <button onclick="copyToClipboard('artisan-command')" data-copy-target="artisan-command" class="absolute right-2 top-1/2 -translate-y-1/2 opacity-0 group-hover:opacity-100 transition-opacity duration-200">
+                              <span class="material-symbols-rounded text-gray-400 hover:text-pink-500">content_copy</span>
+                          </button>
+                      </div>
+                  </div>
+              </div>
+
+              <div>
+                  <div class="bg-slate-950/40 rounded-lg p-6 border border-pink-500/10">
+                      <h3 class="text-xl font-bold text-gray-200 mb-8 flex items-center gap-3">
+                              <span class="material-symbols-rounded text-pink-500">check_circle</span>
+                              3. Choose Packages
+                          </h3>
+                          <img src="https://raw.githubusercontent.com/mooxphp/moox/refs/heads/main/packages/devlink/screenshots/devlink-status.jpg" alt="Installer" class="w-full rounded">
+                      </div>
+                  </div>
+              </div>
+
+            </div>
+          </div>
+        </div>
+  
+  <div class="max-w-7xl mx-auto m-10 p-10">
+    <div class="-px-10 -my-10 rounded-3xl flex justify-center mt-16 bg-[url(banner-bg.jpg)] bg-cover bg-center mx-auto overflow-hidden">
+      <div class="mx-auto max-w-sm text-center lg:mx-0 lg:flex-auto lg:py-24 lg:text-left flex flex-col">
+        <div class="flex flex-row gap-2">
+          <h2 class="text-3xl font-semibold tracking-tight text-balance text-white sm:text-4xl">Moox Jobs</h2>
+          <div class="h-6 bg-pink-500/20 text-pink-200 text-xs px-2 py-0.5 rounded-full border border-pink-500/20 ml-2">4.2.1</div>
+        </div>
+        <p class="mt-6 text-lg/8 text-pretty text-gray-300">
+          Manage your Laravel job queues in Filament.<br>
+          See running jobs, retry failed jobs,
+          and job batches.
+        </p>
+        <div class="mt-10 flex items-center justify-center gap-x-6 lg:justify-start">
+          <a href="/" class="relative px-4 py-2 rounded flex items-center gap-2 group">
+            <div class="absolute inset-0 rounded bg-gradient-to-r from-pink-600 via-purple-600 to-violet-600"></div>
+            <div class="absolute inset-[1px] rounded bg-indigo-950/90"></div>
+            <span class="material-symbols-rounded text-md relative z-10 text-gray-200">box</span>
+            <span class="relative z-10 text-gray-200">Learn more</span>
+          </a>
+          <a href="/" class="si si-github text-3xl text-gray-300">
+          </a>
+        </div>
+        <div class="flex justify-between mt-auto -mb-10">
+          <div class="text-gray-400 text-center bg-slate-950/60 px-5 py-1 rounded-md flex flex-row items-center">
+            <span class="material-symbols-rounded">download</span>
+              4.7k
+          </div>
+          <div class="text-gray-400 text-center bg-slate-950/60 px-5 py-1 rounded-md flex flex-row items-center">
+            <span class="material-symbols-rounded">star</span>
+              175
+          </div>
+          <div class="text-gray-400 text-center bg-slate-950/60 px-5 py-1 rounded-md flex flex-row items-center">
+              <span class="material-symbols-rounded m-1">schedule</span>
+              2d
+          </div>
+        </div>
+      </div>
+      <img 
+        src="test-screen.png" 
+        alt="Screenshot" 
+        class="transform shadow-2xl -mr-20 animated-screenshot" 
+        style="transform: perspective(1000px) rotateY(-30deg);" />
     </div>
+  </div>
 
 
-    <div class="bg-gray-100/10 py-24 sm:py-32">
+    <div class="py-24 sm:py-32">
         <div class="mx-auto max-w-2xl px-6 lg:max-w-7xl lg:px-8">
           <h2 class="text-base/7 font-semibold text-indigo-400">Deploy faster</h2>
           <p class="mt-2 max-w-lg text-4xl font-semibold tracking-tight text-pretty text-white sm:text-5xl">Everything you need to deploy your app</p>
@@ -678,7 +827,7 @@
             </div>
             <div class="flex p-px lg:col-span-2">
               <div class="w-full overflow-hidden rounded-lg bg-gray-800 outline outline-white/15 lg:rounded-bl-4xl">
-                <img class="h-80 object-cover" src="https://tailwindcss.com/plus-assets/img/component-images/dark-bento-02-security.png" alt="" />
+                <img class="h-80 object-cover" src="https://moox.heco.si/web/80-box.png" alt="" />
                 <div class="p-10">
                   <h3 class="text-sm/4 font-semibold text-gray-400">Security</h3>
                   <p class="mt-2 text-lg font-medium tracking-tight text-white">Advanced access control</p>
@@ -701,7 +850,7 @@
       </div>
       
 
-      <footer>
+      <footer class="bg-black/50">
         <div class="mx-auto max-w-7xl px-6 pt-20 pb-8 sm:pt-24 lg:px-8 lg:pt-32">
           <div class="xl:grid xl:grid-cols-3 xl:gap-8">
             <div class="grid grid-cols-2 gap-8 xl:col-span-2">
@@ -827,95 +976,167 @@
       
 
 </body>
-</html>
+
 <script>
-const canvas = document.getElementById('starfield');
-const ctx = canvas.getContext('2d');
-let stars = [];
-const STAR_COUNT = 2000;
-let shootingStars = [];
-let starTime = 0;
-let lastFrame = performance.now();
-function resize() {
-  canvas.width = window.innerWidth;
-  canvas.height = window.innerHeight;
-}
-function createStars() {
-  stars = [];
-  for (let i = 0; i < STAR_COUNT; i++) {
-    const x = Math.random() * canvas.width;
-    const y = Math.random() * canvas.height;
-    const r = Math.random() * 1.2 + 0.3;
-    const baseAlpha = Math.random() * 0.5 + 0.3;
-    const twinkleSpeed = Math.random() * 1.5 + 0.5;
-    const twinklePhase = Math.random() * Math.PI * 2;
-    stars.push({ x, y, r, baseAlpha, twinkleSpeed, twinklePhase });
+  const canvas = document.getElementById('starfield');
+  const ctx = canvas.getContext('2d');
+  let stars = [];
+  const STAR_COUNT = 2000;
+  let shootingStars = [];
+  let starTime = 0;
+  let lastFrame = performance.now();
+  function resize() {
+    canvas.width = window.innerWidth;
+    canvas.height = window.innerHeight;
   }
-}
-function spawnShootingStar() {
-  const angle = Math.random() * (Math.PI / 4) + Math.PI * 0.75;
-  const speed = Math.random() * 8 + 10;
-  const length = Math.random() * 100 + 200;
-  const x = Math.random() * canvas.width * 0.7 + canvas.width * 0.15;
-  const y = Math.random() * canvas.height * 0.5;
-  shootingStars.push({
-    x,
-    y,
-    dx: Math.cos(angle) * speed,
-    dy: Math.sin(angle) * speed,
-    length,
-    progress: 0,
-    alpha: 1
-  });
-  setTimeout(spawnShootingStar, Math.random() * 4000 + 3000);
-}
-function drawShootingStars() {
-  for (let i = shootingStars.length - 1; i >= 0; i--) {
-    const s = shootingStars[i];
-    ctx.save();
-    ctx.globalAlpha = s.alpha;
-    ctx.strokeStyle = '#fff';
-    ctx.lineWidth = 2;
-    ctx.beginPath();
-    ctx.moveTo(s.x, s.y);
-    ctx.lineTo(s.x - s.dx * (s.progress / s.length), s.y - s.dy * (s.progress / s.length));
-    ctx.stroke();
-    ctx.restore();
-    s.x += s.dx;
-    s.y += s.dy;
-    s.progress += Math.sqrt(s.dx * s.dx + s.dy * s.dy);
-    s.alpha *= 0.96;
-    if (s.progress > s.length || s.alpha < 0.05 || s.x < 0 || s.y < 0 || s.x > canvas.width || s.y > canvas.height) {
-      shootingStars.splice(i, 1);
+  function createStars() {
+    stars = [];
+    for (let i = 0; i < STAR_COUNT; i++) {
+      const x = Math.random() * canvas.width;
+      const y = Math.random() * canvas.height;
+      const r = Math.random() * 1.2 + 0.3;
+      const baseAlpha = Math.random() * 0.5 + 0.3;
+      const twinkleSpeed = Math.random() * 1.5 + 0.5;
+      const twinklePhase = Math.random() * Math.PI * 2;
+      stars.push({ x, y, r, baseAlpha, twinkleSpeed, twinklePhase });
     }
   }
-}
-function drawStars(time) {
-  ctx.clearRect(0, 0, canvas.width, canvas.height);
-  for (const star of stars) {
-    const twinkle = 0.55 + 0.25 * Math.sin(time * 0.001 * star.twinkleSpeed + star.twinklePhase);
-    ctx.globalAlpha = star.baseAlpha * twinkle;
-    ctx.beginPath();
-    ctx.arc(star.x, star.y, star.r, 0, Math.PI * 2);
-    ctx.fillStyle = '#fff';
-    ctx.fill();
+  function spawnShootingStar() {
+    const angle = Math.random() * (Math.PI / 4) + Math.PI * 0.75;
+    const speed = Math.random() * 8 + 10;
+    const length = Math.random() * 100 + 200;
+    const x = Math.random() * canvas.width * 0.7 + canvas.width * 0.15;
+    const y = Math.random() * canvas.height * 0.5;
+    shootingStars.push({
+      x,
+      y,
+      dx: Math.cos(angle) * speed,
+      dy: Math.sin(angle) * speed,
+      length,
+      progress: 0,
+      alpha: 1
+    });
+    setTimeout(spawnShootingStar, Math.random() * 4000 + 3000);
   }
-  ctx.globalAlpha = 1;
-  drawShootingStars();
-}
-function animate(now) {
-  const delta = now - lastFrame;
-  lastFrame = now;
-  starTime += delta;
-  drawStars(starTime);
-  requestAnimationFrame(animate);
-}
-resize();
-createStars();
-spawnShootingStar();
-window.addEventListener('resize', () => {
+  function drawShootingStars() {
+    for (let i = shootingStars.length - 1; i >= 0; i--) {
+      const s = shootingStars[i];
+      ctx.save();
+      ctx.globalAlpha = s.alpha;
+      ctx.strokeStyle = '#fff';
+      ctx.lineWidth = 2;
+      ctx.beginPath();
+      ctx.moveTo(s.x, s.y);
+      ctx.lineTo(s.x - s.dx * (s.progress / s.length), s.y - s.dy * (s.progress / s.length));
+      ctx.stroke();
+      ctx.restore();
+      s.x += s.dx;
+      s.y += s.dy;
+      s.progress += Math.sqrt(s.dx * s.dx + s.dy * s.dy);
+      s.alpha *= 0.96;
+      if (s.progress > s.length || s.alpha < 0.05 || s.x < 0 || s.y < 0 || s.x > canvas.width || s.y > canvas.height) {
+        shootingStars.splice(i, 1);
+      }
+    }
+  }
+  function drawStars(time) {
+    ctx.clearRect(0, 0, canvas.width, canvas.height);
+    for (const star of stars) {
+      const twinkle = 0.55 + 0.25 * Math.sin(time * 0.001 * star.twinkleSpeed + star.twinklePhase);
+      ctx.globalAlpha = star.baseAlpha * twinkle;
+      ctx.beginPath();
+      ctx.arc(star.x, star.y, star.r, 0, Math.PI * 2);
+      ctx.fillStyle = '#fff';
+      ctx.fill();
+    }
+    ctx.globalAlpha = 1;
+    drawShootingStars();
+  }
+  function animate(now) {
+    const delta = now - lastFrame;
+    lastFrame = now;
+    starTime += delta;
+    drawStars(starTime);
+    requestAnimationFrame(animate);
+  }
   resize();
   createStars();
-});
-requestAnimationFrame(animate);
-</script>
+  spawnShootingStar();
+  window.addEventListener('resize', () => {
+    resize();
+    createStars();
+  });
+  requestAnimationFrame(animate);
+  
+  function copyToClipboard(elementId) {
+    const text = document.getElementById(elementId).textContent
+    const button = document.querySelector(`[data-copy-target="${elementId}"]`)
+    const icon = button.querySelector('.material-symbols-rounded')
+  
+    navigator.clipboard.writeText(text)
+        .then(() => {
+            icon.textContent = 'check'
+            icon.classList.add('text-green-500')
+  
+            setTimeout(() => {
+                icon.textContent = 'content_copy'
+                icon.classList.remove('text-green-500')
+            }, 2000)
+        })
+        .catch(() => {
+            icon.textContent = 'error'
+            icon.classList.add('text-red-500')
+  
+            setTimeout(() => {
+                icon.textContent = 'content_copy'
+                icon.classList.remove('text-red-500')
+            }, 2000)
+        })
+  }
+  
+  document.addEventListener('DOMContentLoaded', function() {
+    
+    // Motion animation for the rocket bot
+  
+    if (window.matchMedia && !window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+      const rocketBot = document.getElementById('rocket-bot');
+      if (rocketBot) {
+        const Motion = window.Motion || window.motion || globalThis.Motion || globalThis.motion;
+        if (Motion && Motion.animate) {
+          Motion.animate(rocketBot, 
+            { 
+              y: [0, -20, -40, -60, -40, -20, 0],
+              x: [0, 5, 10, 15, 10, 5, 0],
+              rotate: [15, 12, 15, 18, 15, 12, 15]
+            },
+            {
+              duration: 6,
+              easing: [0.25, 0.46, 0.45, 0.94],
+              repeat: Infinity
+            }
+          );
+        }
+      }
+  
+      // Scroll animation for the screenshots
+  
+      const animatedScreenshots = document.querySelectorAll('.animated-screenshot');
+      
+      window.addEventListener('scroll', () => {
+        animatedScreenshots.forEach((screenshot, index) => {
+          const rect = screenshot.getBoundingClientRect();
+          const windowHeight = window.innerHeight;
+          
+          if (rect.top < windowHeight && rect.bottom > 0) {
+            const progress = Math.max(0, Math.min(1, (windowHeight - rect.top + 200) / (windowHeight + rect.height - 200)));
+            const rotation = -50 + (progress * 50);
+            const translateX = progress * 50;
+            screenshot.style.transform = `perspective(1000px) rotateY(${rotation}deg) translateX(${translateX}px)`;
+          }
+        });
+      });
+    }
+  });
+  </script>
+  
+</html>
