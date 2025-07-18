@@ -26,37 +26,14 @@
     </script>
     <style>
       .gradient-text-default {
-        background: linear-gradient(135deg, #f92d93, #5209fc);
+        background: linear-gradient(45deg, #ec2c8c, #6122f4);
         -webkit-background-clip: text;
         -webkit-text-fill-color: transparent;
         background-clip: text;
-      }
-      
-      .animated-gradient-border {
-        position: relative;
-        background: linear-gradient(45deg, #f92d93, #5209fc, #3b82f6, #f92d93);
-        background-size: 400% 400%;
-        border-radius: 0.5rem;
-        padding: 2px;
-        animation: gradient-move 3s ease infinite;
-      }
-      
-      .animated-gradient-border::before {
-        content: '';
-        position: absolute;
-        inset: 0;
-        border-radius: 0.5rem;
-        background: linear-gradient(45deg, #f92d93, #5209fc, #3b82f6, #f92d93);
-        background-size: 400% 400%;
-        animation: gradient-move 3s ease infinite;
-        z-index: -1;
-      }
-      
-      @keyframes gradient-move {
-        0% { background-position: 0% 50%; }
-        50% { background-position: 100% 50%; }
-        100% { background-position: 0% 50%; }
-      }
+    }
+    
+          
+
     </style>
     <script
       defer
@@ -109,18 +86,336 @@
           </button>
         </div>
         <div class="hidden lg:flex lg:gap-x-12">
-          <a href="index.html#top" class="text-lg font-semibold text-white hover:text-pink-500">Home</a>
-          <a href="index.html#features" class="text-lg font-semibold text-white hover:text-pink-500">Features</a>
-          <a href="index.html#installation" class="text-lg font-semibold text-white hover:text-pink-500">Installation</a>
-          <a href="index.html#packages" class="text-lg font-semibold text-white hover:text-pink-500">Packages</a>
-          <a href="index.html#contact" class="text-lg font-semibold text-white hover:text-pink-500">Contact</a>
+          <a href="index.html" class="text-lg font-semibold text-white">Home</a>
+          <div
+            class="relative"
+            x-data="{ open: false }"
+            @mouseenter="desktopProduct = true"
+            @mouseleave="desktopProduct = false"
+          >
+
+            <button
+              type="button"
+              class="flex items-center gap-x-1 text-lg font-semibold text-white"
+              :aria-expanded="desktopProduct"
+              @click="desktopProduct = !desktopProduct"
+            >
+              Packages
+              <svg
+                class="size-5 flex-none text-gray-400"
+                viewBox="0 0 20 20"
+                fill="currentColor"
+                aria-hidden="true"
+                data-slot="icon"
+              >
+                <path
+                  fill-rule="evenodd"
+                  d="M5.22 8.22a.75.75 0 0 1 1.06 0L10 11.94l3.72-3.72a.75.75 0 1 1 1.06 1.06l-4.25 4.25a.75.75 0 0 1-1.06 0L5.22 9.28a.75.75 0 0 1 0-1.06Z"
+                  clip-rule="evenodd"
+                />
+              </svg>
+            </button>
+
+            <div
+              class="absolute left-1/2 z-10 mt-3 w-screen max-w-md -translate-x-1/2 overflow-hidden rounded-3xl bg-white shadow-lg ring-1 ring-gray-900/5"
+              x-show="desktopProduct"
+              x-transition:enter="transition ease-out duration-200"
+              x-transition:enter-start="opacity-0 translate-y-1"
+              x-transition:enter-end="opacity-100 translate-y-0"
+              x-transition:leave="transition ease-in duration-150"
+              x-transition:leave-start="opacity-100 translate-y-0"
+              x-transition:leave-end="opacity-0 translate-y-1"
+            >
+              <div class="p-4">
+                <div
+                  class="group relative flex gap-x-6 rounded-lg p-4 text-sm/6 hover:bg-gray-50"
+                >
+                  <div
+                    class="mt-1 flex size-11 flex-none items-center justify-center rounded-lg bg-gray-50 group-hover:bg-white"
+                  >
+                    <svg
+                      class="size-6 text-gray-600 group-hover:text-indigo-600"
+                      fill="none"
+                      viewBox="0 0 24 24"
+                      stroke-width="1.5"
+                      stroke="currentColor"
+                      aria-hidden="true"
+                      data-slot="icon"
+                    >
+                      <path
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        d="M10.5 6a7.5 7.5 0 1 0 7.5 7.5h-7.5V6Z"
+                      />
+                      <path
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        d="M13.5 10.5H21A7.5 7.5 0 0 0 13.5 3v7.5Z"
+                      />
+                    </svg>
+                  </div>
+                  <div class="flex-auto">
+                    <a href="#" class="block font-semibold text-gray-900">
+                      The Laravel CMS Framework
+                      <span class="absolute inset-0"></span>
+                    </a>
+                    <p class="mt-1 text-gray-600">
+                      Pages, Contents, News and Media.
+                    </p>
+                  </div>
+                </div>
+                <div
+                  class="group relative flex gap-x-6 rounded-lg p-4 text-sm/6 hover:bg-gray-50"
+                >
+                  <div
+                    class="mt-1 flex size-11 flex-none items-center justify-center rounded-lg bg-gray-50 group-hover:bg-white"
+                  >
+                    <svg
+                      class="size-6 text-gray-600 group-hover:text-indigo-600"
+                      fill="none"
+                      viewBox="0 0 24 24"
+                      stroke-width="1.5"
+                      stroke="currentColor"
+                      aria-hidden="true"
+                      data-slot="icon"
+                    >
+                      <path
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        d="M15.042 21.672 13.684 16.6m0 0-2.51 2.225.569-9.47 5.227 7.917-3.286-.672ZM12 2.25V4.5m5.834.166-1.591 1.591M20.25 10.5H18M7.757 14.743l-1.59 1.59M6 10.5H3.75m4.007-4.243-1.59-1.59"
+                      />
+                    </svg>
+                  </div>
+                  <div class="flex-auto">
+                    <a href="#" class="block font-semibold text-gray-900">
+                      A Laravel Shop System
+                      <span class="absolute inset-0"></span>
+                    </a>
+                    <p class="mt-1 text-gray-600">
+                      Products, Cart, Orders, Wishlist, Checkout, etc.
+                    </p>
+                  </div>
+                </div>
+                <div
+                  class="group relative flex gap-x-6 rounded-lg p-4 text-sm/6 hover:bg-gray-50"
+                >
+                  <div
+                    class="mt-1 flex size-11 flex-none items-center justify-center rounded-lg bg-gray-50 group-hover:bg-white"
+                  >
+                    <svg
+                      class="size-6 text-gray-600 group-hover:text-indigo-600"
+                      fill="none"
+                      viewBox="0 0 24 24"
+                      stroke-width="1.5"
+                      stroke="currentColor"
+                      aria-hidden="true"
+                      data-slot="icon"
+                    >
+                      <path
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        d="M7.864 4.243A7.5 7.5 0 0 1 19.5 10.5c0 2.92-.556 5.709-1.568 8.268M5.742 6.364A7.465 7.465 0 0 0 4.5 10.5a7.464 7.464 0 0 1-1.15 3.993m1.989 3.559A11.209 11.209 0 0 0 8.25 10.5a3.75 3.75 0 1 1 7.5 0c0 .527-.021 1.049-.064 1.565M12 10.5a14.94 14.94 0 0 1-3.6 9.75m6.633-4.596a18.666 18.666 0 0 1-2.485 5.33"
+                      />
+                    </svg>
+                  </div>
+                  <div class="flex-auto">
+                    <a href="#" class="block font-semibold text-gray-900">
+                      Security
+                      <span class="absolute inset-0"></span>
+                    </a>
+                    <p class="mt-1 text-gray-600">
+                      Your customers’ data will be safe and secure
+                    </p>
+                  </div>
+                </div>
+                <div
+                  class="group relative flex gap-x-6 rounded-lg p-4 text-sm/6 hover:bg-gray-50"
+                >
+                  <div
+                    class="mt-1 flex size-11 flex-none items-center justify-center rounded-lg bg-gray-50 group-hover:bg-white"
+                  >
+                    <svg
+                      class="size-6 text-gray-600 group-hover:text-indigo-600"
+                      fill="none"
+                      viewBox="0 0 24 24"
+                      stroke-width="1.5"
+                      stroke="currentColor"
+                      aria-hidden="true"
+                      data-slot="icon"
+                    >
+                      <path
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        d="M13.5 16.875h3.375m0 0h3.375m-3.375 0V13.5m0 3.375v3.375M6 10.5h2.25a2.25 2.25 0 0 0 2.25-2.25V6a2.25 2.25 0 0 0-2.25-2.25H6A2.25 2.25 0 0 0 3.75 6v2.25A2.25 2.25 0 0 0 6 10.5Zm0 9.75h2.25A2.25 2.25 0 0 0 10.5 18v-2.25a2.25 2.25 0 0 0-2.25-2.25H6a2.25 2.25 0 0 0-2.25 2.25V18A2.25 2.25 0 0 0 6 20.25Zm9.75-9.75H18a2.25 2.25 0 0 0 2.25-2.25V6A2.25 2.25 0 0 0 18 3.75h-2.25A2.25 2.25 0 0 0 13.5 6v2.25a2.25 2.25 0 0 0 2.25 2.25Z"
+                      />
+                    </svg>
+                  </div>
+                  <div class="flex-auto">
+                    <a href="#" class="block font-semibold text-gray-900">
+                      Integrations
+                      <span class="absolute inset-0"></span>
+                    </a>
+                    <p class="mt-1 text-gray-600">
+                      Connect with third-party tools
+                    </p>
+                  </div>
+                </div>
+                <div
+                  class="group relative flex gap-x-6 rounded-lg p-4 text-sm/6 hover:bg-gray-50"
+                >
+                  <div
+                    class="mt-1 flex size-11 flex-none items-center justify-center rounded-lg bg-gray-50 group-hover:bg-white"
+                  >
+                    <svg
+                      class="size-6 text-gray-600 group-hover:text-indigo-600"
+                      fill="none"
+                      viewBox="0 0 24 24"
+                      stroke-width="1.5"
+                      stroke="currentColor"
+                      aria-hidden="true"
+                      data-slot="icon"
+                    >
+                      <path
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        d="M16.023 9.348h4.992v-.001M2.985 19.644v-4.992m0 0h4.992m-4.993 0 3.181 3.183a8.25 8.25 0 0 0 13.803-3.7M4.031 9.865a8.25 8.25 0 0 1 13.803-3.7l3.181 3.182m0-4.991v4.99"
+                      />
+                    </svg>
+                  </div>
+                  <div class="flex-auto">
+                    <a href="#" class="block font-semibold text-gray-900">
+                      Automations
+                      <span class="absolute inset-0"></span>
+                    </a>
+                    <p class="mt-1 text-gray-600">
+                      Build strategic funnels that will convert
+                    </p>
+                  </div>
+                </div>
+              </div>
+              <div
+                class="grid grid-cols-2 divide-x divide-gray-900/5 bg-gray-50"
+              >
+                <a
+                  href="#"
+                  class="flex items-center justify-center gap-x-2.5 p-3 text-sm/6 font-semibold text-gray-900 hover:bg-gray-100"
+                >
+                  <svg
+                    class="size-5 flex-none text-gray-400"
+                    viewBox="0 0 20 20"
+                    fill="currentColor"
+                    aria-hidden="true"
+                    data-slot="icon"
+                  >
+                    <path
+                      fill-rule="evenodd"
+                      d="M2 10a8 8 0 1 1 16 0 8 8 0 0 1-16 0Zm6.39-2.908a.75.75 0 0 1 .766.027l3.5 2.25a.75.75 0 0 1 0 1.262l-3.5 2.25A.75.75 0 0 1 8 12.25v-4.5a.75.75 0 0 1 .39-.658Z"
+                      clip-rule="evenodd"
+                    />
+                  </svg>
+                  Watch demo
+                </a>
+                <a
+                  href="#"
+                  class="flex items-center justify-center gap-x-2.5 p-3 text-sm/6 font-semibold text-gray-900 hover:bg-gray-100"
+                >
+                  <svg
+                    class="size-5 flex-none text-gray-400"
+                    viewBox="0 0 20 20"
+                    fill="currentColor"
+                    aria-hidden="true"
+                    data-slot="icon"
+                  >
+                    <path
+                      fill-rule="evenodd"
+                      d="M2 3.5A1.5 1.5 0 0 1 3.5 2h1.148a1.5 1.5 0 0 1 1.465 1.175l.716 3.223a1.5 1.5 0 0 1-1.052 1.767l-.933.267c-.41.117-.643.555-.48.95a11.542 11.542 0 0 0 6.254 6.254c.395.163.833-.07.95-.48l.267-.933a1.5 1.5 0 0 1 1.767-1.052l3.223.716A1.5 1.5 0 0 1 18 15.352V16.5a1.5 1.5 0 0 1-1.5 1.5H15c-1.149 0-2.263-.15-3.326-.43A13.022 13.022 0 0 1 2.43 8.326 13.019 13.019 0 0 1 2 5V3.5Z"
+                      clip-rule="evenodd"
+                    />
+                  </svg>
+                  Contact sales
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <a href="#" class="text-lg font-semibold text-white">Features</a>
+          <a href="#" class="text-lg font-semibold text-white"
+            >Marketplace</a
+          >
+
+          <div
+            class="relative"
+            x-data="{ open: false }"
+            @mouseenter="desktopCompany = true"
+            @mouseleave="desktopCompany = false"
+          >
+            <button
+              type="button"
+              class="flex items-center gap-x-1 text-lg font-semibold text-white"
+              :aria-expanded="desktopCompany"
+              @click="desktopCompany = !desktopCompany"
+            >
+              Company
+              <svg
+                class="size-5 flex-none text-gray-400"
+                viewBox="0 0 20 20"
+                fill="currentColor"
+                aria-hidden="true"
+                data-slot="icon"
+              >
+                <path
+                  fill-rule="evenodd"
+                  d="M5.22 8.22a.75.75 0 0 1 1.06 0L10 11.94l3.72-3.72a.75.75 0 1 1 1.06 1.06l-4.25 4.25a.75.75 0 0 1-1.06 0L5.22 9.28a.75.75 0 0 1 0-1.06Z"
+                  clip-rule="evenodd"
+                />
+              </svg>
+            </button>
+
+            <div
+              class="absolute left-1/2 z-10 mt-3 w-56 -translate-x-1/2 rounded-xl bg-white p-2 shadow-lg ring-1 ring-gray-900/5"
+              x-show="desktopCompany"
+              x-transition:enter="transition ease-out duration-200"
+              x-transition:enter-start="opacity-0 translate-y-1"
+              x-transition:enter-end="opacity-100 translate-y-0"
+              x-transition:leave="transition ease-in duration-150"
+              x-transition:leave-start="opacity-100 translate-y-0"
+              x-transition:leave-end="opacity-0 translate-y-1"
+            >
+              <a
+                href="#"
+                class="block rounded-lg px-3 py-2 text-sm/6 font-semibold text-gray-900 hover:bg-gray-50"
+                >About us</a
+              >
+              <a
+                href="#"
+                class="block rounded-lg px-3 py-2 text-sm/6 font-semibold text-gray-900 hover:bg-gray-50"
+                >Careers</a
+              >
+              <a
+                href="#"
+                class="block rounded-lg px-3 py-2 text-sm/6 font-semibold text-gray-900 hover:bg-gray-50"
+                >Support</a
+              >
+              <a
+                href="#"
+                class="block rounded-lg px-3 py-2 text-sm/6 font-semibold text-gray-900 hover:bg-gray-50"
+                >Press</a
+              >
+              <a
+                href="#"
+                class="block rounded-lg px-3 py-2 text-sm/6 font-semibold text-gray-900 hover:bg-gray-50"
+                >Blog</a
+              >
+            </div>
+          </div>
         </div>
         <div class="hidden lg:flex lg:flex-1 lg:justify-end">
-          <a href="https://github.com/mooxphp/" class="si si-github text-3xl text-gray-300 hover:text-violet-700" target="_blank">
-          </a>
+          <a href="#" class="text-lg font-semibold text-white"
+            >Demo <span aria-hidden="true">&rarr;</span></a
+          >
         </div>
       </nav>
-
+      <!-- Mobile menu, show/hide based on menu open state. -->
       <div class="lg:hidden" role="dialog" aria-modal="true">
         <div class="fixed inset-0 z-50" x-show="mobileMenu" x-transition.opacity @click="mobileMenu = false"></div>
         <div
@@ -133,7 +428,7 @@
           x-transition:leave-start="translate-x-0 opacity-100"
           x-transition:leave-end="translate-x-full opacity-0"
         >
-
+        <!-- Background backdrop, show/hide based on slide-over state. -->
         <div class="fixed inset-0 z-50" @click="mobileMenu = false"></div>
         <div
           class="fixed inset-y-0 right-0 z-50 w-full overflow-y-auto bg-white p-6 sm:max-w-sm sm:ring-1 sm:ring-gray-900/10"
@@ -326,7 +621,7 @@
       <div class="absolute inset-x-0 -top-40 -z-10 transform-gpu overflow-hidden blur-3xl sm:-top-80" aria-hidden="true">
           <div class="relative left-[calc(50%-11rem)] aspect-1155/678 w-144.5 -translate-x-1/2 rotate-30 bg-linear-to-tr from-[#ff80b5] to-[#9089fc] opacity-30 sm:left-[calc(50%-30rem)] sm:w-288.75" style="clip-path: polygon(74.1% 44.1%, 100% 61.6%, 97.5% 26.9%, 85.5% 0.1%, 80.7% 2%, 72.5% 32.5%, 60.2% 62.4%, 52.4% 68.1%, 47.5% 58.3%, 45.2% 34.5%, 27.5% 76.7%, 0.1% 64.9%, 17.9% 100%, 27.6% 76.8%, 76.1% 97.7%, 74.1% 44.1%)"></div>
       </div>
-      <div class="pt-24 sm:pt-32">
+      <div class="py-24 sm:py-32 lg:pb-40">
           <div class="mx-auto max-w-7xl">
             <div class="mx-auto">
 
@@ -343,11 +638,11 @@
                   <h1 class="font-semibold tracking-tight text-balance gradient-text-default sm:text-6xl text-4xl">The new Laravel Ecosystem</h1>
                   <p class="mt-8 text-lg font-medium text-pretty text-gray-300 sm:text-xl/8">A collection of powerful Laravel and Filament packages, designed for the modern Web & App Developer.</p>
                   <div class="mt-10 flex items-center gap-x-6">
-                    <a href="/" class="animated-gradient-border flex items-center gap-2 group">
-                      <div class="bg-indigo-950/90 rounded px-4 py-2 flex items-center gap-2">
-                        <span class="material-symbols-rounded text-md text-gray-200">rocket_launch</span>
-                        <span class="text-gray-200">Get started</span>
-                      </div>
+                    <a href="/" class="relative px-4 py-2 rounded flex items-center gap-2 group">
+                      <div class="absolute inset-0 rounded bg-gradient-to-r from-pink-600 via-purple-600 to-violet-600"></div>
+                      <div class="absolute inset-[1px] rounded bg-indigo-950/90"></div>
+                      <span class="material-symbols-rounded text-md relative z-10 text-gray-200">rocket_launch</span>
+                      <span class="relative z-10 text-gray-200">Get started</span>
                     </a>
                     <a href="#" class="ml-5 text-gray-200 hidden lg:block">Learn more <span aria-hidden="true">→</span></a>
                   </div>
@@ -364,25 +659,26 @@
                       <div class="mx-auto max-w-2xl lg:max-w-none">
                         <dl class="mt-16 grid grid-cols-1 gap-0.5 overflow-hidden rounded-2xl text-center sm:grid-cols-2 lg:grid-cols-4">
                           <div class="flex flex-col bg-white/5 p-8">
-                            <dt class="text-sm/6 font-semibold text-gray-300">Downloads</dt>
-                            <dd class="order-first text-5xl font-semibold tracking-tight gradient-text-default">47k</dd>
-                          </div>
-                           <div class="flex flex-col bg-white/5 p-8">
-                            <dt class="text-sm/6 font-semibold text-gray-300">Laravel Packages</dt>
-                            <dd class="order-first text-5xl font-semibold tracking-tight gradient-text-default">43</dd>
+                            <dt class="text-sm/6 font-semibold text-gray-300">Creators on the platform</dt>
+                            <dd class="order-first text-3xl font-semibold tracking-tight text-white">8,000+</dd>
                           </div>
                           <div class="flex flex-col bg-white/5 p-8">
-                            <dt class="text-sm/6 font-semibold text-gray-300">Contributors</dt>
-                            <dd class="order-first text-5xl font-semibold tracking-tight gradient-text-default">24</dd>
+                            <dt class="text-sm/6 font-semibold text-gray-300">Flat platform fee</dt>
+                            <dd class="order-first text-3xl font-semibold tracking-tight text-white">3%</dd>
                           </div>
                           <div class="flex flex-col bg-white/5 p-8">
-                            <dt class="text-sm/6 font-semibold text-gray-300">Stargazers</dt>
-                            <dd class="order-first text-5xl font-semibold tracking-tight gradient-text-default">153</dd>
+                            <dt class="text-sm/6 font-semibold text-gray-300">Uptime guarantee</dt>
+                            <dd class="order-first text-3xl font-semibold tracking-tight text-white">99.9%</dd>
                           </div>
-                       </dl>
+                          <div class="flex flex-col bg-white/5 p-8">
+                            <dt class="text-sm/6 font-semibold text-gray-300">Paid out to creators</dt>
+                            <dd class="order-first text-3xl font-semibold tracking-tight text-white">$70M</dd>
+                          </div>
+                        </dl>
                       </div>
                     </div>
                   </div>
+
 
               </div>
             </div>
@@ -391,18 +687,8 @@
         </div>
       </div>
 
-      <div id="installation" class="max-w-7xl mx-auto text-center my-20">
-        <h2 class="pt-20 pb-2 font-semibold tracking-tight text-balance gradient-text-default sm:text-5xl text-3xl">
-          Get started
-        </h2><br>
-        <p class="text-gray-300 text-lg/8 text-pretty">
-          Installation is simple. Just install the wanted package using Composer and run the Moox installer.<br>
-          The installer will guide you through the process of installing one or more packages.<br>
-          Finally it will ask you to create one or more Admin Panels.
-        </p>
-      </div>
     <div class="max-w-7xl mx-auto m-10 p-10">
-      <div class="-px-10 -my-10 rounded-3xl flex justify-center bg-[url(banner-bg.jpg)] bg-cover bg-center mx-auto overflow-hidden">
+      <div class="-px-10 -my-10 rounded-3xl flex justify-center mt-16 bg-[url(banner-bg.jpg)] bg-cover bg-center mx-auto overflow-hidden">
 
       <div class="m-10">
           <div class="grid grid-cols-2 gap-10">
@@ -432,7 +718,7 @@
                           <span class="material-symbols-rounded text-pink-500">terminal</span>
                           1. Install via Composer
                       </h3>
-                      <div class="bg-slate-950/60 mt-6 p-2 rounded-md font-mono text-gray-300 relative group">
+                      <div class="bg-gray-900 p-4 rounded font-mono text-gray-300 relative group">
                           <code id="composer-command">composer require moox/core</code>
                           <button onclick="copyToClipboard('composer-command')" data-copy-target="composer-command" class="absolute right-2 top-1/2 -translate-y-1/2 opacity-0 group-hover:opacity-100 transition-opacity duration-200">
                               <span class="material-symbols-rounded text-gray-400 hover:text-pink-500">content_copy</span>
@@ -444,7 +730,7 @@
                           <span class="material-symbols-rounded text-pink-500">rocket_launch</span>
                           2. Run the Installer
                       </h3>
-                      <div class="bg-slate-950/60 mt-6 p-2 rounded-md font-mono text-gray-300 relative group">
+                      <div class="bg-gray-900 p-4 rounded font-mono text-gray-300 relative group">
                           <code id="artisan-command">php artisan moox:install</code>
                           <button onclick="copyToClipboard('artisan-command')" data-copy-target="artisan-command" class="absolute right-2 top-1/2 -translate-y-1/2 opacity-0 group-hover:opacity-100 transition-opacity duration-200">
                               <span class="material-symbols-rounded text-gray-400 hover:text-pink-500">content_copy</span>
@@ -457,7 +743,7 @@
                   <div class="bg-slate-950/40 rounded-lg p-6 border border-pink-500/10">
                       <h3 class="text-xl font-bold text-gray-200 mb-8 flex items-center gap-3">
                               <span class="material-symbols-rounded text-pink-500">check_circle</span>
-                              3. Install Moox
+                              3. Choose Packages
                           </h3>
                           <img src="https://raw.githubusercontent.com/mooxphp/moox/refs/heads/main/packages/devlink/screenshots/devlink-status.jpg" alt="Installer" class="w-full rounded">
                       </div>
@@ -468,205 +754,103 @@
           </div>
         </div>
   
-      <!-- Packages -->
-      <div id="packages" class="max-w-7xl mx-auto text-center my-20">
-        <h2 class="pt-20 pb-2 font-semibold tracking-tight text-balance gradient-text-default sm:text-5xl text-3xl">
-          Laravel Packages
-        </h2><br>
-        <p class="text-gray-300 text-lg/8 text-pretty">
-          Moox is a collection of packages for Laravel and Filament.<br>
-          Most packages are under hard development, but those listed are ready to use.
+  <div class="max-w-7xl mx-auto m-10 p-10">
+    <div class="-px-10 -my-10 rounded-3xl flex justify-center mt-16 bg-[url(banner-bg.jpg)] bg-cover bg-center mx-auto overflow-hidden">
+      <div class="mx-auto max-w-sm text-center lg:mx-0 lg:flex-auto lg:py-24 lg:text-left flex flex-col">
+        <div class="flex flex-row gap-2">
+          <h2 class="text-3xl font-semibold tracking-tight text-balance text-white sm:text-4xl">Moox Jobs</h2>
+          <div class="h-6 bg-pink-500/20 text-pink-200 text-xs px-2 py-0.5 rounded-full border border-pink-500/20 ml-2">4.2.1</div>
+        </div>
+        <p class="mt-6 text-lg/8 text-pretty text-gray-300">
+          Manage your Laravel job queues in Filament.<br>
+          See running jobs, retry failed jobs,
+          and job batches.
         </p>
+        <div class="mt-10 flex items-center justify-center gap-x-6 lg:justify-start">
+          <a href="/" class="relative px-4 py-2 rounded flex items-center gap-2 group">
+            <div class="absolute inset-0 rounded bg-gradient-to-r from-pink-600 via-purple-600 to-violet-600"></div>
+            <div class="absolute inset-[1px] rounded bg-indigo-950/90"></div>
+            <span class="material-symbols-rounded text-md relative z-10 text-gray-200">box</span>
+            <span class="relative z-10 text-gray-200">Learn more</span>
+          </a>
+          <a href="/" class="si si-github text-3xl text-gray-300">
+          </a>
+        </div>
+        <div class="flex justify-between mt-auto -mb-10">
+          <div class="text-gray-400 text-center bg-slate-950/60 px-5 py-1 rounded-md flex flex-row items-center">
+            <span class="material-symbols-rounded">download</span>
+              4.7k
+          </div>
+          <div class="text-gray-400 text-center bg-slate-950/60 px-5 py-1 rounded-md flex flex-row items-center">
+            <span class="material-symbols-rounded">star</span>
+              175
+          </div>
+          <div class="text-gray-400 text-center bg-slate-950/60 px-5 py-1 rounded-md flex flex-row items-center">
+              <span class="material-symbols-rounded m-1">schedule</span>
+              2d
+          </div>
+        </div>
       </div>
+      <img 
+        src="test-screen.png" 
+        alt="Screenshot" 
+        class="transform shadow-2xl -mr-20 animated-screenshot" 
+        style="transform: perspective(1000px) rotateY(-30deg);" />
+    </div>
+  </div>
 
-      <!-- Jobs -->
-      <div class="max-w-7xl mx-auto m-10 p-10">
-        <div class="-px-10 -my-10 rounded-3xl flex justify-center bg-[url(banner-bg.jpg)] bg-cover bg-center mx-auto overflow-hidden">
-          <div class="mx-auto max-w-sm text-center lg:mx-0 lg:flex-auto lg:py-24 lg:text-left flex flex-col">
-            <div class="flex flex-row gap-2">
-              <h2 class="text-3xl font-semibold tracking-tight text-balance text-white sm:text-4xl">Moox Jobs</h2>
-              <div class="h-6 bg-pink-500/20 text-pink-200 text-xs px-2 py-0.5 rounded-full border border-pink-500/20 ml-2">Stable</div>
-            </div>
-            <p class="mt-6 text-lg/8 text-pretty text-gray-300">
-              Manage your Laravel job queues in Filament.<br>
-              See running jobs, retry failed jobs,
-              and job batches.
-            </p>
-            <div class="mt-10 flex items-center justify-center gap-x-6 lg:justify-start">
-              <a href="/" class="relative px-4 py-2 rounded flex items-center gap-2 group">
-                <div class="absolute inset-0 rounded bg-gradient-to-r from-pink-600 via-purple-600 to-violet-600"></div>
-                <div class="absolute inset-[1px] rounded bg-indigo-950/90"></div>
-                <span class="material-symbols-rounded text-md relative z-10 text-gray-200">box</span>
-                <span class="relative z-10 text-gray-200">Learn more</span>
-              </a>
-              <a href="/" class="si si-github text-3xl text-gray-300">
-              </a>
-            </div>
-            <div class="mt-auto">
-              <div class="flex justify-between -mb-10">
-                <div class="text-gray-400 text-center bg-slate-950/60 px-5 py-1 rounded-md flex flex-row items-center">
-                  <span class="material-symbols-rounded">download</span>
-                    4.7k
+
+    <div class="py-24 sm:py-32">
+        <div class="mx-auto max-w-2xl px-6 lg:max-w-7xl lg:px-8">
+          <h2 class="text-base/7 font-semibold text-indigo-400">Deploy faster</h2>
+          <p class="mt-2 max-w-lg text-4xl font-semibold tracking-tight text-pretty text-white sm:text-5xl">Everything you need to deploy your app</p>
+          <div class="mt-10 grid grid-cols-1 gap-4 sm:mt-16 lg:grid-cols-6 lg:grid-rows-2">
+            <div class="flex p-px lg:col-span-4">
+              <div class="w-full overflow-hidden rounded-lg bg-gray-800 outline outline-white/15 max-lg:rounded-t-4xl lg:rounded-tl-4xl">
+                <img class="h-80 object-cover object-left" src="https://tailwindcss.com/plus-assets/img/component-images/dark-bento-02-releases.png" alt="" />
+                <div class="p-10">
+                  <h3 class="text-sm/4 font-semibold text-gray-400">Releases</h3>
+                  <p class="mt-2 text-lg font-medium tracking-tight text-white">Push to deploy</p>
+                  <p class="mt-2 max-w-lg text-sm/6 text-gray-400">Lorem ipsum dolor sit amet, consectetur adipiscing elit. In gravida justo et nulla efficitur, maximus egestas sem pellentesque.</p>
                 </div>
-                <div class="text-gray-400 text-center bg-slate-950/60 px-5 py-1 rounded-md flex flex-row items-center">
-                  <span class="material-symbols-rounded">star</span>
-                    175
+              </div>
+            </div>
+            <div class="flex p-px lg:col-span-2">
+              <div class="w-full overflow-hidden rounded-lg bg-gray-800 outline outline-white/15 lg:rounded-tr-4xl">
+                <img class="h-80 object-cover" src="https://tailwindcss.com/plus-assets/img/component-images/dark-bento-02-integrations.png" alt="" />
+                <div class="p-10">
+                  <h3 class="text-sm/4 font-semibold text-gray-400">Integrations</h3>
+                  <p class="mt-2 text-lg font-medium tracking-tight text-white">Connect your favorite tools</p>
+                  <p class="mt-2 max-w-lg text-sm/6 text-gray-400">Curabitur auctor, ex quis auctor venenatis, eros arcu rhoncus massa.</p>
                 </div>
-                <div class="text-gray-400 text-center bg-slate-950/60 px-5 py-1 rounded-md flex flex-row items-center">
-                    <span class="material-symbols-rounded m-1">schedule</span>
-                    2d
+              </div>
+            </div>
+            <div class="flex p-px lg:col-span-2">
+              <div class="w-full overflow-hidden rounded-lg bg-gray-800 outline outline-white/15 lg:rounded-bl-4xl">
+                <img class="h-80 object-cover" src="https://moox.heco.si/web/80-box.png" alt="" />
+                <div class="p-10">
+                  <h3 class="text-sm/4 font-semibold text-gray-400">Security</h3>
+                  <p class="mt-2 text-lg font-medium tracking-tight text-white">Advanced access control</p>
+                  <p class="mt-2 max-w-lg text-sm/6 text-gray-400">Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia.</p>
+                </div>
+              </div>
+            </div>
+            <div class="flex p-px lg:col-span-4">
+              <div class="w-full overflow-hidden rounded-lg bg-gray-800 outline outline-white/15 max-lg:rounded-b-4xl lg:rounded-br-4xl">
+                <img class="h-80 object-cover object-left" src="https://tailwindcss.com/plus-assets/img/component-images/dark-bento-02-performance.png" alt="" />
+                <div class="p-10">
+                  <h3 class="text-sm/4 font-semibold text-gray-400">Performance</h3>
+                  <p class="mt-2 text-lg font-medium tracking-tight text-white">Lightning-fast builds</p>
+                  <p class="mt-2 max-w-lg text-sm/6 text-gray-400">Sed congue eros non finibus molestie. Vestibulum euismod augue vel commodo vulputate. Maecenas at augue sed elit dictum vulputate.</p>
                 </div>
               </div>
             </div>
           </div>
-          <img 
-            src="test-screen.png" 
-            alt="Screenshot" 
-            class="transform shadow-2xl -mr-20 animated-screenshot" 
-            style="transform: perspective(1000px) rotateY(-30deg);" />
         </div>
       </div>
+      
 
-      <!-- Core -->
-      <div class="max-w-7xl mx-auto m-10 p-10">
-        <div class="-px-10 -my-10 rounded-3xl flex justify-center bg-[url(banner-bg.jpg)] bg-cover bg-center mx-auto overflow-hidden">
-          <div class="mx-auto max-w-sm text-center lg:mx-0 lg:flex-auto lg:py-24 lg:text-left flex flex-col">
-            <div class="flex flex-row gap-2">
-              <h2 class="text-3xl font-semibold tracking-tight text-balance text-white sm:text-4xl">Moox Core</h2>
-              <div class="h-6 bg-pink-500/20 text-pink-200 text-xs px-2 py-0.5 rounded-full border border-pink-500/20 ml-2">Stable</div>
-            </div>
-            <p class="mt-6 text-lg/8 text-pretty text-gray-300">
-              Moox Core is required by all Moox packages.<br>
-              It provides a lot of useful features<br>
-              for Filament and Laravel.
-            </p>
-            <div class="mt-10 flex items-center justify-center gap-x-6 lg:justify-start">
-              <a href="/" class="relative px-4 py-2 rounded flex items-center gap-2 group">
-                <div class="absolute inset-0 rounded bg-gradient-to-r from-pink-600 via-purple-600 to-violet-600"></div>
-                <div class="absolute inset-[1px] rounded bg-indigo-950/90"></div>
-                <span class="material-symbols-rounded text-md relative z-10 text-gray-200">box</span>
-                <span class="relative z-10 text-gray-200">Learn more</span>
-              </a>
-              <a href="/" class="si si-github text-3xl text-gray-300">
-              </a>
-            </div>
-            <div class="flex justify-between mt-auto -mb-10">
-              <div class="text-gray-400 text-center bg-slate-950/60 px-5 py-1 rounded-md flex flex-row items-center">
-                <span class="material-symbols-rounded">download</span>
-                  4.7k
-              </div>
-              <div class="text-gray-400 text-center bg-slate-950/60 px-5 py-1 rounded-md flex flex-row items-center">
-                <span class="material-symbols-rounded">star</span>
-                  175
-              </div>
-              <div class="text-gray-400 text-center bg-slate-950/60 px-5 py-1 rounded-md flex flex-row items-center">
-                  <span class="material-symbols-rounded m-1">schedule</span>
-                  2d
-              </div>
-            </div>
-          </div>
-          <img 
-            src="test-screen.png" 
-            alt="Screenshot" 
-            class="transform shadow-2xl -mr-20 animated-screenshot" 
-            style="transform: perspective(1000px) rotateY(-30deg);" />
-        </div>
-      </div>
-
-      <!-- Progress -->
-      <div class="max-w-7xl mx-auto m-10 p-10">
-        <div class="-px-10 -my-10 rounded-3xl flex justify-center bg-[url(banner-bg.jpg)] bg-cover bg-center mx-auto overflow-hidden">
-          <div class="mx-auto max-w-sm text-center lg:mx-0 lg:flex-auto lg:py-24 lg:text-left flex flex-col">
-            <div class="flex flex-row gap-2">
-              <h2 class="text-3xl font-semibold tracking-tight text-balance text-white sm:text-4xl">Moox Progress</h2>
-              <div class="h-6 bg-pink-500/20 text-pink-200 text-xs px-2 py-0.5 rounded-full border border-pink-500/20 ml-2">Stable</div>
-            </div>
-            <p class="mt-6 text-lg/8 text-pretty text-gray-300">
-              A Progress Bar Column for Filament<br>
-              Simple to use, and easy<br>
-              to customize.
-            </p>
-            <div class="mt-10 flex items-center justify-center gap-x-6 lg:justify-start">
-              <a href="/" class="relative px-4 py-2 rounded flex items-center gap-2 group">
-                <div class="absolute inset-0 rounded bg-gradient-to-r from-pink-600 via-purple-600 to-violet-600"></div>
-                <div class="absolute inset-[1px] rounded bg-indigo-950/90"></div>
-                <span class="material-symbols-rounded text-md relative z-10 text-gray-200">box</span>
-                <span class="relative z-10 text-gray-200">Learn more</span>
-              </a>
-              <a href="/" class="si si-github text-3xl text-gray-300">
-              </a>
-            </div>
-            <div class="flex justify-between mt-auto -mb-10">
-              <div class="text-gray-400 text-center bg-slate-950/60 px-5 py-1 rounded-md flex flex-row items-center">
-                <span class="material-symbols-rounded">download</span>
-                  4.7k
-              </div>
-              <div class="text-gray-400 text-center bg-slate-950/60 px-5 py-1 rounded-md flex flex-row items-center">
-                <span class="material-symbols-rounded">star</span>
-                  175
-              </div>
-              <div class="text-gray-400 text-center bg-slate-950/60 px-5 py-1 rounded-md flex flex-row items-center">
-                  <span class="material-symbols-rounded m-1">schedule</span>
-                  2d
-              </div>
-            </div>
-          </div>
-          <img 
-            src="test-screen.png" 
-            alt="Screenshot" 
-            class="transform shadow-2xl -mr-20 animated-screenshot" 
-            style="transform: perspective(1000px) rotateY(-30deg);" />
-        </div>
-      </div>
-
-      <!-- Permission -->
-      <div class="max-w-7xl mx-auto m-10 p-10">
-        <div class="-px-10 -my-10 rounded-3xl flex justify-center bg-[url(banner-bg.jpg)] bg-cover bg-center mx-auto overflow-hidden">
-          <div class="mx-auto max-w-sm text-center lg:mx-0 lg:flex-auto lg:py-24 lg:text-left flex flex-col">
-            <div class="flex flex-row gap-2">
-              <h2 class="text-3xl font-semibold tracking-tight text-balance text-white sm:text-4xl">Moox Permission</h2>
-              <div class="h-6 bg-violet-500/20 text-pink-200 text-xs px-2 py-0.5 rounded-full border border-violet-500/20 ml-2">Dev</div>
-            </div>
-            <p class="mt-6 text-lg/8 text-pretty text-gray-300">
-              A Permission Column for Filament<br>
-              Simple to use, and easy<br>
-              to customize.
-            </p>
-            <div class="mt-10 flex items-center justify-center gap-x-6 lg:justify-start">
-              <a href="/" class="relative px-4 py-2 rounded flex items-center gap-2 group">
-                <div class="absolute inset-0 rounded bg-gradient-to-r from-pink-600 via-purple-600 to-violet-600"></div>
-                <div class="absolute inset-[1px] rounded bg-indigo-950/90"></div>
-                <span class="material-symbols-rounded text-md relative z-10 text-gray-200">box</span>
-                <span class="relative z-10 text-gray-200">Learn more</span>
-              </a>
-              <a href="/" class="si si-github text-3xl text-gray-300">
-              </a>
-            </div>
-            <div class="flex justify-between mt-auto -mb-10">
-              <div class="text-gray-400 text-center bg-slate-950/60 px-5 py-1 rounded-md flex flex-row items-center">
-                <span class="material-symbols-rounded">download</span>
-                  4.7k
-              </div>
-              <div class="text-gray-400 text-center bg-slate-950/60 px-5 py-1 rounded-md flex flex-row items-center">
-                <span class="material-symbols-rounded">star</span>
-                  175
-              </div>
-              <div class="text-gray-400 text-center bg-slate-950/60 px-5 py-1 rounded-md flex flex-row items-center">
-                  <span class="material-symbols-rounded m-1">schedule</span>
-                  2d
-              </div>
-            </div>
-          </div>
-          <img 
-            src="test-screen.png" 
-            alt="Screenshot" 
-            class="transform shadow-2xl -mr-20 animated-screenshot" 
-            style="transform: perspective(1000px) rotateY(-30deg);" />
-        </div>
-      </div>
-
-      <!-- Contact -->
-      <footer id="contact" class="bg-black/50 mt-40">
+      <footer class="bg-black/50">
         <div class="mx-auto max-w-7xl px-6 pt-20 pb-8 sm:pt-24 lg:px-8 lg:pt-32">
           <div class="xl:grid xl:grid-cols-3 xl:gap-8">
             <div class="grid grid-cols-2 gap-8 xl:col-span-2">
@@ -754,36 +938,46 @@
           </div>
           <div class="mt-16 border-t border-white/10 pt-8 sm:mt-20 md:flex md:items-center md:justify-between lg:mt-24">
             <div class="flex gap-x-6 md:order-2">
-              <a href="https://github.com/mooxphp/" target="_blank" class="text-gray-400 hover:text-white">
-                <span class="sr-only">GitHub</span>
-                <i class="si si-github text-xl"></i>
+              <a href="#" class="text-gray-400 hover:text-white">
+                <span class="sr-only">Facebook</span>
+                <svg class="size-6" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                  <path fill-rule="evenodd" d="M22 12c0-5.523-4.477-10-10-10S2 6.477 2 12c0 4.991 3.657 9.128 8.438 9.878v-6.987h-2.54V12h2.54V9.797c0-2.506 1.492-3.89 3.777-3.89 1.094 0 2.238.195 2.238.195v2.46h-1.26c-1.243 0-1.63.771-1.63 1.562V12h2.773l-.443 2.89h-2.33v6.988C18.343 21.128 22 16.991 22 12z" clip-rule="evenodd" />
+                </svg>
               </a>
-              <a href="https://x.com/mooxphp" target="_blank" class="text-gray-400 hover:text-white">
+              <a href="#" class="text-gray-400 hover:text-white">
+                <span class="sr-only">Instagram</span>
+                <svg class="size-6" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                  <path fill-rule="evenodd" d="M12.315 2c2.43 0 2.784.013 3.808.06 1.064.049 1.791.218 2.427.465a4.902 4.902 0 011.772 1.153 4.902 4.902 0 011.153 1.772c.247.636.416 1.363.465 2.427.048 1.067.06 1.407.06 4.123v.08c0 2.643-.012 2.987-.06 4.043-.049 1.064-.218 1.791-.465 2.427a4.902 4.902 0 01-1.153 1.772 4.902 4.902 0 01-1.772 1.153c-.636.247-1.363.416-2.427.465-1.067.048-1.407.06-4.123.06h-.08c-2.643 0-2.987-.012-4.043-.06-1.064-.049-1.791-.218-2.427-.465a4.902 4.902 0 01-1.772-1.153 4.902 4.902 0 01-1.153-1.772c-.247-.636-.416-1.363-.465-2.427-.047-1.024-.06-1.379-.06-3.808v-.63c0-2.43.013-2.784.06-3.808.049-1.064.218-1.791.465-2.427a4.902 4.902 0 011.153-1.772A4.902 4.902 0 015.45 2.525c.636-.247 1.363-.416 2.427-.465C8.901 2.013 9.256 2 11.685 2h.63zm-.081 1.802h-.468c-2.456 0-2.784.011-3.807.058-.975.045-1.504.207-1.857.344-.467.182-.8.398-1.15.748-.35.35-.566.683-.748 1.15-.137.353-.3.882-.344 1.857-.047 1.023-.058 1.351-.058 3.807v.468c0 2.456.011 2.784.058 3.807.045.975.207 1.504.344 1.857.182.466.399.8.748 1.15.35.35.683.566 1.15.748.353.137.882.3 1.857.344 1.054.048 1.37.058 4.041.058h.08c2.597 0 2.917-.01 3.96-.058.976-.045 1.505-.207 1.858-.344.466-.182.8-.398 1.15-.748.35-.35.566-.683.748-1.15.137-.353.3-.882.344-1.857.048-1.055.058-1.37.058-4.041v-.08c0-2.597-.01-2.917-.058-3.96-.045-.976-.207-1.505-.344-1.858a3.097 3.097 0 00-.748-1.15 3.098 3.098 0 00-1.15-.748c-.353-.137-.882-.3-1.857-.344-1.023-.047-1.351-.058-3.807-.058zM12 6.865a5.135 5.135 0 110 10.27 5.135 5.135 0 010-10.27zm0 1.802a3.333 3.333 0 100 6.666 3.333 3.333 0 000-6.666zm5.338-3.205a1.2 1.2 0 110 2.4 1.2 1.2 0 010-2.4z" clip-rule="evenodd" />
+                </svg>
+              </a>
+              <a href="#" class="text-gray-400 hover:text-white">
                 <span class="sr-only">X</span>
-                <i class="si si-x text-xl"></i>
+                <svg class="size-6" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                  <path d="M13.6823 10.6218L20.2391 3H18.6854L12.9921 9.61788L8.44486 3H3.2002L10.0765 13.0074L3.2002 21H4.75404L10.7663 14.0113L15.5685 21H20.8131L13.6819 10.6218H13.6823ZM11.5541 13.0956L10.8574 12.0991L5.31391 4.16971H7.70053L12.1742 10.5689L12.8709 11.5655L18.6861 19.8835H16.2995L11.5541 13.096V13.0956Z" />
+                </svg>
               </a>
-              <a href="https://www.youtube.com/@mooxphp" target="_blank" class="text-gray-400 hover:text-white">
+              <a href="#" class="text-gray-400 hover:text-white">
+                <span class="sr-only">GitHub</span>
+                <svg class="size-6" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                  <path fill-rule="evenodd" d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z" clip-rule="evenodd" />
+                </svg>
+              </a>
+              <a href="#" class="text-gray-400 hover:text-white">
                 <span class="sr-only">YouTube</span>
-                <i class="si si-youtube text-xl"></i>
-              </a>
-              <a href="https://mooxphp.slack.com/" target="_blank" class="text-gray-400 hover:text-white">
-                <span class="sr-only">Slack</span>
-                <i class="si si-slack text-xl"></i>
-              </a>
-              <a href="https://app.codacy.com/gh/mooxphp/moox/dashboard" target="_blank" class="text-gray-400 hover:text-white">
-                <span class="sr-only">Codacy</span>
-                <i class="si si-codacy text-xl"></i>
+                <svg class="size-6" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                  <path fill-rule="evenodd" d="M19.812 5.418c.861.23 1.538.907 1.768 1.768C21.998 8.746 22 12 22 12s0 3.255-.418 4.814a2.504 2.504 0 0 1-1.768 1.768c-1.56.419-7.814.419-7.814.419s-6.255 0-7.814-.419a2.505 2.505 0 0 1-1.768-1.768C2 15.255 2 12 2 12s0-3.255.417-4.814a2.507 2.507 0 0 1 1.768-1.768C5.744 5 11.998 5 11.998 5s6.255 0 7.814.418ZM15.194 12 10 15V9l5.194 3Z" clip-rule="evenodd" />
+                </svg>
               </a>
             </div>
-            <p class="mt-8 text-sm/6 text-gray-400 md:order-1 md:mt-0">&copy; 2025 Moox. All rights reserved.</p>
+            <p class="mt-8 text-sm/6 text-gray-400 md:order-1 md:mt-0">&copy; 2024 Your Company, Inc. All rights reserved.</p>
           </div>
         </div>
       </footer>
-  </body>
-  <script>
+      
 
-  // Starfield Background
+</body>
 
+<script>
   const canvas = document.getElementById('starfield');
   const ctx = canvas.getContext('2d');
   let stars = [];
@@ -873,8 +1067,6 @@
     createStars();
   });
   requestAnimationFrame(animate);
-
-  // Copy to clipboard
   
   function copyToClipboard(elementId) {
     const text = document.getElementById(elementId).textContent
@@ -946,4 +1138,5 @@
     }
   });
   </script>
+  
 </html>
