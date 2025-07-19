@@ -444,8 +444,10 @@
                         </dt>
                         <dd
                           class="order-first text-5xl font-semibold tracking-tight gradient-text-default"
+                          data-count="47"
+                          data-suffix="k"
                         >
-                          47k
+                          0k
                         </dd>
                       </div>
                       <div class="flex flex-col bg-white/5 p-8">
@@ -454,8 +456,9 @@
                         </dt>
                         <dd
                           class="order-first text-5xl font-semibold tracking-tight gradient-text-default"
+                          data-count="43"
                         >
-                          43
+                          0
                         </dd>
                       </div>
                       <div class="flex flex-col bg-white/5 p-8">
@@ -464,8 +467,9 @@
                         </dt>
                         <dd
                           class="order-first text-5xl font-semibold tracking-tight gradient-text-default"
+                          data-count="24"
                         >
-                          24
+                          0
                         </dd>
                       </div>
                       <div class="flex flex-col bg-white/5 p-8">
@@ -474,8 +478,9 @@
                         </dt>
                         <dd
                           class="order-first text-5xl font-semibold tracking-tight gradient-text-default"
+                          data-count="153"
                         >
-                          153
+                          0
                         </dd>
                       </div>
                     </dl>
@@ -1364,6 +1369,47 @@
               }
             );
           }
+        });
+
+        // Counter animation for statistics
+
+        function animateCounter(element, target, suffix = "") {
+          const duration = 2000;
+          const start = 0;
+          const increment = target / (duration / 5);
+          let current = start;
+
+          const timer = setInterval(() => {
+            current += increment;
+            if (current >= target) {
+              current = target;
+              clearInterval(timer);
+            }
+            element.textContent = Math.floor(current) + suffix;
+          }, 16);
+        }
+
+        const counters = document.querySelectorAll("[data-count]");
+        const observerOptions = {
+          threshold: 0.5,
+          rootMargin: "0px 0px -100px 0px",
+        };
+
+        const counterObserver = new IntersectionObserver((entries) => {
+          entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+              const element = entry.target;
+              const target = parseInt(element.getAttribute("data-count"));
+              const suffix = element.getAttribute("data-suffix") || "";
+
+              animateCounter(element, target, suffix);
+              counterObserver.unobserve(element);
+            }
+          });
+        }, observerOptions);
+
+        counters.forEach((counter) => {
+          counterObserver.observe(counter);
         });
       }
     });
