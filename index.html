@@ -50,7 +50,6 @@
         position: relative;
         background: linear-gradient(45deg, #f92d93, #5209fc, #3b82f6, #f92d93);
         background-size: 400% 400%;
-        border-radius: 0.5rem;
         padding: 2px;
         transition: all 0.3s ease;
       }
@@ -59,7 +58,6 @@
         content: "";
         position: absolute;
         inset: 0;
-        border-radius: 0.5rem;
         background: linear-gradient(45deg, #f92d93, #5209fc, #3b82f6, #f92d93);
         background-size: 400% 400%;
         transition: all 0.3s ease;
@@ -72,6 +70,22 @@
 
       .animated-gradient-border:hover::before {
         animation: gradient-move 3s ease infinite;
+      }
+
+      .animated-gradient-border.rounded {
+        border-radius: 0.5rem;
+      }
+
+      .animated-gradient-border.rounded-full {
+        border-radius: 9999px;
+      }
+
+      .animated-gradient-border.rounded::before {
+        border-radius: 0.5rem;
+      }
+
+      .animated-gradient-border.rounded-full::before {
+        border-radius: 9999px;
       }
 
       @keyframes gradient-move {
@@ -201,7 +215,22 @@
             >Demo</a
           >
         </div>
+
         <div class="hidden lg:flex lg:flex-1 lg:justify-end">
+          <a
+            href="pro.html"
+            class="animated-gradient-border text-gray-200 rounded-full hover:text-pink-500 mr-5 mt-0.5 font-bold"
+          >
+            <div class="bg-indigo-950/90 rounded-full px-4 py-1">Pro</div>
+          </a>
+          <a href="english.html">
+            <img
+              src="https://raw.githubusercontent.com/mooxphp/flag-icons-circle/main/resources/svg/us.svg"
+              alt="English"
+              class="w-7 h-7 mt-1 mr-5"
+            />
+          </a>
+
           <a
             href="https://github.com/mooxphp/"
             class="si si-github text-3xl text-gray-300 hover:text-violet-700"
@@ -299,6 +328,11 @@
                     class="-mx-3 block rounded-lg px-3 py-2.5 text-base/7 font-semibold text-white hover:bg-gray-50"
                     >Demo</a
                   >
+                  <a
+                    href="pro.html"
+                    class="-mx-3 block rounded-lg px-3 py-2.5 text-base/7 font-semibold text-white hover:bg-gray-50"
+                    >Pro</a
+                  >
                 </div>
               </div>
             </div>
@@ -366,7 +400,7 @@
                 <div class="mt-10 flex items-center gap-x-6">
                   <a
                     href="#installation"
-                    class="animated-gradient-border flex items-center gap-2 group text-gray-200 hover:text-pink-500"
+                    class="animated-gradient-border rounded flex items-center gap-2 group text-gray-200 hover:text-pink-500"
                   >
                     <div
                       class="bg-indigo-950/90 rounded px-4 py-2 flex items-center gap-2"
@@ -613,8 +647,10 @@
       <br />
       <p class="text-gray-300 text-lg/8 text-pretty">
         Moox is a collection of packages for Laravel and Filament.<br />
-        Most packages are under hard development, but those listed are ready to
-        use.
+        These are the most popular packages.
+        <a href="#" class="underline hover:text-pink-500"
+          >Search all packages here.</a
+        >
       </p>
     </div>
 
@@ -648,7 +684,7 @@
               >
                 <a
                   href="/"
-                  class="animated-gradient-border flex items-center gap-2 group text-gray-200 hover:text-pink-500 mb-10"
+                  class="animated-gradient-border flex rounded items-center gap-2 group text-gray-200 hover:text-pink-500 mb-10"
                 >
                   <div
                     class="bg-indigo-950/90 rounded px-4 py-2 flex items-center gap-2"
@@ -696,7 +732,7 @@
               >
                 <a
                   href="/"
-                  class="animated-gradient-border flex items-center gap-2 group text-gray-200 hover:text-pink-500 mb-10"
+                  class="animated-gradient-border flex rounded items-center gap-2 group text-gray-200 hover:text-pink-500 mb-10"
                 >
                   <div
                     class="bg-indigo-950/90 rounded px-4 py-2 flex items-center gap-2"
@@ -744,7 +780,7 @@
               >
                 <a
                   href="/"
-                  class="animated-gradient-border flex items-center gap-2 group text-gray-200 hover:text-pink-500 mb-10"
+                  class="animated-gradient-border flex rounded items-center gap-2 group text-gray-200 hover:text-pink-500 mb-10"
                 >
                   <div
                     class="bg-indigo-950/90 rounded px-4 py-2 flex items-center gap-2"
@@ -792,7 +828,7 @@
               >
                 <a
                   href="/"
-                  class="animated-gradient-border flex items-center gap-2 group text-gray-200 hover:text-pink-500 mb-10"
+                  class="animated-gradient-border flex rounded items-center gap-2 group text-gray-200 hover:text-pink-500 mb-10"
                 >
                   <div
                     class="bg-indigo-950/90 rounded px-4 py-2 flex items-center gap-2"
@@ -926,17 +962,12 @@
                   </li>
                   <li>
                     <a href="#" class="text-sm/6 text-gray-400 hover:text-white"
-                      >Laravel & WordPress</a
-                    >
-                  </li>
-                  <li>
-                    <a href="#" class="text-sm/6 text-gray-400 hover:text-white"
                       >Laravel DevOps</a
                     >
                   </li>
                   <li>
                     <a href="#" class="text-sm/6 text-gray-400 hover:text-white"
-                      >Laravel Development</a
+                      >Laravel & WordPress</a
                     >
                   </li>
                 </ul>
@@ -959,31 +990,36 @@
                       >Video Tutorials</a
                     >
                   </li>
+                  <li>
+                    <a href="#" class="text-sm/6 text-gray-400 hover:text-white"
+                      >Slack Community</a
+                    >
+                  </li>
                 </ul>
               </div>
             </div>
             <div class="md:grid md:grid-cols-2 md:gap-8">
               <div>
-                <h3 class="text-sm/6 font-semibold text-white">Company</h3>
+                <h3 class="text-sm/6 font-semibold text-white">Developers</h3>
                 <ul role="list" class="mt-6 space-y-4">
                   <li>
                     <a href="#" class="text-sm/6 text-gray-400 hover:text-white"
-                      >About</a
+                      >About Moox</a
                     >
                   </li>
                   <li>
                     <a href="#" class="text-sm/6 text-gray-400 hover:text-white"
-                      >Blog</a
+                      >Development</a
                     >
                   </li>
                   <li>
                     <a href="#" class="text-sm/6 text-gray-400 hover:text-white"
-                      >Jobs</a
+                      >Translation</a
                     >
                   </li>
                   <li>
                     <a href="#" class="text-sm/6 text-gray-400 hover:text-white"
-                      >Press</a
+                      >Demo Platform</a
                     >
                   </li>
                 </ul>
@@ -991,6 +1027,11 @@
               <div class="mt-10 md:mt-0">
                 <h3 class="text-sm/6 font-semibold text-white">Legal</h3>
                 <ul role="list" class="mt-6 space-y-4">
+                  <li>
+                    <a href="#" class="text-sm/6 text-gray-400 hover:text-white"
+                      >Imprint</a
+                    >
+                  </li>
                   <li>
                     <a href="#" class="text-sm/6 text-gray-400 hover:text-white"
                       >Terms of service</a
