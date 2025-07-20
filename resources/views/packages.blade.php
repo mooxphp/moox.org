@@ -2,6 +2,38 @@
 
 @section('content')
 
+<img
+src="{{ Vite::asset('resources/images/polygon.png') }}"
+alt=""
+class="hidden lg:block floating-polygon absolute top-[25vh] right-[15%] w-32 h-32 pointer-events-none -z-50"
+style="object-fit: contain"
+/>
+
+<img
+src="{{ Vite::asset('resources/images/polygon.png') }}"
+alt=""
+class="hidden lg:block floating-polygon absolute bottom-[50vh] left-[25%] w-40 h-40 pointer-events-none -z-50"
+style="object-fit: contain"
+/>
+
+<div class="py-18 sm:py-24">
+    <div class="mx-auto max-w-2xl px-6 lg:max-w-7xl lg:px-8">
+
+        <div id="packages" class="max-w-7xl mx-auto text-center">
+            <h2
+              class="pb-2 font-semibold tracking-tight text-balance gradient-text-default sm:text-5xl text-3xl"
+            >
+              Moox Packages
+            </h2>
+            <br />
+            <p class="text-gray-300 text-lg/8 text-pretty">
+              Our countless packages for Laravel and Filament.
+            </p>
+          </div>
+
+    </div>
+</div>
+
 <div class="max-w-7xl mx-auto flex flex-row gap-10">
     <div class="w-1/4 hidden lg:block m-10">
         <ul class="mb-10">
@@ -9,98 +41,98 @@
                 <a href="#" class="text-gray-200 flex items-center gap-2">
                     <span class="material-symbols-rounded">article</span>
                     Content
-                    <span class="bg-pink-500/20 text-pink-200 text-xs px-2 py-0.5 rounded-full border border-pink-500/20">11</span>
+                    <span class="bg-gray-500/20 text-pink-200 text-xs px-2 py-0.5 rounded-full border border-pink-500/50">11</span>
                 </a>
             </li>
             <li class="mb-4">
                 <a href="#" class="text-gray-200 flex items-center gap-2">
                     <span class="material-symbols-rounded">perm_media</span>
                     Media
-                    <span class="bg-pink-500/20 text-pink-200 text-xs px-2 py-0.5 rounded-full border border-pink-500/20">1</span>
+                    <span class="bg-gray-500/20 text-pink-200 text-xs px-2 py-0.5 rounded-full border border-pink-500/50">1</span>
                 </a>
             </li>
             <li class="mb-4">
                 <a href="#" class="text-gray-200 flex items-center gap-2">
                     <span class="material-symbols-rounded">tag</span>
                     Taxonomy
-                    <span class="bg-pink-500/20 text-pink-200 text-xs px-2 py-0.5 rounded-full border border-pink-500/20">3</span>
+                    <span class="bg-gray-500/20 text-pink-200 text-xs px-2 py-0.5 rounded-full border border-pink-500/50">3</span>
                 </a>
             </li>
             <li class="mb-4">
                 <a href="#" class="text-gray-200 flex items-center gap-2">
                     <span class="material-symbols-rounded">shopping_cart</span>
                     Shop
-                    <span class="bg-pink-500/20 text-pink-200 text-xs px-2 py-0.5 rounded-full border border-pink-500/20">8</span>
+                    <span class="bg-gray-500/20 text-pink-200 text-xs px-2 py-0.5 rounded-full border border-pink-500/50">8</span>
                 </a>
             </li>
             <li class="mb-4">
                 <a href="#" class="text-gray-200 flex items-center gap-2">
                     <span class="material-symbols-rounded">palette</span>
                     Theme
-                    <span class="bg-pink-500/20 text-pink-200 text-xs px-2 py-0.5 rounded-full border border-pink-500/20">3</span>
+                    <span class="bg-gray-500/20 text-pink-200 text-xs px-2 py-0.5 rounded-full border border-pink-500/50">3</span>
                 </a>
             </li>
             <li class="mb-4">
                 <a href="#" class="text-gray-200 flex items-center gap-2">
                     <span class="material-symbols-rounded">extension</span>
                     Module
-                    <span class="bg-pink-500/20 text-pink-200 text-xs px-2 py-0.5 rounded-full border border-pink-500/20">3</span>
+                    <span class="bg-gray-500/20 text-pink-200 text-xs px-2 py-0.5 rounded-full border border-pink-500/50">3</span>
                 </a>
             </li>
             <li class="mb-4">
                 <a href="#" class="text-gray-200 flex items-center gap-2">
                     <span class="material-symbols-rounded">settings</span>
                     System
-                    <span class="bg-pink-500/20 text-pink-200 text-xs px-2 py-0.5 rounded-full border border-pink-500/20">7</span>
+                    <span class="bg-gray-500/20 text-pink-200 text-xs px-2 py-0.5 rounded-full border border-pink-500/50">7</span>
                 </a>
             </li>
             <li class="mb-4">
                 <a href="#" class="text-gray-200 flex items-center gap-2">
                     <span class="material-symbols-rounded">person</span>
                     User
-                    <span class="bg-pink-500/20 text-pink-200 text-xs px-2 py-0.5 rounded-full border border-pink-500/20">6</span>
+                    <span class="bg-gray-500/20 text-pink-200 text-xs px-2 py-0.5 rounded-full border border-pink-500/50">6</span>
                 </a>
             </li>
             <li class="mb-4">
                 <a href="#" class="text-gray-200 flex items-center gap-2">
                     <span class="material-symbols-rounded">build</span>
                     Tools
-                    <span class="bg-pink-500/20 text-pink-200 text-xs px-2 py-0.5 rounded-full border border-pink-500/20">6</span>
+                    <span class="bg-gray-500/20 text-pink-200 text-xs px-2 py-0.5 rounded-full border border-pink-500/50">6</span>
                 </a>
             </li>
             <li class="mb-4">
                 <a href="#" class="text-gray-200 flex items-center gap-2">
                     <span class="material-symbols-rounded">newspaper</span>
                     Press
-                    <span class="bg-pink-500/20 text-pink-200 text-xs px-2 py-0.5 rounded-full border border-pink-500/20">2</span>
+                    <span class="bg-gray-500/20 text-pink-200 text-xs px-2 py-0.5 rounded-full border border-pink-500/50">2</span>
                 </a>
             </li>
             <li class="mb-4">
                 <a href="#" class="text-gray-200 flex items-center gap-2">
                     <span class="material-symbols-rounded">terminal</span>
                     DevOps
-                    <span class="bg-pink-500/20 text-pink-200 text-xs px-2 py-0.5 rounded-full border border-pink-500/20">4</span>
+                    <span class="bg-gray-500/20 text-pink-200 text-xs px-2 py-0.5 rounded-full border border-pink-500/50">4</span>
                 </a>
             </li>
             <li class="mb-4">
                 <a href="#" class="text-gray-200 flex items-center gap-2">
                     <span class="material-symbols-rounded">rocket_launch</span>
                     Builder
-                    <span class="bg-pink-500/20 text-pink-200 text-xs px-2 py-0.5 rounded-full border border-pink-500/20">7</span>
+                    <span class="bg-gray-500/20 text-pink-200 text-xs px-2 py-0.5 rounded-full border border-pink-500/50">7</span>
                 </a>
             </li>
             <li class="mb-4">
                 <a href="#" class="text-gray-200 flex items-center gap-2">
                     <span class="material-symbols-rounded">code</span>
                     Coding
-                    <span class="bg-pink-500/20 text-pink-200 text-xs px-2 py-0.5 rounded-full border border-pink-500/20">4</span>
+                    <span class="bg-gray-500/20 text-pink-200 text-xs px-2 py-0.5 rounded-full border border-pink-500/50">4</span>
                 </a>
             </li>
             <li class="mb-4">
                 <a href="#" class="text-gray-200 flex items-center gap-2">
                     <span class="material-symbols-rounded">category</span>
                     Icons
-                    <span class="bg-pink-500/20 text-pink-200 text-xs px-2 py-0.5 rounded-full border border-pink-500/20">2</span>
+                    <span class="bg-gray-500/20 text-pink-200 text-xs px-2 py-0.5 rounded-full border border-pink-500/50">2</span>
                 </a>
             </li>
         </ul>
@@ -137,7 +169,7 @@
               </a>
             </div>
           </div>
-          <img src="screenshots/jobs.jpg" alt="Screenshot" class="transform shadow-2xl -mr-10 animated-screenshot w-2/3 hidden lg:block" style="transform: perspective(1000px) rotateY(-17.1094deg) translateX(32.8906px);">
+          <img src="{{ Vite::asset('resources/screenshots/jobs.jpg') }}" alt="Screenshot" class="transform shadow-2xl -mr-10 animated-screenshot w-2/3 hidden lg:block" style="transform: perspective(1000px) rotateY(-17.1094deg) translateX(32.8906px);">
         </div>
       </div>
 
@@ -167,7 +199,7 @@
               </a>
             </div>
           </div>
-          <img src="screenshots/jobs.jpg" alt="Screenshot" class="transform shadow-2xl -mr-10 animated-screenshot w-2/3 hidden lg:block" style="transform: perspective(1000px) rotateY(-31.3385deg) translateX(18.6615px);">
+          <img src="{{ Vite::asset('resources/screenshots/jobs.jpg') }}" alt="Screenshot" class="transform shadow-2xl -mr-10 animated-screenshot w-2/3 hidden lg:block" style="transform: perspective(1000px) rotateY(-31.3385deg) translateX(18.6615px);">
         </div>
       </div>
 
@@ -197,7 +229,7 @@
               </a>
             </div>
           </div>
-          <img src="screenshots/jobs.jpg" alt="Screenshot" class="transform shadow-2xl -mr-10 animated-screenshot w-2/3 hidden lg:block" style="transform: perspective(1000px) rotateY(-43.6639deg) translateX(6.33611px);">
+          <img src="{{ Vite::asset('resources/screenshots/jobs.jpg') }}" alt="Screenshot" class="transform shadow-2xl -mr-10 animated-screenshot w-2/3 hidden lg:block" style="transform: perspective(1000px) rotateY(-43.6639deg) translateX(6.33611px);">
         </div>
       </div>
 
@@ -227,7 +259,7 @@
               </a>
             </div>
           </div>
-          <img src="screenshots/jobs.jpg" alt="Screenshot" class="transform shadow-2xl -mr-10 animated-screenshot w-2/3 hidden lg:block" style="transform: perspective(1000px) rotateY(-43.9223deg) translateX(6.0777px);">
+          <img src="{{ Vite::asset('resources/screenshots/jobs.jpg') }}" alt="Screenshot" class="transform shadow-2xl -mr-10 animated-screenshot w-2/3 hidden lg:block" style="transform: perspective(1000px) rotateY(-43.9223deg) translateX(6.0777px);">
         </div>
       </div>
 

@@ -126,12 +126,12 @@
               class="w-full min-w-0 rounded-md bg-white/5 px-3 py-1.5 text-base text-white outline-1 -outline-offset-1 outline-gray-700 placeholder:text-gray-500 focus:outline-2 focus:-outline-offset-2 focus:outline-indigo-500 sm:w-64 sm:text-sm/6 xl:w-full"
               placeholder="Enter your email"
             />
-            <div class="mt-4 sm:mt-0 sm:ml-4 sm:shrink-0">
+            <div class="animated-gradient-border rounded mt-4 sm:mt-0 sm:ml-4 sm:shrink-0">
               <button
                 type="submit"
-                class="flex w-full items-center justify-center rounded-md bg-indigo-500 px-3 py-2 text-sm font-semibold text-white shadow-xs hover:bg-indigo-400 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-500"
+                class="px-3 py-1 rounded font-bold bg-indigo-950/90 text-gray-200 hover:text-pink-500 text-md shadow-xs focus-visible:outline-2 focus-visible:outline-offset-2"
               >
-                Subscribe
+                >
               </button>
             </div>
           </form>

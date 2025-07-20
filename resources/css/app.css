@@ -73,7 +73,7 @@
 }
 
 .bg-banner {
-    background-image: url("/images/banner-bg.jpg");
+    background-image: url("../images/banner-bg.jpg");
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;

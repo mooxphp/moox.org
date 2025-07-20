@@ -18,9 +18,9 @@ Route::get('/support', function () {
     return view('support');
 })->name('support');
 
-Route::get('/license', function () {
-    return view('license');
-})->name('license');
+Route::get('/pricing', function () {
+    return view('pricing');
+})->name('pricing');
 
 Route::get('/demo', function () {
     return view('demo');

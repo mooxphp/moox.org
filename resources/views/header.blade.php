@@ -12,7 +12,7 @@ x-data="{ mobileMenu: false, desktopProduct: false, desktopCompany: false, mobil
       >
       <img
         class="h-10 w-auto"
-        src="/images/moox-logo.png"
+        src="{{ Vite::asset('resources/images/moox-logo.png') }}"
         alt="Moox Logo"
       />
     </a>
@@ -53,14 +53,14 @@ x-data="{ mobileMenu: false, desktopProduct: false, desktopCompany: false, mobil
       >Documentation</a
     >
     <a
+      href="{{ route('pricing') }}"
+      class="text-lg font-semibold text-white hover:text-pink-500"
+      >Pricing</a
+    >
+    <a
       href="{{ route('support') }}"
       class="text-lg font-semibold text-white hover:text-pink-500"
       >Support</a
-    >
-    <a
-      href="{{ route('license') }}"
-      class="text-lg font-semibold text-white hover:text-pink-500"
-      >License</a
     >
     <a
       href="{{ route('demo') }}"
@@ -76,14 +76,6 @@ x-data="{ mobileMenu: false, desktopProduct: false, desktopCompany: false, mobil
     >
       <div class="bg-indigo-950/90 rounded-full px-4 py-1">Pro</div>
     </a>
-    <a href="english.html">
-      <img
-        src="https://raw.githubusercontent.com/mooxphp/flag-icons-circle/main/resources/svg/us.svg"
-        alt="English"
-        class="w-7 h-7 mt-1 mr-5"
-      />
-    </a>
-
     <a
       href="https://github.com/mooxphp/"
       class="si si-github text-3xl text-gray-300 hover:text-violet-700"
@@ -121,7 +113,7 @@ x-data="{ mobileMenu: false, desktopProduct: false, desktopCompany: false, mobil
           >
           <img
             class="h-10 w-auto"
-            src="/images/moox-logo.png"
+            src="{{ Vite::asset('resources/images/moox-logo.png') }}"
             alt="Moox Logo"
           />
         </a>
@@ -167,14 +159,14 @@ x-data="{ mobileMenu: false, desktopProduct: false, desktopCompany: false, mobil
               >Documentation</a
             >
             <a
+              href="{{ route('pricing') }}"
+              class="-mx-3 block rounded-lg px-3 py-2.5 text-base/7 font-semibold text-white hover:bg-gray-50"
+              >Pricing</a
+            >
+            <a
               href="{{ route('support') }}"
               class="-mx-3 block rounded-lg px-3 py-2.5 text-base/7 font-semibold text-white hover:bg-gray-50"
               >Support</a
-            >
-            <a
-              href="{{ route('license') }}"
-              class="-mx-3 block rounded-lg px-3 py-2.5 text-base/7 font-semibold text-white hover:bg-gray-50"
-              >License</a
             >
             <a
               href="{{ route('demo') }}"
