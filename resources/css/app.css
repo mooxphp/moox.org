@@ -1,4 +1,4 @@
-@import 'tailwindcss';
+@import "tailwindcss";
 
 @source '../../vendor/laravel/framework/src/Illuminate/Pagination/resources/views/*.blade.php';
 @source '../../storage/framework/views/*.php';
@@ -6,6 +6,75 @@
 @source '../**/*.js';
 
 @theme {
-    --font-sans: 'Instrument Sans', ui-sans-serif, system-ui, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji',
-        'Segoe UI Symbol', 'Noto Color Emoji';
+    --font-sans: "Exo 2", ui-sans-serif, system-ui, sans-serif;
+    --color-mooxdark: #01081c;
+    --color-mooxblue: #050c57;
+}
+
+.gradient-text-default {
+    background: linear-gradient(135deg, #f92d93, #5209fc);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.animated-gradient-border {
+    position: relative;
+    background: linear-gradient(45deg, #f92d93, #5209fc, #3b82f6, #f92d93);
+    background-size: 400% 400%;
+    padding: 2px;
+    transition: all 0.3s ease;
+}
+
+.animated-gradient-border::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(45deg, #f92d93, #5209fc, #3b82f6, #f92d93);
+    background-size: 400% 400%;
+    transition: all 0.3s ease;
+    z-index: -1;
+}
+
+.animated-gradient-border:hover {
+    animation: gradient-move 3s ease infinite;
+}
+
+.animated-gradient-border:hover::before {
+    animation: gradient-move 3s ease infinite;
+}
+
+.animated-gradient-border.rounded {
+    border-radius: 0.5rem;
+}
+
+.animated-gradient-border.rounded-full {
+    border-radius: 9999px;
+}
+
+.animated-gradient-border.rounded::before {
+    border-radius: 0.5rem;
+}
+
+.animated-gradient-border.rounded-full::before {
+    border-radius: 9999px;
+}
+
+@keyframes gradient-move {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+.bg-banner {
+    background-image: url("/images/banner-bg.jpg");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
 }
