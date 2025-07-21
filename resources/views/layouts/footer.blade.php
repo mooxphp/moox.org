@@ -7,22 +7,22 @@
               <h3 class="text-sm/6 font-semibold text-white">Bundles</h3>
               <ul role="list" class="mt-6 space-y-4">
                 <li>
-                  <a href="#" class="text-sm/6 text-gray-400 hover:text-white"
+                  <a href="{{ route('bundles.content') }}" class="text-sm/6 text-gray-400 hover:text-white"
                     >Laravel CMS</a
                   >
                 </li>
                 <li>
-                  <a href="#" class="text-sm/6 text-gray-400 hover:text-white"
+                  <a href="{{ route('bundles.commerce') }}" class="text-sm/6 text-gray-400 hover:text-white"
                     >Laravel Shop</a
                   >
                 </li>
                 <li>
-                  <a href="#" class="text-sm/6 text-gray-400 hover:text-white"
+                  <a href="{{ route('bundles.devops') }}" class="text-sm/6 text-gray-400 hover:text-white"
                     >Laravel DevOps</a
                   >
                 </li>
                 <li>
-                  <a href="#" class="text-sm/6 text-gray-400 hover:text-white"
+                  <a href="{{ route('bundles.press') }}" target="_blank" class="text-sm/6 text-gray-400 hover:text-white"
                     >Laravel & WordPress</a
                   >
                 </li>
@@ -32,22 +32,22 @@
               <h3 class="text-sm/6 font-semibold text-white">Support</h3>
               <ul role="list" class="mt-6 space-y-4">
                 <li>
-                  <a href="#" class="text-sm/6 text-gray-400 hover:text-white"
+                  <a href="https://github.com/mooxphp/moox/issues" target="_blank" class="text-sm/6 text-gray-400 hover:text-white"
                     >GitHub Issues</a
                   >
                 </li>
                 <li>
-                  <a href="#" class="text-sm/6 text-gray-400 hover:text-white"
+                  <a href="{{ route('docs') }}" class="text-sm/6 text-gray-400 hover:text-white"
                     >Documentation</a
                   >
                 </li>
                 <li>
-                  <a href="#" class="text-sm/6 text-gray-400 hover:text-white"
+                  <a href="https://www.youtube.com/@mooxphp" target="_blank" class="text-sm/6 text-gray-400 hover:text-white"
                     >Video Tutorials</a
                   >
                 </li>
                 <li>
-                  <a href="#" class="text-sm/6 text-gray-400 hover:text-white"
+                  <a href="https://mooxphp.slack.com/" target="_blank" class="text-sm/6 text-gray-400 hover:text-white"
                     >Slack Community</a
                   >
                 </li>
@@ -59,22 +59,22 @@
               <h3 class="text-sm/6 font-semibold text-white">Developers</h3>
               <ul role="list" class="mt-6 space-y-4">
                 <li>
-                  <a href="#" class="text-sm/6 text-gray-400 hover:text-white"
+                  <a href="{{ route('about') }}" class="text-sm/6 text-gray-400 hover:text-white"
                     >About Moox</a
                   >
                 </li>
                 <li>
-                  <a href="#" class="text-sm/6 text-gray-400 hover:text-white"
+                  <a href="https://github.com/mooxphp/moox" target="_blank" class="text-sm/6 text-gray-400 hover:text-white"
                     >Development</a
                   >
                 </li>
                 <li>
-                  <a href="#" class="text-sm/6 text-gray-400 hover:text-white"
+                  <a href="https://hosted.weblate.org/projects/moox/" target="_blank" class="text-sm/6 text-gray-400 hover:text-white"
                     >Translation</a
                   >
                 </li>
                 <li>
-                  <a href="#" class="text-sm/6 text-gray-400 hover:text-white"
+                  <a href="{{ route('demo') }}" class="text-sm/6 text-gray-400 hover:text-white"
                     >Demo Platform</a
                   >
                 </li>
@@ -84,22 +84,22 @@
               <h3 class="text-sm/6 font-semibold text-white">Legal</h3>
               <ul role="list" class="mt-6 space-y-4">
                 <li>
-                  <a href="#" class="text-sm/6 text-gray-400 hover:text-white"
+                  <a href="{{ route('imprint') }}" class="text-sm/6 text-gray-400 hover:text-white"
                     >Imprint</a
                   >
                 </li>
                 <li>
-                  <a href="#" class="text-sm/6 text-gray-400 hover:text-white"
+                  <a href="{{ route('terms') }}" class="text-sm/6 text-gray-400 hover:text-white"
                     >Terms of service</a
                   >
                 </li>
                 <li>
-                  <a href="#" class="text-sm/6 text-gray-400 hover:text-white"
+                  <a href="{{ route('privacy') }}" class="text-sm/6 text-gray-400 hover:text-white"
                     >Privacy policy</a
                   >
                 </li>
                 <li>
-                  <a href="#" class="text-sm/6 text-gray-400 hover:text-white"
+                  <a href="{{ route('license') }}" class="text-sm/6 text-gray-400 hover:text-white"
                     >License</a
                   >
                 </li>
@@ -189,6 +189,14 @@
             <span class="sr-only">Codacy</span>
             <i class="si si-codacy text-xl"></i>
           </a>
+          <a
+          href="https://hosted.weblate.org/projects/moox/"
+          target="_blank"
+          class="text-gray-400 hover:text-violet-700"
+        >
+          <span class="sr-only">Weblate</span>
+          <i class="si si-weblate text-xl"></i>
+        </a>
         </div>
         <p class="mt-8 text-sm/6 text-gray-400 md:order-1 md:mt-0">
           &copy; 2025 Moox. All rights reserved.

@@ -71,10 +71,10 @@
     ></div>
   </div>
 
-    @include('header')
+    @include('layouts.header')
 
     @yield('content')
 
-    @include('footer')
+    @include('layouts.footer')
   </body>
 </html>

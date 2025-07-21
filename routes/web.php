@@ -6,6 +6,10 @@ Route::get('/', function () {
     return view('welcome');
 })->name('welcome');
 
+Route::get('/about', function () {
+    return view('about');
+})->name('about');
+
 Route::get('/packages', function () {
     return view('packages');
 })->name('packages');
@@ -18,6 +22,10 @@ Route::get('/support', function () {
     return view('support');
 })->name('support');
 
+Route::get('/imprint', function () {
+    return view('imprint');
+})->name('imprint');
+
 Route::get('/pricing', function () {
     return view('pricing');
 })->name('pricing');
@@ -29,3 +37,31 @@ Route::get('/demo', function () {
 Route::get('/pro', function () {
     return view('pro');
 })->name('pro');
+
+Route::get('/license', function () {
+    return view('license');
+})->name('license');
+
+Route::get('/terms', function () {
+    return view('terms');
+})->name('terms');
+
+Route::get('/privacy', function () {
+    return view('privacy');
+})->name('privacy');
+
+Route::get('/bundles/content', function () {
+    return view('bundles.content');
+})->name('bundles.content');
+
+Route::get('/bundles/commerce', function () {
+    return view('bundles.commerce');
+})->name('bundles.commerce');
+
+Route::get('/bundles/devops', function () {
+    return view('bundles.devops');
+})->name('bundles.devops');
+
+Route::get('/bundles/press', function () {
+    return view('bundles.press');
+})->name('bundles.press');
