@@ -96,15 +96,18 @@
           </div>
 
           <div class="mt-16 flow-root sm:mt-24">
-            <div
-              class="-m-2 rounded-xl p-2 ring-1 ring-gray-900/10 ring-inset lg:-m-4 lg:rounded-2xl lg:p-4"
-            >
-              <img
-                src="{{ Vite::asset('resources/images/mac.png') }}"
-                alt="App screenshot"
-                width="2432"
-                height="1442"
-              />
+          <img
+            src="{{ Vite::asset('resources/images/mac-video.gif') }}"
+            alt="App screenshot"
+            width="2432"
+            height="1442"
+          />
+          <img
+            src="{{ Vite::asset('resources/images/mac-keys.png') }}"
+            alt="App screenshot"
+            width="2432"
+            height="1442"
+          />
 
               <div class="-mt-40 lg:-mt-80">
                 <div class="mx-auto max-w-7xl px-6 lg:px-8">
