@@ -2,31 +2,31 @@
 
 @section('content')
     <img
-      src="{{ Vite::asset('resources/images/polygon.png') }}"
+      src="{{ asset('/images/polygon.png') }}"
       alt=""
       class="hidden lg:block floating-polygon absolute top-[70vh] left-[10%] w-64 h-64 pointer-events-none -z-50"
       style="object-fit: contain"
     />
     <img
-      src="{{ Vite::asset('resources/images/polygon.png') }}"
+      src="{{ asset('/images/polygon.png') }}"
       alt=""
       class="hidden lg:block floating-polygon absolute top-[55vh] right-[15%] w-32 h-32 pointer-events-none -z-50"
       style="object-fit: contain"
     />
     <img
-      src="{{ Vite::asset('resources/images/polygon.png') }}"
+      src="{{ asset('/images/polygon.png') }}"
       alt=""
       class="hidden lg:block floating-polygon absolute top-[155vh] right-[10%] w-40 h-40 pointer-events-none -z-50"
       style="object-fit: contain"
     />
     <img
-      src="{{ Vite::asset('resources/images/polygon.png') }}"
+      src="{{ asset('/images/polygon.png') }}"
       alt=""
       class="hidden lg:block floating-polygon absolute top-[235vh] left-[15%] w-40 h-40 pointer-events-none -z-50"
       style="object-fit: contain"
     />
     <img
-      src="{{ Vite::asset('resources/images/polygon.png') }}"
+      src="{{ asset('/images/polygon.png') }}"
       alt=""
       class="hidden lg:block floating-polygon absolute bottom-[75vh] left-[15%] w-40 h-40 pointer-events-none -z-50"
       style="object-fit: contain"
@@ -41,7 +41,7 @@
                 <div class="relative">
                   <img
                     id="rocket-bot"
-                    src="{{ Vite::asset('resources/images/robot.png') }}"
+                    src="{{ asset('/images/robot.png') }}"
                     alt="Moox Bot"
                     class="w-auto"
                     style="transform: rotate(15deg)"
@@ -97,13 +97,13 @@
 
           <div class="mt-16 flow-root sm:mt-24">
           <img
-            src="{{ Vite::asset('resources/images/mac-video.gif') }}"
+            src="{{ asset('/images/mac-video.gif') }}"
             alt="App screenshot"
             width="2432"
             height="1442"
           />
           <img
-            src="{{ Vite::asset('resources/images/mac-keys.png') }}"
+            src="{{ asset('/images/mac-keys.png') }}"
             alt="App screenshot"
             width="2432"
             height="1442"
@@ -308,7 +308,7 @@
                   3. Install Moox
                 </h3>
                 <img
-                  src="{{ Vite::asset('resources/screenshots/devlink.jpg') }}"
+                  src="{{ asset('/screenshots/devlink.jpg') }}"
                   alt="Installer"
                   class="w-full rounded"
                 />
@@ -378,7 +378,7 @@
               </div>
             </div>
             <img
-              src="{{ Vite::asset('resources/screenshots/jobs.jpg') }}"
+              src="{{ asset('/screenshots/jobs.jpg') }}"
               alt="Screenshot"
               class="transform shadow-2xl -mr-10 animated-screenshot w-2/3 hidden lg:block"
               style="transform: perspective(1000px) rotateY(-30deg)"
@@ -426,7 +426,7 @@
               </div>
             </div>
             <img
-              src="{{ Vite::asset('resources/screenshots/jobs.jpg') }}"
+              src="{{ asset('/screenshots/jobs.jpg') }}"
               alt="Screenshot"
               class="transform shadow-2xl -mr-10 animated-screenshot w-2/3 hidden lg:block"
               style="transform: perspective(1000px) rotateY(-30deg)"
@@ -474,7 +474,7 @@
               </div>
             </div>
             <img
-              src="{{ Vite::asset('resources/screenshots/jobs.jpg') }}"
+              src="{{ asset('/screenshots/jobs.jpg') }}"
               alt="Screenshot"
               class="transform shadow-2xl -mr-10 animated-screenshot w-2/3 hidden lg:block"
               style="transform: perspective(1000px) rotateY(-30deg)"
@@ -522,7 +522,7 @@
               </div>
             </div>
             <img
-              src="{{ Vite::asset('resources/screenshots/jobs.jpg') }}"
+              src="{{ asset('/screenshots/jobs.jpg') }}"
               alt="Screenshot"
               class="transform shadow-2xl -mr-10 animated-screenshot w-2/3 hidden lg:block"
               style="transform: perspective(1000px) rotateY(-30deg)"
@@ -535,7 +535,7 @@
       <div class="w-1/4 hidden lg:block">
         <div class="sticky top-10 -m-5 -mt-20">
           <img
-            src="{{ Vite::asset('resources/images/boxbot.png') }}"
+            src="{{ asset('/images/boxbot.png') }}"
             alt="Delivery Robot"
             class="w-full"
           />
@@ -569,7 +569,7 @@
           <div class="bg-white/75 p-8 sm:p-10">
             <a href="https://heco.de" target="_blank">
               <img
-                src="{{ Vite::asset('resources/sponsors/heco.png') }}"
+                src="{{ asset('/sponsors/heco.png') }}"
                 alt="heco gmbh"
                 class="max-h-12 w-full object-contain"
               />
@@ -578,7 +578,7 @@
           <div class="bg-white/75 p-4 sm:p-8">
             <a href="https://heltec-online.de" target="_blank">
               <img
-                src="{{ Vite::asset('resources/sponsors/heltec.png') }}"
+                src="{{ asset('/sponsors/heltec.png') }}"
                 alt="Heltec GmbH"
                 class="max-h-16 w-full object-contain"
               />
@@ -587,7 +587,7 @@
           <div class="bg-white/75 p-6 sm:p-10">
             <a href="https://hecoform.de" target="_blank">
               <img
-                src="{{ Vite::asset('resources/sponsors/hecoform.svg') }}"
+                src="{{ asset('/sponsors/hecoform.svg') }}"
                 alt="Hecoform GmbH"
                 class="max-h-14 w-full object-contain"
               />
@@ -596,7 +596,7 @@
           <div class="bg-white/75 p-6 sm:p-10">
             <a href="https://alf-drollinger.de" target="_blank">
               <img
-                src="{{ Vite::asset('resources/sponsors/alf-drollinger.png') }}"
+                src="{{ asset('/sponsors/alf-drollinger.png') }}"
                 alt="Alf Drollinger"
                 class="max-h-12 w-full object-contain"
               />
@@ -605,7 +605,7 @@
           <div class="bg-white/75 p-6 sm:p-10">
             <a href="https://meinsolarstrom.de" target="_blank">
               <img
-                src="{{ Vite::asset('resources/sponsors/meinsolarstrom.png') }}"
+                src="{{ asset('/sponsors/meinsolarstrom.png') }}"
                 alt="Mein Solarstrom"
                 class="max-h-14 w-full object-contain"
               />

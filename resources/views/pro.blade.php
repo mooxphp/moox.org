@@ -3,14 +3,14 @@
 @section('content')
 
 <img
-src="{{ Vite::asset('resources/images/polygon.png') }}"
+src="{{ asset('/images/polygon.png') }}"
 alt=""
 class="hidden lg:block floating-polygon absolute top-[25vh] right-[25%] w-32 h-32 pointer-events-none -z-50"
 style="object-fit: contain"
 />
 
 <img
-src="{{ Vite::asset('resources/images/polygon.png') }}"
+src="{{ asset('/images/polygon.png') }}"
 alt=""
 class="hidden lg:block floating-polygon absolute top-[65vh] left-[25%] w-40 h-40 pointer-events-none -z-50"
 style="object-fit: contain"

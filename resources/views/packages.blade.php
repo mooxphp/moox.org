@@ -3,14 +3,14 @@
 @section('content')
 
 <img
-src="{{ Vite::asset('resources/images/polygon.png') }}"
+src="{{ asset('/images/polygon.png') }}"
 alt=""
 class="hidden lg:block floating-polygon absolute top-[25vh] right-[15%] w-32 h-32 pointer-events-none -z-50"
 style="object-fit: contain"
 />
 
 <img
-src="{{ Vite::asset('resources/images/polygon.png') }}"
+src="{{ asset('/images/polygon.png') }}"
 alt=""
 class="hidden lg:block floating-polygon absolute bottom-[50vh] left-[25%] w-40 h-40 pointer-events-none -z-50"
 style="object-fit: contain"
@@ -169,7 +169,7 @@ style="object-fit: contain"
               </a>
             </div>
           </div>
-          <img src="{{ Vite::asset('resources/screenshots/jobs.jpg') }}" alt="Screenshot" class="transform shadow-2xl -mr-10 animated-screenshot w-2/3 hidden lg:block" style="transform: perspective(1000px) rotateY(-17.1094deg) translateX(32.8906px);">
+          <img src="{{ asset('/screenshots/jobs.jpg') }}" alt="Screenshot" class="transform shadow-2xl -mr-10 animated-screenshot w-2/3 hidden lg:block" style="transform: perspective(1000px) rotateY(-17.1094deg) translateX(32.8906px);">
         </div>
       </div>
 
@@ -199,7 +199,7 @@ style="object-fit: contain"
               </a>
             </div>
           </div>
-          <img src="{{ Vite::asset('resources/screenshots/jobs.jpg') }}" alt="Screenshot" class="transform shadow-2xl -mr-10 animated-screenshot w-2/3 hidden lg:block" style="transform: perspective(1000px) rotateY(-31.3385deg) translateX(18.6615px);">
+          <img src="{{ asset('/screenshots/jobs.jpg') }}" alt="Screenshot" class="transform shadow-2xl -mr-10 animated-screenshot w-2/3 hidden lg:block" style="transform: perspective(1000px) rotateY(-31.3385deg) translateX(18.6615px);">
         </div>
       </div>
 
@@ -229,7 +229,7 @@ style="object-fit: contain"
               </a>
             </div>
           </div>
-          <img src="{{ Vite::asset('resources/screenshots/jobs.jpg') }}" alt="Screenshot" class="transform shadow-2xl -mr-10 animated-screenshot w-2/3 hidden lg:block" style="transform: perspective(1000px) rotateY(-43.6639deg) translateX(6.33611px);">
+          <img src="{{ asset('/screenshots/jobs.jpg') }}" alt="Screenshot" class="transform shadow-2xl -mr-10 animated-screenshot w-2/3 hidden lg:block" style="transform: perspective(1000px) rotateY(-43.6639deg) translateX(6.33611px);">
         </div>
       </div>
 
@@ -259,7 +259,7 @@ style="object-fit: contain"
               </a>
             </div>
           </div>
-          <img src="{{ Vite::asset('resources/screenshots/jobs.jpg') }}" alt="Screenshot" class="transform shadow-2xl -mr-10 animated-screenshot w-2/3 hidden lg:block" style="transform: perspective(1000px) rotateY(-43.9223deg) translateX(6.0777px);">
+          <img src="{{ asset('/screenshots/jobs.jpg') }}" alt="Screenshot" class="transform shadow-2xl -mr-10 animated-screenshot w-2/3 hidden lg:block" style="transform: perspective(1000px) rotateY(-43.9223deg) translateX(6.0777px);">
         </div>
       </div>
 

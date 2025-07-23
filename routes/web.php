@@ -69,3 +69,7 @@ Route::get('/bundles/press', function () {
 Route::get('/banner', function () {
     return view('banner');
 })->name('banner');
+
+Route::get('/bannergenerator',
+    [App\Http\Controllers\BannerGeneratorController::class, 'generate',
+    ])->name('bannergenerator');

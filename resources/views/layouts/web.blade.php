@@ -6,7 +6,7 @@
     <title>Moox - CMS for Filament, Laravel and PHP</title>
     <link
       rel="icon"
-      href="{{ Vite::asset('resources/images/moox-icon.png') }}"
+      href="{{ asset('/images/moox-icon.png') }}"
       type="image/png"
     />
     <link

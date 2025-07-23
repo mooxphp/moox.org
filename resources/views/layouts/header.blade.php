@@ -12,7 +12,7 @@ x-data="{ mobileMenu: false, desktopProduct: false, desktopCompany: false, mobil
       >
       <img
         class="h-10 w-auto"
-        src="{{ Vite::asset('resources/images/moox-logo.png') }}"
+        src="{{ asset('/images/moox-logo.png') }}"
         alt="Moox Logo"
       />
     </a>
@@ -113,7 +113,7 @@ x-data="{ mobileMenu: false, desktopProduct: false, desktopCompany: false, mobil
           >
           <img
             class="h-10 w-auto"
-            src="{{ Vite::asset('resources/images/moox-logo.png') }}"
+            src="{{ asset('/images/moox-logo.png') }}"
             alt="Moox Logo"
           />
         </a>
