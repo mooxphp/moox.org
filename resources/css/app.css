@@ -12,7 +12,14 @@
 }
 
 .gradient-text-default {
-    background: linear-gradient(135deg, #f92d93, #5209fc);
+    background: linear-gradient(135deg, #f92d93, #6f04e9);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.gradient-text-inverse {
+    background: linear-gradient(135deg, #7700ff, #ff0080);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
@@ -74,6 +81,13 @@
 
 .bg-banner {
     background-image: url("../images/banner-bg.jpg");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.bg-banner-big {
+    background-image: url("../images/banner-bg-big.jpg");
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;

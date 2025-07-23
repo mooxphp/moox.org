@@ -65,3 +65,7 @@ Route::get('/bundles/devops', function () {
 Route::get('/bundles/press', function () {
     return view('bundles.press');
 })->name('bundles.press');
+
+Route::get('/banner', function () {
+    return view('banner');
+})->name('banner');
