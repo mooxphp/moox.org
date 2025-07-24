@@ -80,14 +80,14 @@
 }
 
 .bg-banner {
-    background-image: url("../images/banner-bg.jpg");
+    background-image: url("../../public/images/banner-bg.jpg");
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
 }
 
 .bg-banner-big {
-    background-image: url("../images/banner-bg-big.jpg");
+    background-image: url("../../public/images/banner-bg-big.jpg");
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;

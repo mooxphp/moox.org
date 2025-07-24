@@ -9,7 +9,7 @@
 
         <div class="flex items-center gap-x-2 mt-10 ml-30">
 
-        <img class="h-36 w-auto" src="{{ Vite::asset('resources/images/moox-logo.png') }}" style="max-width: fit-content;" />
+        <img class="h-36 w-auto" src="/images/moox-logo.png" style="max-width: fit-content;" />
         <template x-if="commercial">
             <div class="h-20 bg-gray-500/20 text-pink-200 text-4xl font-semibold px-8 py-4 rounded-full border border-pink-500/50 ml-10 -mt-20">
                 Pro
@@ -32,7 +32,7 @@
                  style="transform: perspective(1000px) rotateY(-10deg)">
         </template>
         <template x-if="!imageExists">
-            <img src="{{ Vite::asset('resources/images/banner-fallback.jpg') }}" class="ml-auto -mt-30 -mb-30">
+            <img src="/images/banner-fallback.jpg" class="ml-auto -mt-30 -mb-30">
         </template>
     </div>
 
