@@ -1,3 +1,13 @@
+ <!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>{{ $title ?? 'Moox Banner' }}</title>
+        @vite('resources/css/app.css')
+    </head>
+    <body class="bg-black text-white" style="width: 2560px; height: 1440px; transform: scale(0.5); transform-origin: 0 0; overflow: hidden;">
+
+
 <div class="flex bg-banner-big overflow-hidden" style="width: 2560px; height: 1440px;">
 
     <div class="flex flex-col w-2/5">
@@ -23,13 +33,17 @@
     </div>
 
     <div class="w-3/5 pt-30">
-        <template x-if="imageExists">
-            <img :src="currentScreenshotUrl" alt="Screenshot" class="h-full shadow-2xl transform ml-auto -mt-10"
+        @if (!empty($screenshot))
+            <img src="{{ $screenshot }}" alt="Screenshot"
+                 class="h-full shadow-2xl transform ml-auto -mt-10"
                  style="transform: perspective(1000px) rotateY(-10deg)">
-        </template>
-        <template x-if="!imageExists">
-            <img src="{{ request()->getSchemeAndHttpHost() }}/images/banner-fallback.jpg" class="ml-auto -mt-30 -mb-30">
-        </template>
-     </div>
+        @else
+            <img src="{{ request()->getSchemeAndHttpHost() }}/images/banner-fallback.jpg"
+                 class="ml-auto -mt-30 -mb-30">
+        @endif
+    </div>
 
 </div>
+
+</body>
+</html>

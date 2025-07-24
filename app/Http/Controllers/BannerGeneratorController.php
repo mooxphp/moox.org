@@ -3,12 +3,23 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\View;
 use Spatie\Browsershot\Browsershot;
 
 class BannerGeneratorController extends Controller
 {
     public function __invoke(Request $request)
+    {
+        return view('components.banner-moox', [
+            'title' => $request->get('title'),
+            'description' => $request->get('description'),
+            'screenshot' => $request->get('screenshot'),
+            'commercial' => $request->boolean('commercial'),
+            'community' => $request->boolean('community'),
+            'useLayout' => true,
+        ]);
+    }
+
+    public function preview(Request $request)
     {
         return view('components.banner-moox', [
             'title' => $request->get('title'),
@@ -30,26 +41,17 @@ class BannerGeneratorController extends Controller
             'commercial' => 'nullable|boolean',
         ]);
 
-        $title = $validated['title'];
-        $description = str_replace('++', "\n", $validated['description']);
-        $screenshot = $validated['screenshot'];
-        $isCommunity = (bool) ($validated['community'] ?? false);
-        $isCommercial = (bool) ($validated['commercial'] ?? false);
+        $url = route('bannergenerator.preview', [
+            'title' => $validated['title'],
+            'description' => $validated['description'],
+            'screenshot' => $validated['screenshot'],
+            'community' => $validated['community'],
+            'commercial' => $validated['commercial'],
+        ]);
 
-        $view = $isCommunity ? 'components.banner-community' : 'components.banner-moox';
-
-        $html = View::make($view, [
-            'title' => $title,
-            'description' => $description,
-            'screenshot' => $screenshot,
-            'commercial' => $isCommercial,
-            'useLayout' => true,
-        ])->render();
-
-        $image = Browsershot::html($html)
+        $image = Browsershot::url($url)
             ->setNodeBinary('"/Users/alfdrollinger/Library/Application Support/Herd/config/nvm/versions/node/v21.7.3/bin/node"')
-            ->setNpmBinary('"/Users/alfdrollinger/Library/Application Support/Herd/config/nvm/versions/node/v21.7.3/bin/npm"')
-            ->windowSize(2560, 1440)
+            ->setNpmBinary('"/Users/alfdrollinger/Library/Application Support/Herd/config/nvm/versions/node/v21.7.3/bin/npm"')->windowSize(2560, 1440)
             ->deviceScaleFactor(2)
             ->waitUntilNetworkIdle()
             ->timeout(30)

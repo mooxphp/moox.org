@@ -70,6 +70,10 @@ Route::get('/banner', function () {
     return view('banner');
 })->name('banner');
 
+Route::get('/bannergenerator/preview',
+    [App\Http\Controllers\BannerGeneratorController::class, 'preview',
+    ])->name('bannergenerator.preview');
+
 Route::get('/bannergenerator',
     [App\Http\Controllers\BannerGeneratorController::class, 'generate',
     ])->name('bannergenerator');

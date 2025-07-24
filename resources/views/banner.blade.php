@@ -84,15 +84,14 @@
             </p>
         </div>
 
-        <div class="-mt-30 justify-center hidden lg:flex" style="height: 800px;">
-            <div style="transform: scale(0.4); transform-origin: center;" id="banner">
-                <template x-if="community">
-                @include('components.banner-community')
-                </template>
-                <template x-if="!community">
-                @include('components.banner-moox')
-                </template>
-            </div>
+        <div class="justify-center hidden lg:flex">
+            <div class="hidden lg:flex justify-center mt-10">
+                <iframe
+                  id="bannerPreview"
+                  style="width: 1280px; height: 720px;"
+                  :src="previewUrl"
+                ></iframe>
+              </div>
         </div>
 
       <button
@@ -176,6 +175,13 @@ function bannerGenerator() {
     },
     get apiUrl() {
       const base = '{{ config('app.url') }}/bannergenerator'
+      const title = this.name.replace(/\s+/g, '+')
+      const community = this.community ? 1 : 0
+      const commercial = this.commercial ? 1 : 0
+      return `${base}?title=${title}&description=${this.descriptionEncoded}&screenshot=${this.currentScreenshotUrl}&community=${community}&commercial=${commercial}`
+    },
+    get previewUrl() {
+      const base = '{{ config('app.url') }}/bannergenerator/preview'
       const title = this.name.replace(/\s+/g, '+')
       const community = this.community ? 1 : 0
       const commercial = this.commercial ? 1 : 0
