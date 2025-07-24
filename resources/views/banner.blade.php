@@ -94,11 +94,12 @@
               </div>
         </div>
 
-      <button
-        class="mt-10 w-full rounded-md bg-indigo-600 px-3.5 py-2.5 text-sm font-semibold text-white shadow hover:bg-indigo-500 focus:outline-indigo-600"
-        onclick="saveBannerAsJPEG()">
-        Download Banner as JPEG
-      </button>
+      <a :href="apiUrl" target="_blank"
+      class="justify-center mt-10 animated-gradient-border flex rounded text-gray-200 hover:text-gray-100 mb-10">
+        <span class="p-2">
+      Download Banner as JPEG
+        </span>
+      </a>
 
       <div class="mt-16 bg-gray-700/50 p-10 rounded-lg text-center">
         <h3 class="text-2xl font-semibold text-white mb-4">API usage</h3>
@@ -116,7 +117,7 @@
 <script>
 function bannerGenerator() {
   return {
-    name: 'User Session',
+    name: 'Core',
     description: 'Common features\nfor Laravel and\nFilament.',
     community: false,
     commercial: false,
@@ -130,8 +131,7 @@ function bannerGenerator() {
       return this.screenshotUrl || `https://raw.githubusercontent.com/mooxphp/${this.slug}/main/screenshot/main.jpg`
     },
     get defaultScreenshotUrl() {
-      //return `https://raw.githubusercontent.com/mooxphp/${this.slug}/main/screenshot/main.jpg`
-      return `https://raw.githubusercontent.com/mooxphp/moox/main/packages/jobs/screenshot/jobs-jobs.jpg`
+      return `https://raw.githubusercontent.com/mooxphp/${this.slug}/main/screenshot/main.jpg`
     },
     get currentScreenshotUrl() {
       return this.screenshotUrl || this.defaultScreenshotUrl
@@ -171,18 +171,18 @@ function bannerGenerator() {
       event.target.src = '{{ asset('/images/banner-fallback.jpg') }}'
     },
     get descriptionEncoded() {
-      return this.description.replace(/\n/g, '++').replace(/\s+/g, '+')
+        return encodeURIComponent(this.description)
     },
     get apiUrl() {
       const base = '{{ config('app.url') }}/bannergenerator'
-      const title = this.name.replace(/\s+/g, '+')
+      const title = this.name
       const community = this.community ? 1 : 0
       const commercial = this.commercial ? 1 : 0
       return `${base}?title=${title}&description=${this.descriptionEncoded}&screenshot=${this.currentScreenshotUrl}&community=${community}&commercial=${commercial}`
     },
     get previewUrl() {
       const base = '{{ config('app.url') }}/bannergenerator/preview'
-      const title = this.name.replace(/\s+/g, '+')
+      const title = this.name
       const community = this.community ? 1 : 0
       const commercial = this.commercial ? 1 : 0
       return `${base}?title=${title}&description=${this.descriptionEncoded}&screenshot=${this.currentScreenshotUrl}&community=${community}&commercial=${commercial}`

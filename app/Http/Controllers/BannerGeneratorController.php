@@ -15,19 +15,24 @@ class BannerGeneratorController extends Controller
             'screenshot' => $request->get('screenshot'),
             'commercial' => $request->boolean('commercial'),
             'community' => $request->boolean('community'),
-            'useLayout' => true,
+            'isPreview' => false,
         ]);
     }
 
     public function preview(Request $request)
     {
-        return view('components.banner-moox', [
+        $rawDescription = $request->get('description');
+        $description = $rawDescription;
+
+        $viewName = $request->boolean('community') ? 'components.banner-community' : 'components.banner-moox';
+
+        return view($viewName, [
             'title' => $request->get('title'),
-            'description' => str_replace('++', "\n", $request->get('description')),
+            'description' => $description,
             'screenshot' => $request->get('screenshot'),
             'commercial' => $request->boolean('commercial'),
             'community' => $request->boolean('community'),
-            'useLayout' => true,
+            'isPreview' => ! $request->has('generate'),
         ]);
     }
 
@@ -41,21 +46,21 @@ class BannerGeneratorController extends Controller
             'commercial' => 'nullable|boolean',
         ]);
 
+        $description = $validated['description'];
+
         $url = route('bannergenerator.preview', [
             'title' => $validated['title'],
             'description' => $validated['description'],
             'screenshot' => $validated['screenshot'],
             'community' => $validated['community'],
             'commercial' => $validated['commercial'],
+            'generate' => true,
         ]);
 
         $image = Browsershot::url($url)
             ->setNodeBinary('"/Users/alfdrollinger/Library/Application Support/Herd/config/nvm/versions/node/v21.7.3/bin/node"')
             ->setNpmBinary('"/Users/alfdrollinger/Library/Application Support/Herd/config/nvm/versions/node/v21.7.3/bin/npm"')->windowSize(2560, 1440)
-            ->deviceScaleFactor(2)
-            ->waitUntilNetworkIdle()
-            ->timeout(30)
-            ->quality(90)
+            ->quality(60)
             ->setScreenshotType('jpeg')
             ->screenshot();
 
