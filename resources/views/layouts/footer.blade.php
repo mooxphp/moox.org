@@ -32,13 +32,13 @@
               <h3 class="text-sm/6 font-semibold text-white">Support</h3>
               <ul role="list" class="mt-6 space-y-4">
                 <li>
+                    <a href="https://github.com/mooxphp/moox" target="_blank" class="text-sm/6 text-gray-400 hover:text-white"
+                      >Moox Repo</a
+                    >
+                  </li>
+                <li>
                   <a href="https://github.com/mooxphp/moox/issues" target="_blank" class="text-sm/6 text-gray-400 hover:text-white"
                     >GitHub Issues</a
-                  >
-                </li>
-                <li>
-                  <a href="{{ route('docs') }}" class="text-sm/6 text-gray-400 hover:text-white"
-                    >Documentation</a
                   >
                 </li>
                 <li>
@@ -74,8 +74,8 @@
                   >
                 </li>
                 <li>
-                  <a href="{{ route('demo') }}" class="text-sm/6 text-gray-400 hover:text-white"
-                    >Demo Platform</a
+                  <a href="{{ route('banner') }}" class="text-sm/6 text-gray-400 hover:text-white"
+                    >Banner Generator</a
                   >
                 </li>
               </ul>
