@@ -107,7 +107,7 @@ requestAnimationFrame(animate);
 
 // Copy to clipboard
 
-function copyToClipboard(elementId) {
+window.copyToClipboard = function (elementId) {
     const text = document.getElementById(elementId).textContent;
     const button = document.querySelector(`[data-copy-target="${elementId}"]`);
     const icon = button.querySelector(".material-symbols-rounded");
@@ -132,7 +132,7 @@ function copyToClipboard(elementId) {
                 icon.classList.remove("text-red-500");
             }, 2000);
         });
-}
+};
 
 document.addEventListener("DOMContentLoaded", function () {
     // Motion animation for the rocket bot

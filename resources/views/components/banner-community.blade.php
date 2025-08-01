@@ -3,6 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <title>{{ $title ?? 'Moox Banner' }}</title>
+    <link
+    href="https://fonts.googleapis.com/css2?family=Exo+2:wght@400;600;700&display=swap"
+    rel="stylesheet"
+    />
     @vite('resources/css/app.css')
 </head>
 <body class="bg-black text-white"
