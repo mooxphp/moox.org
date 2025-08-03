@@ -60,7 +60,7 @@
                       </span>
                     </a>
                 </div>
-                <h1 class="font-semibold tracking-tight text-balance gradient-text-default sm:text-6xl text-4xl">
+                <h1 id="typewriter-heading" class="font-semibold tracking-tight text-balance gradient-text-default sm:text-6xl text-4xl pb-2">
                   The new Laravel Ecosystem
                 </h1>
                 <p class="mt-8 text-lg font-medium text-pretty text-gray-300 sm:text-xl/8">

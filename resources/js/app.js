@@ -135,6 +135,39 @@ window.copyToClipboard = function (elementId) {
 };
 
 document.addEventListener("DOMContentLoaded", function () {
+    // Typewriter animation for the main heading
+    const typewriterHeading = document.getElementById("typewriter-heading");
+    if (typewriterHeading) {
+        const text = typewriterHeading.textContent;
+
+        // Remove gradient class from parent and apply to text only
+        typewriterHeading.classList.remove("gradient-text-default");
+        typewriterHeading.innerHTML =
+            '<span class="typewriter-text gradient-text-default"></span><span class="cursor" style="color: #f92d93; font-weight: bold; font-size: inherit;">_</span>';
+
+        const textElement = typewriterHeading.querySelector(".typewriter-text");
+        const cursorElement = typewriterHeading.querySelector(".cursor");
+
+        // Force cursor visibility
+        cursorElement.style.color = "#f92d93 !important";
+        cursorElement.style.fontWeight = "bold !important";
+        cursorElement.style.animation = "blink 1s infinite";
+
+        let currentIndex = 0;
+        const typeSpeed = 100;
+
+        function typeNextChar() {
+            if (currentIndex < text.length) {
+                textElement.textContent += text[currentIndex];
+                currentIndex++;
+                setTimeout(typeNextChar, typeSpeed);
+            }
+        }
+
+        // Start typing immediately
+        setTimeout(typeNextChar, 100);
+    }
+
     // Motion animation for the rocket bot
 
     if (
