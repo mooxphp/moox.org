@@ -1,3 +1,4 @@
+
 @extends('layouts.web')
 
 @section('content')
@@ -9,11 +10,11 @@
             <h2
               class="pb-2 font-semibold tracking-tight text-balance gradient-text-default sm:text-5xl text-3xl"
             >
-              Moox Docs
+              Moox Core
             </h2>
             <br />
             <p class="text-gray-300 text-lg/8 text-pretty">
-              These are the demos for Moox. Currently three demos are available.
+              <a href="{{ route('welcome') }}" class="text-pink-500">Moox</a> > <a href="{{ route('docs') }}" class="text-pink-500">Documentation</a> > <a href="{{ route('docs-package') }}" class="text-pink-500">Core packages</a> > Moox Core
             </p>
           </div>
 
@@ -31,7 +32,7 @@
                     </div>
                 </div>
 
-                <div x-data="{ active: 'getting-started' }">
+                <div x-data="{ active: 'packages' }">
                     <ul class="mb-10">
                         <li class="mb-4">
                             <a href="#" class="text-gray-200 flex items-center gap-2" @click.prevent="active = active === 'getting-started' ? null : 'getting-started'">
@@ -96,7 +97,7 @@
                                     </a>
                                 </li>
                                 <li class="my-3">
-                                    <a href="#" class="text-gray-400 flex items-center gap-2">
+                                    <a href="#" class="hover:text-gray-400 flex items-center gap-2 text-pink-500">
                                         Core packages
                                     </a>
                                 </li>
@@ -313,8 +314,8 @@
 
             <div class="w-3/4">
                 <div class="bg-mooxdark rounded-3xl mb-6 hover:shadow-[0px_-4px_15px_-5px_rgba(139,92,246,0.5),0px_4px_15px_-5px_rgba(236,72,153,0.5)]">
-                    <a href="{{ route('docs-package') }}">
-                        <img src="https://mooxweb.test/bannergenerator?title=for%20Laravel&description=Ecosystem%20of%20%0ALaravel%20packages%0Aand%20Filament%20plugins&screenshot=https://raw.githubusercontent.com/mooxphp/moox/refs/heads/main/packages/jobs/screenshot/jobs-jobs.jpg&community=0&commercial=0" alt="Moox Jobs" class="w-full rounded-t-3xl">
+                    <a href="https://moox.heco.si/docsingle?package=job-monitor">
+                        <img src="https://mooxweb.test/bannergenerator?title=Core&description=Common%20features%0Afor%20Laravel%20and%0AFilament.&screenshot=https://raw.githubusercontent.com/mooxphp/core/main/screenshot/main.jpg&community=0&commercial=0" alt="Moox Jobs" class="w-full rounded-t-3xl">
                     </a>
 
                     <div class="p-10">

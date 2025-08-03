@@ -18,6 +18,10 @@ Route::get('/docs', function () {
     return view('docs');
 })->name('docs');
 
+Route::get('/docs-package', function () {
+    return view('docs-package');
+})->name('docs-package');
+
 Route::get('/support', function () {
     return view('support');
 })->name('support');
@@ -65,6 +69,10 @@ Route::get('/bundles/devops', function () {
 Route::get('/bundles/press', function () {
     return view('bundles.press');
 })->name('bundles.press');
+
+Route::get('/blog', function () {
+    return view('blog');
+})->name('blog');
 
 Route::get('/banner', function () {
     return view('banner');

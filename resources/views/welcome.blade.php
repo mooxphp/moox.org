@@ -50,24 +50,20 @@
               </div>
               <div class="w-3/5 -mt-10 lg:mr-20 lg:pr-20">
                 <div class="mt-24 sm:mt-32 lg:mt-16 mb-10">
-                    <a href="#" class="inline-flex space-x-6">
+                    <a href="{{ route('blog') }}" class="inline-flex space-x-6">
                       <span class="rounded-full bg-indigo-500/10 px-3 py-1 text-sm/6 font-semibold text-indigo-400 ring-1 ring-indigo-500/25 ring-inset">News</span>
-                      <span class="inline-flex items-center space-x-2 text-sm/6 font-medium text-gray-300">
+                      <span class="inline-flex items-center space-x-2 text-sm/6 font-medium text-gray-300 hover:text-pink-500">
                         <span>Tailwind 4.0 compatible now!</span>
-                        <svg viewBox="0 0 20 20" fill="currentColor" data-slot="icon" aria-hidden="true" class="size-5 text-gray-500">
+                        <svg viewBox="0 0 20 20" fill="currentColor" data-slot="icon" aria-hidden="true" class="size-5">
                           <path d="M8.22 5.22a.75.75 0 0 1 1.06 0l4.25 4.25a.75.75 0 0 1 0 1.06l-4.25 4.25a.75.75 0 0 1-1.06-1.06L11.94 10 8.22 6.28a.75.75 0 0 1 0-1.06Z" clip-rule="evenodd" fill-rule="evenodd" />
                         </svg>
                       </span>
                     </a>
                 </div>
-                <h1
-                  class="font-semibold tracking-tight text-balance gradient-text-default sm:text-6xl text-4xl"
-                >
+                <h1 class="font-semibold tracking-tight text-balance gradient-text-default sm:text-6xl text-4xl">
                   The new Laravel Ecosystem
                 </h1>
-                <p
-                  class="mt-8 text-lg font-medium text-pretty text-gray-300 sm:text-xl/8"
-                >
+                <p class="mt-8 text-lg font-medium text-pretty text-gray-300 sm:text-xl/8">
                   A collection of powerful Laravel and Filament packages,
                   designed for the modern Web & App Developer.
                 </p>
@@ -76,17 +72,13 @@
                     href="#installation"
                     class="animated-gradient-border rounded flex items-center gap-2 group text-gray-200 hover:text-pink-500"
                   >
-                    <div
-                      class="bg-indigo-950/90 rounded px-4 py-2 flex items-center gap-2"
-                    >
-                      <span class="material-symbols-rounded text-md"
-                        >rocket_launch</span
-                      >
+                    <div class="bg-indigo-950/90 rounded px-4 py-2 flex items-center gap-2">
+                      <span class="material-symbols-rounded text-md">rocket_launch</span>
                       Get started
                     </div>
                   </a>
                   <a
-                    href="#"
+                    href="{{ route('docs') }}"
                     class="ml-5 text-gray-200 hidden lg:block hover:text-pink-500"
                     >Learn more <span aria-hidden="true">→</span></a
                   >
@@ -108,6 +100,7 @@
             width="2432"
             height="1442"
           />
+
 
               <div class="-mt-40 lg:-mt-80">
                 <div class="mx-auto max-w-7xl px-6 lg:px-8">
@@ -187,7 +180,7 @@
     </div>
     <div class="max-w-7xl mx-auto m-10 p-10">
       <div
-        class="-px-10 -my-10 rounded-3xl flex justify-center bg-banner mx-auto overflow-hidden"
+        class="-px-10 -my-10 rounded-3xl flex justify-center bg-banner mx-auto overflow-hidden hover:shadow-[0px_-4px_15px_-5px_rgba(139,92,246,0.5),0px_4px_15px_-5px_rgba(236,72,153,0.5)]"
       >
         <div class="lg:m-10">
           <div class="grid lg:grid-cols-2 gap-10">
@@ -319,34 +312,141 @@
       </div>
     </div>
 
+    <!-- Bundles -->
+    <div id="packages" class="max-w-7xl mx-auto text-center my-20">
+        <h2
+          class="pt-20 pb-2 font-semibold tracking-tight text-balance gradient-text-default sm:text-5xl text-3xl"
+        >
+          Moox Bundles
+        </h2>
+        <br />
+        <p class="text-gray-300 text-lg/8 text-pretty">
+          Moox Installer will ask you, if you want to install a bundle.<br />
+          Here they are. Smart start your Moox experience.
+        </p>
+      </div>
+
+      <div class="mx-auto max-w-7xl px-6 lg:px-8">
+        <div class="mx-auto max-w-2xl lg:max-w-none">
+          <dl
+            class="mt-16 grid grid-cols-1 gap-0.5 overflow-hidden rounded-2xl text-center sm:grid-cols-2 lg:grid-cols-4 hover:shadow-[0px_-4px_15px_-5px_rgba(139,92,246,0.5),0px_4px_15px_-5px_rgba(236,72,153,0.5)]"
+          >
+            <div class="flex flex-col bg-gradient-to-r from-mooxdark to-mooxblue p-8">
+              <dt class="font-semibold text-gray-300 mt-5">
+                Moox CMS is an Open Source Content Management System for Laravel and Filament.
+              </dt>
+              <dd
+                class="order-first text-3xl font-semibold tracking-tight gradient-text-default"
+              >
+              Laravel CMS
+            </dd>
+            <div class="mt-10 flex items-center justify-center gap-x-6">
+                <a
+                    href="{{ route('bundles.content') }}"
+                    class="animated-gradient-border flex rounded items-center gap-2 group text-gray-200 hover:text-pink-500 mb-5"
+                >
+                    <div class="bg-indigo-950/90 rounded px-4 py-2 flex items-center gap-2">
+                    <span class="material-symbols-rounded text-md">box</span>
+                    Learn more
+                    </div>
+                </a>
+            </div>
+            </div>
+            <div class="flex flex-col bg-mooxblue p-8">
+              <dt class="font-semibold text-gray-300 mt-5">
+                Moox Shop is a modular Open Source e-Commerce platform for Laravel and Filament.
+              </dt>
+              <dd
+                class="order-first text-3xl font-semibold tracking-tight gradient-text-default"
+              >
+                Laravel Shop
+              </dd>
+              <div class="mt-10 flex items-center justify-center gap-x-6">
+                  <a
+                      href="{{ route('bundles.commerce') }}"
+                      class="animated-gradient-border flex rounded items-center gap-2 group text-gray-200 hover:text-pink-500 mb-5"
+                  >
+                      <div class="bg-indigo-950/90 rounded px-4 py-2 flex items-center gap-2">
+                      <span class="material-symbols-rounded text-md">box</span>
+                      Learn more
+                      </div>
+                  </a>
+              </div>
+            </div>
+            <div class="flex flex-col bg-mooxblue p-8">
+              <dt class="font-semibold text-gray-300 mt-5">
+                Moox DevOps is centralized management platform for Laravel and Filament.
+              </dt>
+              <dd
+                class="order-first text-3xl font-semibold tracking-tight gradient-text-default"
+              >
+                Laravel DevOps
+              </dd>
+              <div class="mt-10 flex items-center justify-center gap-x-6">
+                  <a
+                      href="{{ route('bundles.devops') }}"
+                      class="animated-gradient-border flex rounded items-center gap-2 group text-gray-200 hover:text-pink-500 mb-5"
+                  >
+                      <div class="bg-indigo-950/90 rounded px-4 py-2 flex items-center gap-2">
+                      <span class="material-symbols-rounded text-md">box</span>
+                      Learn more
+                      </div>
+                  </a>
+              </div>
+            </div>
+            <div class="flex flex-col bg-gradient-to-r from-mooxblue to-mooxdark p-8">
+                <dt class="font-semibold text-gray-300 mt-5">
+                Moox Press is a free Open Source WordPress integration for Laravel and Filament.
+                </dt>
+                <dd
+                class="order-first text-3xl font-semibold tracking-tight gradient-text-default"
+                >
+                WordPress
+                </dd>
+                <div class="mt-10 flex items-center justify-center gap-x-6">
+                    <a
+                        href="{{ route('bundles.press') }}"
+                        class="animated-gradient-border flex rounded items-center gap-2 group text-gray-200 hover:text-pink-500 mb-5"
+                    >
+                        <div class="bg-indigo-950/90 rounded px-4 py-2 flex items-center gap-2">
+                        <span class="material-symbols-rounded text-md">box</span>
+                        Learn more
+                        </div>
+                    </a>
+                </div>
+            </div>
+          </dl>
+        </div>
+      </div>
+
     <!-- Packages -->
     <div id="packages" class="max-w-7xl mx-auto text-center my-20">
-      <h2
-        class="pt-20 pb-2 font-semibold tracking-tight text-balance gradient-text-default sm:text-5xl text-3xl"
-      >
-        Laravel Packages
-      </h2>
-      <br />
-      <p class="text-gray-300 text-lg/8 text-pretty">
-        Moox is a collection of packages for Laravel and Filament.<br />
-        These are the most popular packages.
-        <a href="#" class="underline hover:text-pink-500"
-          >Search all packages here.</a
+        <h2
+          class="pt-20 pb-2 font-semibold tracking-tight text-balance gradient-text-default sm:text-5xl text-3xl"
         >
-      </p>
-    </div>
+          Laravel Packages
+        </h2>
+        <br />
+        <p class="text-gray-300 text-lg/8 text-pretty">
+          Moox is a collection of packages for Laravel and Filament.<br />
+          These are the most popular packages.
+          <a href="#" class="underline hover:text-pink-500"
+            >Search all packages here.</a
+          >
+        </p>
+      </div>
 
     <div class="max-w-7xl mx-auto flex flex-row gap-10">
       <div class="w-full lg:w-3/4">
         <div class="mx-auto m-10 p-10">
           <div
-            class="-px-10 -my-10 rounded-3xl flex justify-center bg-banner mx-auto overflow-hidden"
+            class="-px-10 -my-10 rounded-3xl flex justify-center bg-banner mx-auto overflow-hidden hover:shadow-[0px_-4px_15px_-5px_rgba(139,92,246,0.5),0px_4px_15px_-5px_rgba(236,72,153,0.5)]"
           >
             <div class="lg:py-12 flex flex-col ml-5 mt-10">
               <div class="flex flex-row">
                 <div></div>
                 <h2
-                  class="text-3xl font-semibold tracking-tight text-balance text-white"
+                  class="text-3xl font-semibold tracking-tight text-balance gradient-text-default"
                 >
                   Backup Server
                 </h2>
@@ -388,13 +488,13 @@
 
         <div class="mx-auto m-10 p-10">
           <div
-            class="-px-10 -my-10 rounded-3xl flex justify-center bg-banner mx-auto overflow-hidden"
+            class="-px-10 -my-10 rounded-3xl flex justify-center bg-banner mx-auto overflow-hidden hover:shadow-[0px_-4px_15px_-5px_rgba(139,92,246,0.5),0px_4px_15px_-5px_rgba(236,72,153,0.5)]"
           >
             <div class="lg:py-12 flex flex-col ml-5 mt-10">
               <div class="flex flex-row">
                 <div></div>
                 <h2
-                  class="text-3xl font-semibold tracking-tight text-balance text-white"
+                  class="text-3xl font-semibold tracking-tight text-balance gradient-text-default"
                 >
                   Backup Server
                 </h2>
@@ -436,13 +536,13 @@
 
         <div class="mx-auto m-10 p-10">
           <div
-            class="-px-10 -my-10 rounded-3xl flex justify-center bg-banner mx-auto overflow-hidden"
+            class="-px-10 -my-10 rounded-3xl flex justify-center bg-banner mx-auto overflow-hidden hover:shadow-[0px_-4px_15px_-5px_rgba(139,92,246,0.5),0px_4px_15px_-5px_rgba(236,72,153,0.5)]"
           >
             <div class="lg:py-12 flex flex-col ml-5 mt-10">
               <div class="flex flex-row">
                 <div></div>
                 <h2
-                  class="text-3xl font-semibold tracking-tight text-balance text-white"
+                  class="text-3xl font-semibold tracking-tight text-balance gradient-text-default"
                 >
                   Backup Server
                 </h2>
@@ -484,13 +584,13 @@
 
         <div class="mx-auto m-10 p-10">
           <div
-            class="-px-10 -my-10 rounded-3xl flex justify-center bg-banner mx-auto overflow-hidden"
+            class="-px-10 -my-10 rounded-3xl flex justify-center bg-banner mx-auto overflow-hidden hover:shadow-[0px_-4px_15px_-5px_rgba(139,92,246,0.5),0px_4px_15px_-5px_rgba(236,72,153,0.5)]"
           >
             <div class="lg:py-12 flex flex-col ml-5 mt-10">
               <div class="flex flex-row">
                 <div></div>
                 <h2
-                  class="text-3xl font-semibold tracking-tight text-balance text-white"
+                  class="text-3xl font-semibold tracking-tight text-balance gradient-text-default"
                 >
                   Backup Server
                 </h2>

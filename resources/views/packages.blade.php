@@ -39,6 +39,13 @@ style="object-fit: contain"
         <ul class="mb-10">
             <li class="mb-4">
                 <a href="#" class="text-gray-200 flex items-center gap-2">
+                    <span class="material-symbols-rounded">api</span>
+                    Core
+                    <span class="bg-gray-500/20 text-pink-200 text-xs px-2 py-0.5 rounded-full border border-pink-500/50">7</span>
+                </a>
+            </li>
+            <li class="mb-4">
+                <a href="#" class="text-gray-200 flex items-center gap-2">
                     <span class="material-symbols-rounded">article</span>
                     Content
                     <span class="bg-gray-500/20 text-pink-200 text-xs px-2 py-0.5 rounded-full border border-pink-500/50">11</span>
@@ -53,6 +60,13 @@ style="object-fit: contain"
             </li>
             <li class="mb-4">
                 <a href="#" class="text-gray-200 flex items-center gap-2">
+                    <span class="material-symbols-rounded">border_outer</span>
+                    Entity
+                    <span class="bg-gray-500/20 text-pink-200 text-xs px-2 py-0.5 rounded-full border border-pink-500/50">7</span>
+                </a>
+            </li>
+            <li class="mb-4">
+                <a href="#" class="text-gray-200 flex items-center gap-2">
                     <span class="material-symbols-rounded">tag</span>
                     Taxonomy
                     <span class="bg-gray-500/20 text-pink-200 text-xs px-2 py-0.5 rounded-full border border-pink-500/50">3</span>
@@ -61,7 +75,7 @@ style="object-fit: contain"
             <li class="mb-4">
                 <a href="#" class="text-gray-200 flex items-center gap-2">
                     <span class="material-symbols-rounded">shopping_cart</span>
-                    Shop
+                    Commerce
                     <span class="bg-gray-500/20 text-pink-200 text-xs px-2 py-0.5 rounded-full border border-pink-500/50">8</span>
                 </a>
             </li>
@@ -144,7 +158,7 @@ style="object-fit: contain"
 
     <div class="w-full lg:w-3/4">
       <div class="mx-auto m-10 p-10">
-        <div class="-px-10 -my-10 rounded-3xl flex justify-center bg-banner mx-auto overflow-hidden">
+        <div class="-px-10 -my-10 rounded-3xl flex justify-center bg-banner mx-auto overflow-hidden hover:shadow-[0px_-4px_15px_-5px_rgba(139,92,246,0.5),0px_4px_15px_-5px_rgba(236,72,153,0.5)]">
           <div class="lg:py-12 flex flex-col ml-5 mt-10">
             <div class="flex flex-row">
               <div></div>
@@ -174,7 +188,7 @@ style="object-fit: contain"
       </div>
 
       <div class="mx-auto m-10 p-10">
-        <div class="-px-10 -my-10 rounded-3xl flex justify-center bg-banner mx-auto overflow-hidden">
+        <div class="-px-10 -my-10 rounded-3xl flex justify-center bg-banner mx-auto overflow-hidden hover:shadow-[0px_-4px_15px_-5px_rgba(139,92,246,0.5),0px_4px_15px_-5px_rgba(236,72,153,0.5)]">
           <div class="lg:py-12 flex flex-col ml-5 mt-10">
             <div class="flex flex-row">
               <div></div>
@@ -204,7 +218,7 @@ style="object-fit: contain"
       </div>
 
       <div class="mx-auto m-10 p-10">
-        <div class="-px-10 -my-10 rounded-3xl flex justify-center bg-banner mx-auto overflow-hidden">
+        <div class="-px-10 -my-10 rounded-3xl flex justify-center bg-banner mx-auto overflow-hidden hover:shadow-[0px_-4px_15px_-5px_rgba(139,92,246,0.5),0px_4px_15px_-5px_rgba(236,72,153,0.5)]">
           <div class="lg:py-12 flex flex-col ml-5 mt-10">
             <div class="flex flex-row">
               <div></div>
@@ -234,7 +248,7 @@ style="object-fit: contain"
       </div>
 
       <div class="mx-auto m-10 p-10">
-        <div class="-px-10 -my-10 rounded-3xl flex justify-center bg-banner mx-auto overflow-hidden">
+        <div class="-px-10 -my-10 rounded-3xl flex justify-center bg-banner mx-auto overflow-hidden hover:shadow-[0px_-4px_15px_-5px_rgba(139,92,246,0.5),0px_4px_15px_-5px_rgba(236,72,153,0.5)]">
           <div class="lg:py-12 flex flex-col ml-5 mt-10">
             <div class="flex flex-row">
               <div></div>
