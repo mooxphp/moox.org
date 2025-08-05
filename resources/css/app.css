@@ -95,7 +95,7 @@
 
 .typewriter-cursor {
     font-weight: bold;
-    color: #f92d93;
+    color: #8b5cf6;
     animation: blink 1.2s infinite;
 }
 
@@ -107,5 +107,45 @@
     51%,
     100% {
         opacity: 0;
+    }
+}
+
+/* top-[-15px] left-[48px] w-[1198px] h-[543px] */
+.mac-screenshot {
+    top: -1.3%;
+    left: 3.9%;
+    width: 93.3%;
+    height: 50%;
+    transform: perspective(2000px) rotateX(-40deg) rotateY(0deg) scale(0.9);
+    object-position: top center;
+}
+
+@media (max-width: 640px) {
+    .mac-screenshot {
+        top: -0.5%;
+        left: 2%;
+        width: 96%;
+        height: 45%;
+        transform: perspective(1500px) rotateX(-30deg) rotateY(0deg) scale(0.7);
+    }
+}
+
+@media (min-width: 641px) and (max-width: 768px) {
+    .mac-screenshot {
+        top: -0.8%;
+        left: 2.5%;
+        width: 95%;
+        height: 47%;
+        transform: perspective(1700px) rotateX(-35deg) rotateY(0deg) scale(0.8);
+    }
+}
+
+@media (min-width: 769px) and (max-width: 1024px) {
+    .mac-screenshot {
+        top: -1%;
+        left: 3%;
+        width: 94%;
+        height: 40%;
+        transform: perspective(1800px) rotateX(-38deg) rotateY(0deg) scale(0.85);
     }
 }

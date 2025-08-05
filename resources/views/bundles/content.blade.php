@@ -87,20 +87,29 @@
             </div>
           </div>
 
-          <div class="mt-16 flow-root sm:mt-24">
-          <img
-            src="{{ asset('/images/mac-video.gif') }}"
-            alt="App screenshot"
-            width="2432"
-            height="1442"
+          <div class="relative mt-16 flow-root sm:mt-24">
+            @foreach ([
+                'https://raw.githubusercontent.com/mooxphp/moox/refs/heads/main/packages/jobs/screenshot/jobs-jobs.jpg',
+                'https://raw.githubusercontent.com/mooxphp/moox/refs/heads/main/packages/jobs/screenshot/jobs-detail.jpg',
+                'https://raw.githubusercontent.com/mooxphp/moox/refs/heads/main/packages/jobs/screenshot/jobs-batches.jpg']
+            as $i => $screen)
+            <img
+            src="{{ asset($screen) }}"
+            alt="Screenshot"
+            class="mac-screenshot absolute object-cover rounded-3xl"
+            style="
+            opacity: {{ $i === 0 ? "1" : "0" }};
+            z-index: {{ $i === 0 ? "2" : "1" }};
+            "/>
+            @endforeach
+            <img
+            src="{{ asset('/images/mac-screen.png') }}"
+            alt="Mac Screen"
           />
           <img
             src="{{ asset('/images/mac-keys.png') }}"
-            alt="App screenshot"
-            width="2432"
-            height="1442"
+            alt="Mac Keyboard"
           />
-
 
               <div class="-mt-40 lg:-mt-80">
                 <div class="mx-auto max-w-7xl px-6 lg:px-8">

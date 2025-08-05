@@ -30,7 +30,7 @@
 
           <div class="sm:col-span-2">
             <label for="name" class="block text-sm font-semibold text-gray-200">Package Name</label>
-            <input id="name" type="text" x-model="name" @input="if (!isScreenshotUrlManuallySet) screenshotUrl = defaultScreenshotUrl"
+            <input id="name" type="text" x-model="name" @input="if (!isScreenshotUrlManuallySet) { screenshotUrl = defaultScreenshotUrl; $nextTick(() => checkImageExists()) }"
               class="mt-2.5 block w-full rounded-md bg-white px-3.5 py-2 text-gray-900 text-base focus:outline-indigo-600">
           </div>
 
@@ -139,6 +139,7 @@ function bannerGenerator() {
     imageExists: false,
     imageLoading: false,
     imageError: false,
+    currentCheckId: 0,
 
 
     init() {
@@ -146,25 +147,36 @@ function bannerGenerator() {
       this.checkImageExists()
     },
     async checkImageExists() {
+      this.currentCheckId++
+      const checkId = this.currentCheckId
+
       this.imageLoading = true
       this.imageError = false
+      this.imageExists = false
 
       try {
         const img = new Image()
         img.onload = () => {
-          this.imageExists = true
-          this.imageLoading = false
+          if (checkId === this.currentCheckId) {
+            this.imageExists = true
+            this.imageLoading = false
+            this.imageError = false
+          }
         }
         img.onerror = () => {
+          if (checkId === this.currentCheckId) {
+            this.imageExists = false
+            this.imageError = true
+            this.imageLoading = false
+          }
+        }
+        img.src = this.currentScreenshotUrl
+      } catch (error) {
+        if (checkId === this.currentCheckId) {
           this.imageExists = false
           this.imageError = true
           this.imageLoading = false
         }
-        img.src = this.currentScreenshotUrl
-      } catch (error) {
-        this.imageExists = false
-        this.imageError = true
-        this.imageLoading = false
       }
     },
     handleImageError(event) {

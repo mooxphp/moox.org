@@ -135,7 +135,50 @@ window.copyToClipboard = function (elementId) {
 };
 
 document.addEventListener("DOMContentLoaded", function () {
+    // Mac Screenshot Animation
+
+    const slides = document.querySelectorAll(".mac-screenshot");
+    let index = 0;
+
+    function showNext() {
+        const current = slides[index];
+        index = (index + 1) % slides.length;
+        const next = slides[index];
+
+        next.classList.remove("hidden");
+
+        const Motion =
+            window.Motion ||
+            window.motion ||
+            globalThis.Motion ||
+            globalThis.motion;
+
+        if (Motion && Motion.animate) {
+            Motion.animate(
+                current,
+                { opacity: 0, "--scale": 0.88 },
+                { duration: 0.8 }
+            ).finished.then(() => current.classList.add("hidden"));
+
+            Motion.animate(
+                next,
+                { opacity: 1, "--scale": 0.92 },
+                { duration: 0.8 }
+            );
+        } else {
+            current.style.opacity = "0";
+            current.style.setProperty("--scale", 0.88);
+            setTimeout(() => current.classList.add("hidden"), 800);
+
+            next.style.opacity = "1";
+            next.style.setProperty("--scale", 0.92);
+        }
+    }
+
+    setInterval(showNext, 4000);
+
     // Typewriter animation for the main heading
+
     const typewriterHeading = document.getElementById("typewriter-heading");
     if (typewriterHeading) {
         const text = typewriterHeading.textContent;
@@ -143,13 +186,13 @@ document.addEventListener("DOMContentLoaded", function () {
         // Remove gradient class from parent and apply to text only
         typewriterHeading.classList.remove("gradient-text-default");
         typewriterHeading.innerHTML =
-            '<span class="typewriter-text gradient-text-default"></span><span class="cursor" style="color: #f92d93; font-weight: bold; font-size: inherit;">_</span>';
+            '<span class="typewriter-text gradient-text-default"></span><span class="cursor" style="color: #8b5cf6; font-weight: bold; font-size: inherit;">_</span>';
 
         const textElement = typewriterHeading.querySelector(".typewriter-text");
         const cursorElement = typewriterHeading.querySelector(".cursor");
 
         // Force cursor visibility
-        cursorElement.style.color = "#f92d93 !important";
+        cursorElement.style.color = "#8b5cf6 !important";
         cursorElement.style.fontWeight = "bold !important";
         cursorElement.style.animation = "blink 1s infinite";
 
