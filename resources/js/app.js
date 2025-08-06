@@ -138,44 +138,51 @@ document.addEventListener("DOMContentLoaded", function () {
     // Mac Screenshot Animation
 
     const slides = document.querySelectorAll(".mac-screenshot");
-    let index = 0;
+    if (slides.length > 0) {
+        let index = 0;
+        let timer;
 
-    function showNext() {
-        const current = slides[index];
-        index = (index + 1) % slides.length;
-        const next = slides[index];
+        function showNext() {
+            const current = slides[index];
+            index = (index + 1) % slides.length;
+            const next = slides[index];
 
-        next.classList.remove("hidden");
+            next.classList.remove("hidden");
 
-        const Motion =
-            window.Motion ||
-            window.motion ||
-            globalThis.Motion ||
-            globalThis.motion;
+            const Motion =
+                window.Motion ||
+                window.motion ||
+                globalThis.Motion ||
+                globalThis.motion;
 
-        if (Motion && Motion.animate) {
-            Motion.animate(
-                current,
-                { opacity: 0, "--scale": 0.88 },
-                { duration: 0.8 }
-            ).finished.then(() => current.classList.add("hidden"));
+            if (Motion && Motion.animate) {
+                Motion.animate(
+                    current,
+                    { opacity: 0, "--scale": 0.88 },
+                    { duration: 0.8 }
+                ).finished.then(() => current.classList.add("hidden"));
 
-            Motion.animate(
-                next,
-                { opacity: 1, "--scale": 0.92 },
-                { duration: 0.8 }
-            );
-        } else {
-            current.style.opacity = "0";
-            current.style.setProperty("--scale", 0.88);
-            setTimeout(() => current.classList.add("hidden"), 800);
+                Motion.animate(
+                    next,
+                    { opacity: 1, "--scale": 0.92 },
+                    { duration: 0.8 }
+                );
+            } else {
+                current.style.opacity = "0";
+                current.style.setProperty("--scale", 0.88);
+                setTimeout(() => current.classList.add("hidden"), 800);
 
-            next.style.opacity = "1";
-            next.style.setProperty("--scale", 0.92);
+                next.style.opacity = "1";
+                next.style.setProperty("--scale", 0.92);
+            }
+
+            const delay = parseInt(next.dataset.duration) || 4000;
+            clearTimeout(timer);
+            timer = setTimeout(showNext, delay);
         }
-    }
 
-    setInterval(showNext, 4000);
+        showNext();
+    }
 
     // Typewriter animation for the main heading
 

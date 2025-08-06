@@ -89,18 +89,29 @@
 
           <div class="relative mt-16 flow-root sm:mt-24">
             @foreach ([
-                'https://raw.githubusercontent.com/mooxphp/moox/refs/heads/main/packages/jobs/screenshot/jobs-jobs.jpg',
-                'https://raw.githubusercontent.com/mooxphp/moox/refs/heads/main/packages/jobs/screenshot/jobs-detail.jpg',
-                'https://raw.githubusercontent.com/mooxphp/moox/refs/heads/main/packages/jobs/screenshot/jobs-batches.jpg']
-            as $i => $screen)
-            <img
-            src="{{ asset($screen) }}"
-            alt="Screenshot"
-            class="mac-screenshot absolute object-cover rounded-3xl"
-            style="
-            opacity: {{ $i === 0 ? "1" : "0" }};
-            z-index: {{ $i === 0 ? "2" : "1" }};
-            "/>
+                ['src' => 'https://raw.githubusercontent.com/mooxphp/moox/refs/heads/main/packages/jobs/screenshot/jobs-main.jpg', 'duration' => 5000],
+                //['src' => 'images/flickering8.gif', 'duration' => 800],
+                //['src' => 'https://raw.githubusercontent.com/mooxphp/moox/refs/heads/main/packages/jobs/screenshot/jobs-details.jpg', 'duration' => 5000],
+                //['src' => 'images/flickering8.gif', 'duration' => 800],
+                //['src' => 'https://raw.githubusercontent.com/mooxphp/moox/refs/heads/main/packages/jobs/screenshot/jobs-detail.jpg', 'duration' => 5000],
+                //['src' => 'images/flickering4.gif', 'duration' => 800],
+                ['src' => 'https://raw.githubusercontent.com/mooxphp/moox/refs/heads/main/packages/jobs/screenshot/jobs-failed.jpg', 'duration' => 5000],
+                //['src' => 'images/flickering8.gif', 'duration' => 800],
+                ['src' => 'https://raw.githubusercontent.com/mooxphp/moox/refs/heads/main/packages/jobs/screenshot/jobs-scale.jpg', 'duration' => 5000],
+                //['src' => 'images/flickering6.gif', 'duration' => 800],
+                ['src' => 'https://raw.githubusercontent.com/mooxphp/moox/refs/heads/main/packages/jobs/screenshot/jobs-batches.jpg', 'duration' => 5000],
+                //['src' => 'images/flickering3.gif', 'duration' => 800],
+            ] as $i => $slide)
+              <img
+                src="{{ asset($slide['src']) }}"
+                alt="Screenshot"
+                class="mac-screenshot absolute object-cover rounded-3xl"
+                data-duration="{{ $slide['duration'] }}"
+                style="
+                  opacity: {{ $i === 0 ? '1' : '0' }};
+                  z-index: {{ $i === 0 ? '2' : '1' }};
+                "
+              />
             @endforeach
             <img
             src="{{ asset('/images/mac-screen.png') }}"
