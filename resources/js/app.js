@@ -181,7 +181,8 @@ document.addEventListener("DOMContentLoaded", function () {
             timer = setTimeout(showNext, delay);
         }
 
-        showNext();
+        const firstSlideDuration = parseInt(slides[0].dataset.duration) || 4000;
+        timer = setTimeout(showNext, firstSlideDuration);
     }
 
     // Typewriter animation for the main heading

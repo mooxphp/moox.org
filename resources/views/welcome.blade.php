@@ -87,20 +87,38 @@
             </div>
           </div>
 
-          <div class="mt-16 flow-root sm:mt-24">
-          <img
-            src="{{ asset('/images/mac-video.gif') }}"
-            alt="App screenshot"
-            width="2432"
-            height="1442"
+          <div class="relative mt-16 flow-root sm:mt-24">
+            @foreach ([
+                ['src' => 'images/flickering3.gif', 'duration' => 1000],
+                ['src' => 'images/blackpixel.gif', 'duration' => 600],
+                ['src' => 'screenshots/jobs-main.jpg', 'duration' => 7000],
+                ['src' => 'screenshots/jobs-failed.jpg', 'duration' => 3500],
+                ['src' => 'screenshots/jobs-retry.jpg', 'duration' => 3500],
+                ['src' => 'screenshots/jobs-detail.jpg', 'duration' => 3500],
+                ['src' => 'screenshots/jobs-batches.jpg', 'duration' => 7000],
+                ['src' => 'screenshots/localization.jpg', 'duration' => 7000],
+                ['src' => 'screenshots/devices.jpg', 'duration' => 7000],
+                ['src' => 'screenshots/build.jpg', 'duration' => 7000],
+            ] as $i => $slide)
+              <img
+                src="{{ asset($slide['src']) }}"
+                alt="Screenshot"
+                class="mac-screenshot absolute object-cover rounded-3xl"
+                data-duration="{{ $slide['duration'] }}"
+                style="
+                  opacity: {{ $i === 0 ? '1' : '0' }};
+                  z-index: {{ $i === 0 ? '2' : '1' }};
+                "
+              />
+            @endforeach
+            <img
+            src="{{ asset('/images/mac-screen.png') }}"
+            alt="Mac Screen"
           />
           <img
             src="{{ asset('/images/mac-keys.png') }}"
-            alt="App screenshot"
-            width="2432"
-            height="1442"
+            alt="Mac Keyboard"
           />
-
 
               <div class="-mt-40 lg:-mt-80">
                 <div class="mx-auto max-w-7xl px-6 lg:px-8">
@@ -478,7 +496,7 @@
               </div>
             </div>
             <img
-              src="{{ asset('/screenshots/jobs.jpg') }}"
+              src="{{ asset('/screenshots/jobs-main.jpg') }}"
               alt="Screenshot"
               class="transform shadow-2xl -mr-10 animated-screenshot w-2/3 hidden lg:block"
               style="transform: perspective(1000px) rotateY(-30deg)"
@@ -526,7 +544,7 @@
               </div>
             </div>
             <img
-              src="{{ asset('/screenshots/jobs.jpg') }}"
+              src="{{ asset('/screenshots/localization.jpg') }}"
               alt="Screenshot"
               class="transform shadow-2xl -mr-10 animated-screenshot w-2/3 hidden lg:block"
               style="transform: perspective(1000px) rotateY(-30deg)"
@@ -574,7 +592,7 @@
               </div>
             </div>
             <img
-              src="{{ asset('/screenshots/jobs.jpg') }}"
+              src="{{ asset('/screenshots/devices.jpg') }}"
               alt="Screenshot"
               class="transform shadow-2xl -mr-10 animated-screenshot w-2/3 hidden lg:block"
               style="transform: perspective(1000px) rotateY(-30deg)"
@@ -622,7 +640,7 @@
               </div>
             </div>
             <img
-              src="{{ asset('/screenshots/jobs.jpg') }}"
+              src="{{ asset('/screenshots/build.jpg') }}"
               alt="Screenshot"
               class="transform shadow-2xl -mr-10 animated-screenshot w-2/3 hidden lg:block"
               style="transform: perspective(1000px) rotateY(-30deg)"

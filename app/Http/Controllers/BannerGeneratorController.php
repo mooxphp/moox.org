@@ -57,13 +57,19 @@ class BannerGeneratorController extends Controller
             'generate' => true,
         ]);
 
-        $image = Browsershot::url($url)
-            ->setNodeBinary('"/Users/alfdrollinger/Library/Application Support/Herd/config/nvm/versions/node/v21.7.3/bin/node"')
-            ->setNpmBinary('"/Users/alfdrollinger/Library/Application Support/Herd/config/nvm/versions/node/v21.7.3/bin/npm"')->windowSize(2560, 1440)
-            ->quality(60)
-            ->setScreenshotType('jpeg')
-            ->screenshot();
+        try {
+            $image = Browsershot::url($url)
+                ->windowSize(2560, 1440)
+                ->quality(60)
+                ->setScreenshotType('jpeg')
+                ->screenshot();
 
-        return response($image, 200)->header('Content-Type', 'image/jpeg');
+            return response($image, 200)->header('Content-Type', 'image/jpeg');
+        } catch (\Exception $e) {
+            return response()->json([
+                'error' => 'Failed to generate banner',
+                'message' => $e->getMessage(),
+            ], 500);
+        }
     }
 }

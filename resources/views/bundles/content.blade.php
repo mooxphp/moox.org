@@ -89,18 +89,16 @@
 
           <div class="relative mt-16 flow-root sm:mt-24">
             @foreach ([
-                ['src' => 'https://raw.githubusercontent.com/mooxphp/moox/refs/heads/main/packages/jobs/screenshot/jobs-main.jpg', 'duration' => 5000],
-                //['src' => 'images/flickering8.gif', 'duration' => 800],
-                //['src' => 'https://raw.githubusercontent.com/mooxphp/moox/refs/heads/main/packages/jobs/screenshot/jobs-details.jpg', 'duration' => 5000],
-                //['src' => 'images/flickering8.gif', 'duration' => 800],
-                //['src' => 'https://raw.githubusercontent.com/mooxphp/moox/refs/heads/main/packages/jobs/screenshot/jobs-detail.jpg', 'duration' => 5000],
-                //['src' => 'images/flickering4.gif', 'duration' => 800],
-                ['src' => 'https://raw.githubusercontent.com/mooxphp/moox/refs/heads/main/packages/jobs/screenshot/jobs-failed.jpg', 'duration' => 5000],
-                //['src' => 'images/flickering8.gif', 'duration' => 800],
-                ['src' => 'https://raw.githubusercontent.com/mooxphp/moox/refs/heads/main/packages/jobs/screenshot/jobs-scale.jpg', 'duration' => 5000],
-                //['src' => 'images/flickering6.gif', 'duration' => 800],
-                ['src' => 'https://raw.githubusercontent.com/mooxphp/moox/refs/heads/main/packages/jobs/screenshot/jobs-batches.jpg', 'duration' => 5000],
-                //['src' => 'images/flickering3.gif', 'duration' => 800],
+                ['src' => 'images/flickering3.gif', 'duration' => 1000],
+                ['src' => 'images/blackpixel.gif', 'duration' => 600],
+                ['src' => 'screenshots/jobs-main.jpg', 'duration' => 7000],
+                ['src' => 'screenshots/jobs-failed.jpg', 'duration' => 3500],
+                ['src' => 'screenshots/jobs-retry.jpg', 'duration' => 3500],
+                ['src' => 'screenshots/jobs-detail.jpg', 'duration' => 3500],
+                ['src' => 'screenshots/jobs-batches.jpg', 'duration' => 7000],
+                ['src' => 'screenshots/localization.jpg', 'duration' => 7000],
+                ['src' => 'screenshots/devices.jpg', 'duration' => 7000],
+                ['src' => 'screenshots/build.jpg', 'duration' => 7000],
             ] as $i => $slide)
               <img
                 src="{{ asset($slide['src']) }}"
@@ -387,7 +385,7 @@
               </div>
             </div>
             <img
-              src="{{ asset('/screenshots/jobs.jpg') }}"
+              src="{{ asset('/screenshots/jobs-main.jpg') }}"
               alt="Screenshot"
               class="transform shadow-2xl -mr-10 animated-screenshot w-2/3 hidden lg:block"
               style="transform: perspective(1000px) rotateY(-30deg)"
@@ -435,7 +433,7 @@
               </div>
             </div>
             <img
-              src="{{ asset('/screenshots/jobs.jpg') }}"
+              src="{{ asset('/screenshots/localization.jpg') }}"
               alt="Screenshot"
               class="transform shadow-2xl -mr-10 animated-screenshot w-2/3 hidden lg:block"
               style="transform: perspective(1000px) rotateY(-30deg)"
@@ -483,7 +481,7 @@
               </div>
             </div>
             <img
-              src="{{ asset('/screenshots/jobs.jpg') }}"
+              src="{{ asset('/screenshots/devices.jpg') }}"
               alt="Screenshot"
               class="transform shadow-2xl -mr-10 animated-screenshot w-2/3 hidden lg:block"
               style="transform: perspective(1000px) rotateY(-30deg)"
@@ -531,7 +529,7 @@
               </div>
             </div>
             <img
-              src="{{ asset('/screenshots/jobs.jpg') }}"
+              src="{{ asset('/screenshots/build.jpg') }}"
               alt="Screenshot"
               class="transform shadow-2xl -mr-10 animated-screenshot w-2/3 hidden lg:block"
               style="transform: perspective(1000px) rotateY(-30deg)"

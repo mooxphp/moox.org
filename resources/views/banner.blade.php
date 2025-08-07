@@ -30,13 +30,13 @@
 
           <div class="sm:col-span-2">
             <label for="name" class="block text-sm font-semibold text-gray-200">Package Name</label>
-            <input id="name" type="text" x-model="name" @input="if (!isScreenshotUrlManuallySet) { screenshotUrl = defaultScreenshotUrl; $nextTick(() => checkImageExists()) }"
+            <input id="name" type="text" x-model="name" @input.debounce.500ms="if (!isScreenshotUrlManuallySet) { screenshotUrl = defaultScreenshotUrl; $nextTick(() => checkImageExists()) }"
               class="mt-2.5 block w-full rounded-md bg-white px-3.5 py-2 text-gray-900 text-base focus:outline-indigo-600">
           </div>
 
           <div class="sm:col-span-2">
             <label for="screenshot" class="block text-sm font-semibold text-gray-200">Screenshot URL</label>
-            <input id="screenshot" type="text" x-model="screenshotUrl" :placeholder="defaultScreenshotUrl" @input="isScreenshotUrlManuallySet = true; checkImageExists()"
+            <input id="screenshot" type="text" x-model="screenshotUrl" :placeholder="defaultScreenshotUrl" @input.debounce.500ms="isScreenshotUrlManuallySet = true; checkImageExists()"
               class="mt-2.5 block w-full rounded-md bg-white px-3.5 py-2 text-gray-900 text-base focus:outline-indigo-600">
             <div x-show="imageLoading" class="mt-2 text-sm text-blue-400">Checking image...</div>
             <div x-show="imageError" class="mt-2 text-sm text-red-400">Image not found!</div>
@@ -154,22 +154,42 @@ function bannerGenerator() {
       this.imageError = false
       this.imageExists = false
 
+      if (!this.currentScreenshotUrl || this.currentScreenshotUrl.trim() === '') {
+        this.imageLoading = false
+        this.imageError = true
+        return
+      }
+
       try {
         const img = new Image()
+        img.crossOrigin = 'anonymous'
+
+        const timeout = setTimeout(() => {
+          if (checkId === this.currentCheckId) {
+            this.imageExists = false
+            this.imageError = true
+            this.imageLoading = false
+          }
+        }, 10000)
+
         img.onload = () => {
+          clearTimeout(timeout)
           if (checkId === this.currentCheckId) {
             this.imageExists = true
             this.imageLoading = false
             this.imageError = false
           }
         }
+
         img.onerror = () => {
+          clearTimeout(timeout)
           if (checkId === this.currentCheckId) {
             this.imageExists = false
             this.imageError = true
             this.imageLoading = false
           }
         }
+
         img.src = this.currentScreenshotUrl
       } catch (error) {
         if (checkId === this.currentCheckId) {
