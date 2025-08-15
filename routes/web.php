@@ -85,3 +85,11 @@ Route::get('/bannergenerator/preview',
 Route::get('/bannergenerator',
     [App\Http\Controllers\BannerGeneratorController::class, 'generate',
     ])->name('bannergenerator');
+
+Route::get('/help-moox', function () {
+    return view('help-moox');
+})->name('help-moox');
+
+Route::get('/docs-installation', function () {
+    return redirect('https://github.com/mooxphp/moox#installation');
+})->name('docs-installation');
