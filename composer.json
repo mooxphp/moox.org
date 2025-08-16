@@ -7,6 +7,8 @@
     "license": "MIT",
     "require": {
         "php": "^8.2",
+        "codeat3/blade-google-material-design-icons": "^1.20",
+        "codeat3/blade-simple-icons": "^7.9",
         "laravel/framework": "^12.0",
         "laravel/tinker": "^2.10.1",
         "spatie/browsershot": "^5.0",

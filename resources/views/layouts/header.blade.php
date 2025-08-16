@@ -76,11 +76,8 @@ x-data="{ mobileMenu: false, desktopProduct: false, desktopCompany: false, mobil
     >
       <div class="bg-indigo-950/90 rounded-full px-4 py-1">Pro</div>
     </a>
-    <a
-      href="https://github.com/mooxphp/"
-      class="si si-github text-3xl text-gray-300 hover:text-violet-700"
-      target="_blank"
-    >
+    <a href="https://github.com/mooxphp/" target="_blank">
+        <x-si-github class="mt-1 h-7 w-7 text-gray-300 hover:text-violet-700" />
     </a>
   </div>
 </nav>

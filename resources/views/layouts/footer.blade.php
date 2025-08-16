@@ -158,15 +158,15 @@
             class="text-gray-400 hover:text-indigo-500"
           >
             <span class="sr-only">GitHub</span>
-            <i class="si si-github text-xl"></i>
-          </a>
+            <x-si-github class="h-6 w-6 text-gray-400 hover:text-indigo-500" />
+        </a>
           <a
             href="https://packagist.org/packages/moox"
             target="_blank"
             class="text-gray-400 hover:text-orange-700"
           >
             <span class="sr-only">Packagist</span>
-            <i class="si si-packagist text-xl"></i>
+            <x-si-packagist class="h-6 w-6 text-gray-400 hover:text-orange-700" style="stroke-width: 0.5; stroke: currentColor; fill: currentColor;" />
           </a>
           <a
             href="https://x.com/mooxphp"
@@ -174,7 +174,7 @@
             class="text-gray-400 hover:text-violet-700"
           >
             <span class="sr-only">X</span>
-            <i class="si si-x text-xl"></i>
+            <x-si-x class="h-6 w-6 text-gray-400 hover:text-violet-700" />
           </a>
           <a
             href="https://www.youtube.com/@mooxphp"
@@ -182,7 +182,7 @@
             class="text-gray-400 hover:text-red-700"
           >
             <span class="sr-only">YouTube</span>
-            <i class="si si-youtube text-xl"></i>
+            <x-si-youtube class="h-6 w-6 text-gray-400 hover:text-red-700" />
           </a>
           <a
             href="https://mooxphp.slack.com/"
@@ -190,7 +190,7 @@
             class="text-gray-400 hover:text-pink-500"
           >
             <span class="sr-only">Slack</span>
-            <i class="si si-slack text-xl"></i>
+            <x-si-slack class="h-6 w-6 text-gray-400 hover:text-pink-500" />
           </a>
           <a
             href="https://app.codacy.com/gh/mooxphp/moox/dashboard"
@@ -198,7 +198,7 @@
             class="text-gray-400 hover:text-blue-700"
           >
             <span class="sr-only">Codacy</span>
-            <i class="si si-codacy text-xl"></i>
+            <x-si-codacy class="h-6 w-6 text-gray-400 hover:text-blue-700" />
           </a>
           <a
           href="https://hosted.weblate.org/projects/moox/"
@@ -206,7 +206,7 @@
           class="text-gray-400 hover:text-violet-700"
         >
           <span class="sr-only">Weblate</span>
-          <i class="si si-weblate text-xl"></i>
+          <x-si-weblate class="h-6 w-6 text-gray-400 hover:text-violet-700" />
         </a>
         </div>
         <p class="mt-8 text-sm/6 text-gray-400 md:order-1 md:mt-0">

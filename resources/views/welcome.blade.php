@@ -73,7 +73,7 @@
                     class="animated-gradient-border rounded flex items-center gap-2 group text-gray-200 hover:text-pink-500"
                   >
                     <div class="bg-indigo-950/90 rounded px-4 py-2 flex items-center gap-2">
-                      <span class="material-symbols-rounded text-md">rocket_launch</span>
+                      <x-gmdi-rocket-launch class="w-6 h-6" />
                       Get started
                     </div>
                   </a>
@@ -209,17 +209,12 @@
                 <h3
                   class="text-xl font-bold text-gray-200 flex items-center gap-3 mr-10 mb-7"
                 >
-                  <span class="material-symbols-rounded text-pink-500"
-                    >tips_and_updates</span
-                  >
+                  <x-gmdi-tips-and-updates class="text-pink-500 w-6 h-6" />
                   Requirements
                 </h3>
                 <div class="mt-6 ml-4 lg:flex gap-11 mb-2">
                   <div class="flex items-center gap-3 group">
-                    <span
-                      class="material-symbols-rounded text-transparent bg-clip-text bg-gradient-to-r from-pink-500 to-violet-500 transition-transform duration-200 group-hover:scale-110"
-                      >check_circle</span
-                    >
+                    <x-gmdi-check-circle class="text-pink-500 w-6 h-6" />
                     <div
                       class="text-gray-300 group-hover:text-gray-200 transition-colors duration-200"
                     >
@@ -227,10 +222,7 @@
                     </div>
                   </div>
                   <div class="flex items-center gap-3 group">
-                    <span
-                      class="material-symbols-rounded text-transparent bg-clip-text bg-gradient-to-r from-pink-500 to-violet-500 transition-transform duration-200 group-hover:scale-110"
-                      >check_circle</span
-                    >
+                    <x-gmdi-check-circle class="text-pink-500 w-6 h-6" />
                     <div
                       class="text-gray-300 group-hover:text-gray-200 transition-colors duration-200"
                     >
@@ -238,10 +230,7 @@
                     </div>
                   </div>
                   <div class="flex items-center gap-3 group">
-                    <span
-                      class="material-symbols-rounded text-transparent bg-clip-text bg-gradient-to-r from-pink-500 to-violet-500 transition-transform duration-200 group-hover:scale-110"
-                      >check_circle</span
-                    >
+                    <x-gmdi-check-circle class="text-pink-500 w-6 h-6" />
                     <div
                       class="text-gray-300 group-hover:text-gray-200 transition-colors duration-200"
                     >
@@ -256,9 +245,7 @@
                 <h3
                   class="text-xl font-bold text-gray-200 mb-8 flex items-center gap-3"
                 >
-                  <span class="material-symbols-rounded text-pink-500"
-                    >terminal</span
-                  >
+                  <x-gmdi-terminal class="text-pink-500 w-6 h-6" />
                   1. Install via Composer
                 </h3>
                 <div
@@ -270,10 +257,7 @@
                     data-copy-target="composer-command"
                     class="absolute right-2 top-1/2 -translate-y-1/2 opacity-0 group-hover:opacity-100 transition-opacity duration-200"
                   >
-                    <span
-                      class="material-symbols-rounded text-gray-400 hover:text-pink-500"
-                      >content_copy</span
-                    >
+                    <x-gmdi-content-copy class="text-gray-400 hover:text-pink-500" />
                   </button>
                 </div>
               </div>
@@ -283,9 +267,7 @@
                 <h3
                   class="text-xl font-bold text-gray-200 mb-8 flex items-center gap-3"
                 >
-                  <span class="material-symbols-rounded text-pink-500"
-                    >rocket_launch</span
-                  >
+                <x-gmdi-rocket-launch class="text-pink-500 w-6 h-6" />
                   2. Run the Installer
                 </h3>
                 <div
@@ -313,9 +295,7 @@
                 <h3
                   class="text-xl font-bold text-gray-200 mb-8 flex items-center gap-3"
                 >
-                  <span class="material-symbols-rounded text-pink-500"
-                    >check_circle</span
-                  >
+                  <x-gmdi-check-circle class="text-pink-500 w-6 h-6" />
                   3. Install Moox
                 </h3>
                 <img
@@ -364,7 +344,7 @@
                     class="animated-gradient-border flex rounded items-center gap-2 group text-gray-200 hover:text-pink-500 mb-5"
                 >
                     <div class="bg-indigo-950/90 rounded px-4 py-2 flex items-center gap-2">
-                    <span class="material-symbols-rounded text-md">box</span>
+                        <x-gmdi-lens-blur class="w-6 h-6" />
                     Learn more
                     </div>
                 </a>
@@ -385,7 +365,7 @@
                       class="animated-gradient-border flex rounded items-center gap-2 group text-gray-200 hover:text-pink-500 mb-5"
                   >
                       <div class="bg-indigo-950/90 rounded px-4 py-2 flex items-center gap-2">
-                      <span class="material-symbols-rounded text-md">box</span>
+                      <x-gmdi-lens-blur class="w-6 h-6" />
                       Learn more
                       </div>
                   </a>
@@ -406,7 +386,7 @@
                       class="animated-gradient-border flex rounded items-center gap-2 group text-gray-200 hover:text-pink-500 mb-5"
                   >
                       <div class="bg-indigo-950/90 rounded px-4 py-2 flex items-center gap-2">
-                      <span class="material-symbols-rounded text-md">box</span>
+                      <x-gmdi-lens-blur class="w-6 h-6" />
                       Learn more
                       </div>
                   </a>
@@ -427,7 +407,7 @@
                         class="animated-gradient-border flex rounded items-center gap-2 group text-gray-200 hover:text-pink-500 mb-5"
                     >
                         <div class="bg-indigo-950/90 rounded px-4 py-2 flex items-center gap-2">
-                        <span class="material-symbols-rounded text-md">box</span>
+                        <x-gmdi-lens-blur class="w-6 h-6" />
                         Learn more
                         </div>
                     </a>
@@ -489,7 +469,7 @@
                   <div
                     class="bg-indigo-950/90 rounded px-4 py-2 flex items-center gap-2"
                   >
-                    <span class="material-symbols-rounded text-md">box</span>
+                    <x-gmdi-token class="w-6 h-6" />
                     Learn more
                   </div>
                 </a>
@@ -537,7 +517,7 @@
                   <div
                     class="bg-indigo-950/90 rounded px-4 py-2 flex items-center gap-2"
                   >
-                    <span class="material-symbols-rounded text-md">box</span>
+                    <x-gmdi-token class="w-6 h-6" />
                     Learn more
                   </div>
                 </a>
@@ -585,7 +565,7 @@
                   <div
                     class="bg-indigo-950/90 rounded px-4 py-2 flex items-center gap-2"
                   >
-                    <span class="material-symbols-rounded text-md">box</span>
+                    <x-gmdi-token class="w-6 h-6" />
                     Learn more
                   </div>
                 </a>
@@ -633,7 +613,7 @@
                   <div
                     class="bg-indigo-950/90 rounded px-4 py-2 flex items-center gap-2"
                   >
-                    <span class="material-symbols-rounded text-md">box</span>
+                    <x-gmdi-token class="w-6 h-6" />
                     Learn more
                   </div>
                 </a>
