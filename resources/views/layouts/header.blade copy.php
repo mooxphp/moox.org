@@ -42,10 +42,40 @@ x-data="{ mobileMenu: false, desktopProduct: false, desktopCompany: false, mobil
     </button>
   </div>
   <div class="hidden lg:flex lg:gap-x-12">
-
+    <a
+      href="{{ route('packages') }}"
+      class="text-lg font-semibold text-white hover:text-pink-500"
+      >Packages</a
+    >
+    <a
+      href="{{ route('docs') }}"
+      class="text-lg font-semibold text-white hover:text-pink-500"
+      >Documentation</a
+    >
+    <a
+      href="{{ route('pricing') }}"
+      class="text-lg font-semibold text-white hover:text-pink-500"
+      >Pricing</a
+    >
+    <a
+      href="{{ route('support') }}"
+      class="text-lg font-semibold text-white hover:text-pink-500"
+      >Support</a
+    >
+    <a
+      href="{{ route('demo') }}"
+      class="text-lg font-semibold text-white hover:text-pink-500"
+      >Demo</a
+    >
   </div>
 
   <div class="hidden lg:flex lg:flex-1 lg:justify-end">
+    <a
+      href="{{ route('pro') }}"
+      class="animated-gradient-border text-gray-200 rounded-full hover:text-pink-500 mr-5 mt-0.5 font-bold"
+    >
+      <div class="bg-indigo-950/90 rounded-full px-4 py-1">Pro</div>
+    </a>
     <a href="https://github.com/mooxphp/" target="_blank">
         <x-si-github class="mt-1 h-7 w-7 text-gray-300 hover:text-violet-700" />
     </a>
