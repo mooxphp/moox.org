@@ -6,6 +6,10 @@ Route::get('/', function () {
     return view('welcome');
 })->name('welcome');
 
+Route::get('/v2', function () {
+    return view('welcomev2');
+})->name('welcomev2');
+
 Route::get('/about', function () {
     return view('about');
 })->name('about');
