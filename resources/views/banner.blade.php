@@ -38,10 +38,21 @@
             <label for="screenshot" class="block text-sm font-semibold text-gray-200">Screenshot URL</label>
             <input id="screenshot" type="text" x-model="screenshotUrl" :placeholder="defaultScreenshotUrl" @input.debounce.500ms="isScreenshotUrlManuallySet = true; checkImageExists()"
               class="mt-2.5 block w-full rounded-md bg-white px-3.5 py-2 text-gray-900 text-base focus:outline-indigo-600">
-            <div x-show="imageLoading" class="mt-2 text-sm text-blue-400">Checking image...</div>
-            <div x-show="imageError" class="mt-2 text-sm text-red-400">Image not found!</div>
-            <div x-show="imageExists" class="mt-2 text-sm text-green-400">Image found ✓</div>
           </div>
+          <div class="flex gap-x-4">
+            <div x-show="imageLoading" class="text-sm/6 text-blue-400">Checking image...</div>
+            <div x-show="imageError" class="text-sm/6 text-red-400">Image not found!</div>
+
+            <div class="flex h-6 items-center" x-show="imageExists">
+            <div class="group relative inline-flex w-8 shrink-0 rounded-full bg-gray-200 p-px inset-ring inset-ring-gray-900/5 outline-offset-2 outline-indigo-600 transition-colors duration-200 ease-in-out has-checked:bg-indigo-600 has-focus-visible:outline-2" :class="{ 'has-checked': transform }">
+                <span class="size-4 rounded-full bg-white shadow-xs ring-1 ring-gray-900/5 transition-transform duration-200 ease-in-out group-has-checked:translate-x-3.5" :class="{ 'translate-x-3.5': transform }"></span>
+                <input id="transform" type="checkbox" x-model="transform" aria-label="Package type" class="absolute inset-0 appearance-none focus:outline-hidden" />
+            </div>
+            </div>
+            <label for="transform" class="text-sm/6 text-gray-200" x-show="imageExists">
+                Do not transform
+            </label>
+        </div>
 
           <div class="sm:col-span-2">
             <label for="description" class="block text-sm font-semibold text-gray-200">Package Description</label>
@@ -49,31 +60,30 @@
               class="mt-2.5 block w-full rounded-md bg-white px-3.5 py-2 text-gray-900 text-base focus:outline-indigo-600"></textarea>
           </div>
 
-          <div class="flex flex-row gap-x-20 sm:col-span-2">
-                           <div class="flex gap-x-4">
-               <div class="flex h-6 items-center">
-                   <div class="group relative inline-flex w-8 shrink-0 rounded-full bg-gray-200 p-px inset-ring inset-ring-gray-900/5 outline-offset-2 outline-indigo-600 transition-colors duration-200 ease-in-out has-checked:bg-indigo-600 has-focus-visible:outline-2" :class="{ 'has-checked': community }">
-                     <span class="size-4 rounded-full bg-white shadow-xs ring-1 ring-gray-900/5 transition-transform duration-200 ease-in-out group-has-checked:translate-x-3.5" :class="{ 'translate-x-3.5': community }"></span>
-                     <input id="community" type="checkbox" x-model="community" aria-label="Package type" class="absolute inset-0 appearance-none focus:outline-hidden" />
-                   </div>
-                 </div>
-                 <label for="community" class="text-sm/6 text-gray-200">
-                      Community package?
-                  </label>
-               </div>
-               <div class="flex gap-x-4">
-
-               <div class="flex h-6 items-center">
-                   <div class="group relative inline-flex w-8 shrink-0 rounded-full bg-gray-200 p-px inset-ring inset-ring-gray-900/5 outline-offset-2 outline-indigo-600 transition-colors duration-200 ease-in-out has-checked:bg-indigo-600 has-focus-visible:outline-2" :class="{ 'has-checked': commercial }">
-                     <span class="size-4 rounded-full bg-white shadow-xs ring-1 ring-gray-900/5 transition-transform duration-200 ease-in-out group-has-checked:translate-x-3.5" :class="{ 'translate-x-3.5': commercial }"></span>
-                     <input id="commercial" type="checkbox" x-model="commercial" aria-label="Package type" class="absolute inset-0 appearance-none focus:outline-hidden" />
-                   </div>
-                 </div>
-                 <label for="commercial" class="text-sm/6 text-gray-200">
-                      Commercial package?
-                  </label>
-               </div>
-              </div>
+            <div class="flex flex-row gap-x-20 sm:col-span-2">
+                <div class="flex gap-x-4">
+                    <div class="flex h-6 items-center">
+                    <div class="group relative inline-flex w-8 shrink-0 rounded-full bg-gray-200 p-px inset-ring inset-ring-gray-900/5 outline-offset-2 outline-indigo-600 transition-colors duration-200 ease-in-out has-checked:bg-indigo-600 has-focus-visible:outline-2" :class="{ 'has-checked': community }">
+                        <span class="size-4 rounded-full bg-white shadow-xs ring-1 ring-gray-900/5 transition-transform duration-200 ease-in-out group-has-checked:translate-x-3.5" :class="{ 'translate-x-3.5': community }"></span>
+                        <input id="community" type="checkbox" x-model="community" aria-label="Package type" class="absolute inset-0 appearance-none focus:outline-hidden" />
+                    </div>
+                    </div>
+                    <label for="community" class="text-sm/6 text-gray-200">
+                        Community package?
+                    </label>
+                </div>
+                <div class="flex gap-x-4">
+                    <div class="flex h-6 items-center">
+                    <div class="group relative inline-flex w-8 shrink-0 rounded-full bg-gray-200 p-px inset-ring inset-ring-gray-900/5 outline-offset-2 outline-indigo-600 transition-colors duration-200 ease-in-out has-checked:bg-indigo-600 has-focus-visible:outline-2" :class="{ 'has-checked': commercial }">
+                        <span class="size-4 rounded-full bg-white shadow-xs ring-1 ring-gray-900/5 transition-transform duration-200 ease-in-out group-has-checked:translate-x-3.5" :class="{ 'translate-x-3.5': commercial }"></span>
+                        <input id="commercial" type="checkbox" x-model="commercial" aria-label="Package type" class="absolute inset-0 appearance-none focus:outline-hidden" />
+                    </div>
+                    </div>
+                    <label for="commercial" class="text-sm/6 text-gray-200">
+                        Commercial package?
+                    </label>
+                </div>
+            </div>
             </div>
           </div>
         </form>
@@ -121,6 +131,7 @@ function bannerGenerator() {
     description: 'Common features\nfor Laravel and\nFilament.',
     community: false,
     commercial: false,
+    transform: false,
     screenshotUrl: '',
     isScreenshotUrlManuallySet: false,
 
@@ -210,14 +221,16 @@ function bannerGenerator() {
       const title = this.name
       const community = this.community ? 1 : 0
       const commercial = this.commercial ? 1 : 0
-      return `${base}?title=${title}&description=${this.descriptionEncoded}&screenshot=${this.currentScreenshotUrl}&community=${community}&commercial=${commercial}`
+      const transform = this.transform ? 1 : 0
+      return `${base}?title=${title}&description=${this.descriptionEncoded}&screenshot=${this.currentScreenshotUrl}&community=${community}&commercial=${commercial}&transform=${transform}`
     },
     get previewUrl() {
       const base = '{{ config('app.url') }}/bannergenerator/preview'
       const title = this.name
       const community = this.community ? 1 : 0
       const commercial = this.commercial ? 1 : 0
-      return `${base}?title=${title}&description=${this.descriptionEncoded}&screenshot=${this.currentScreenshotUrl}&community=${community}&commercial=${commercial}`
+      const transform = this.transform ? 1 : 0
+      return `${base}?title=${title}&description=${this.descriptionEncoded}&screenshot=${this.currentScreenshotUrl}&community=${community}&commercial=${commercial}&transform=${transform}`
     }
   }
 }

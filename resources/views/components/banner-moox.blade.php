@@ -38,14 +38,38 @@
 
     </div>
 
+        <!--
+
+    https://raw.githubusercontent.com/mooxphp/moox/main/packages/laravel-icons/screenshot/main.jpg
+
     <div class="w-3/5 pt-30">
-        @if ($screenshot && trim($screenshot) !== '' && filter_var($screenshot, FILTER_VALIDATE_URL))
+        @ if ($screenshot && trim($screenshot) !== '' && filter_var($screenshot, FILTER_VALIDATE_URL))
+            <img src="{ { $screenshot }}" alt="Screenshot"
+                 class="h-full shadow-2xl transform ml-auto -mt-10"
+                 style="transform: perspective(1000px) rotateY(-10deg)"
+                 onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
+            <img src="{ { request()->getSchemeAndHttpHost() }}/images/banner-fallback.jpg"
+                 class="ml-auto -mt-30 -mb-30" style="display: none;">
+        @ else
+            <img src="{ { request()->getSchemeAndHttpHost() }}/images/banner-fallback.jpg"
+                 class="ml-auto -mt-30 -mb-30">
+        @ endif
+    </div>
+
+    -->
+
+    <div class="w-3/5 pt-30">
+        @if (!$transform && $screenshot && trim($screenshot) !== '' && filter_var($screenshot, FILTER_VALIDATE_URL))
             <img src="{{ $screenshot }}" alt="Screenshot"
                  class="h-full shadow-2xl transform ml-auto -mt-10"
                  style="transform: perspective(1000px) rotateY(-10deg)"
                  onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
             <img src="{{ request()->getSchemeAndHttpHost() }}/images/banner-fallback.jpg"
                  class="ml-auto -mt-30 -mb-30" style="display: none;">
+        @elseif ($transform)
+            <img src="{{ $screenshot }}" alt="Screenshot"
+                 class="ml-auto -mt-30 -mb-30"
+                 onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
         @else
             <img src="{{ request()->getSchemeAndHttpHost() }}/images/banner-fallback.jpg"
                  class="ml-auto -mt-30 -mb-30">

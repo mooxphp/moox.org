@@ -15,6 +15,7 @@ class BannerGeneratorController extends Controller
             'screenshot' => $request->get('screenshot'),
             'commercial' => $request->boolean('commercial'),
             'community' => $request->boolean('community'),
+            'transform' => $request->boolean('transform'),
             'isPreview' => false,
         ]);
     }
@@ -32,6 +33,7 @@ class BannerGeneratorController extends Controller
             'screenshot' => $request->get('screenshot'),
             'commercial' => $request->boolean('commercial'),
             'community' => $request->boolean('community'),
+            'transform' => $request->boolean('transform'),
             'isPreview' => ! $request->has('generate'),
         ]);
     }
@@ -44,6 +46,7 @@ class BannerGeneratorController extends Controller
             'screenshot' => 'required|url',
             'community' => 'nullable|boolean',
             'commercial' => 'nullable|boolean',
+            'transform' => 'nullable|boolean',
         ]);
 
         $description = $validated['description'];
@@ -54,6 +57,7 @@ class BannerGeneratorController extends Controller
             'screenshot' => $validated['screenshot'],
             'community' => $validated['community'],
             'commercial' => $validated['commercial'],
+            'transform' => $validated['transform'],
             'generate' => true,
         ]);
 
