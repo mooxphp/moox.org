@@ -65,7 +65,7 @@ class BannerGeneratorController extends Controller
             $image = Browsershot::url($url)
                 ->windowSize(2560, 1440)
                 ->quality(60)
-                ->setScreenshotType('jpeg')
+                ->setScreenshotType('jpg')
                 ->screenshot();
 
             return response($image, 200)->header('Content-Type', 'image/jpeg');
