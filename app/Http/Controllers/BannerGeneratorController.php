@@ -64,11 +64,12 @@ class BannerGeneratorController extends Controller
         try {
             $image = Browsershot::url($url)
                 ->windowSize(2560, 1440)
-                ->quality(60)
-                ->setScreenshotType('jpg')
+                ->quality(75)
+                ->setScreenshotType('jpeg')
                 ->screenshot();
 
-            return response($image, 200)->header('Content-Type', 'image/jpeg');
+            return response($image, 200)
+                ->header('Content-Type', 'image/jpeg');
         } catch (\Exception $e) {
             return response()->json([
                 'error' => 'Failed to generate banner',
