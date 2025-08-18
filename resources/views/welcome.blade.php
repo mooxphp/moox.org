@@ -50,8 +50,8 @@
               </div>
               <div class="w-3/5 -mt-10 lg:mr-20 lg:pr-20">
                 <div class="mt-24 sm:mt-32 lg:mt-16 mb-10">
-                    <span class="rounded-full bg-indigo-500/10 px-3 py-1 text-sm/6 font-semibold text-indigo-400 ring-1 ring-indigo-500/25 ring-inset">News</span>
-                    <span class="ml-3 inline-flex items-center space-x-2 text-sm/6 font-medium text-gray-300 hover:text-pink-500">
+                    <span class="mr-3 rounded-full bg-indigo-500/10 px-3 py-1 text-sm/6 font-semibold text-indigo-400 ring-1 ring-indigo-500/25 ring-inset hidden lg:block">News</span>
+                    <span class="inline-flex items-center space-x-2 text-sm/6 font-medium text-gray-300 hover:text-pink-500">
                         <span>Tailwind 4.0 compatible now!</span>
                     </span>
                 </div>
@@ -125,7 +125,7 @@
         Get started
       </h2>
       <br />
-      <p class="text-gray-300 text-lg/8 text-pretty">
+      <p class="px-5 text-gray-300 text-lg/8 text-pretty">
         Installation is simple. Just install the wanted package using Composer
         and run the Moox installer.<br />
         The installer will guide you through the process of installing one or
@@ -255,7 +255,7 @@
           Laravel Packages
         </h2>
         <br />
-        <p class="text-gray-300 text-lg/8 text-pretty">
+        <p class="px-5 text-gray-300 text-lg/8 text-pretty">
           Moox is a collection of packages for Laravel and Filament.<br />
           These are the packages, we already released:<br />
           <a href="https://github.com/orgs/mooxphp/repositories" class="underline hover:text-pink-500"
@@ -455,7 +455,7 @@
         Sponsors
       </h2>
       <br />
-      <p class="text-gray-300 text-lg/8 text-pretty">
+      <p class="px-5 text-gray-300 text-lg/8 text-pretty">
         This project is made possible by our sponsors.<br />
         If you are interested in sponsoring Moox,
         <a
@@ -519,7 +519,7 @@
           <div class="bg-white/75 p-6 sm:p-10 text-center">
             <a href="mailto:hello@moox.org?subject=Sponsorship">
               <p
-                class="mt-2 font-semibold tracking-tight text-balance gradient-text-default sm:text-xl text-3xl"
+                class="mt-2 font-semibold tracking-tight text-balance gradient-text-default text-xs lg:text-3xl"
               >
                 Your company here?
               </p>
