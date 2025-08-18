@@ -413,7 +413,7 @@
                 class="mt-10 flex items-center justify-center gap-x-6 lg:justify-start"
               >
                 <a
-                  href="/"
+                  href="https://github.com/mooxphp/progress"
                   class="animated-gradient-border flex rounded items-center gap-2 group text-gray-200 hover:text-pink-500 mb-10"
                 >
                   <div
