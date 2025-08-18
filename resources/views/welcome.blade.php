@@ -363,57 +363,15 @@
                 </h2>
               </div>
               <p class="mt-6 text-lg/8 text-pretty text-gray-300">
-                Manage your Laravel<br />
-                Job Queues in<br />
-                Filament.
+                Build your Laravel<br />
+                Packages with<br />
+                Moox.
               </p>
               <div
                 class="mt-10 flex items-center justify-center gap-x-6 lg:justify-start"
               >
                 <a
-                  href="/"
-                  class="animated-gradient-border flex rounded items-center gap-2 group text-gray-200 hover:text-pink-500 mb-10"
-                >
-                  <div
-                    class="bg-indigo-950/90 rounded px-4 py-2 flex items-center gap-2"
-                  >
-                    <x-gmdi-token class="w-6 h-6" />
-                    Learn more
-                  </div>
-                </a>
-              </div>
-            </div>
-            <img
-              src="{{ asset('/screenshots/devices.jpg') }}"
-              alt="Screenshot"
-              class="transform shadow-2xl animated-screenshot w-2/3 hidden lg:block ml-auto -mr-3"
-              style="transform: perspective(1000px) rotateY(-30deg)"
-            />
-          </div>
-        </div>
-
-        <div class="mx-auto m-10 p-10">
-          <div
-            class="-px-10 -my-10 rounded-3xl flex justify-between bg-banner mx-auto overflow-hidden hover:shadow-[0px_-4px_15px_-5px_rgba(139,92,246,0.5),0px_4px_15px_-5px_rgba(236,72,153,0.5)]"
-          >
-            <div class="lg:py-12 flex flex-col mt-10 ml-10">
-              <div class="flex flex-row items-center gap-3 w-full">
-                <h2
-                  class="text-3xl font-semibold tracking-tight text-balance gradient-text-default flex-shrink-0"
-                >
-                  Progress
-                </h2>
-              </div>
-              <p class="mt-6 text-lg/8 text-pretty text-gray-300">
-                Manage your Laravel<br />
-                Job Queues in<br />
-                Filament.
-              </p>
-              <div
-                class="mt-10 flex items-center justify-center gap-x-6 lg:justify-start"
-              >
-                <a
-                  href="/"
+                  href="https://github.com/mooxphp/skeleton"
                   class="animated-gradient-border flex rounded items-center gap-2 group text-gray-200 hover:text-pink-500 mb-10"
                 >
                   <div
@@ -435,46 +393,47 @@
         </div>
 
         <div class="mx-auto m-10 p-10">
-            <div
-              class="-px-10 -my-10 rounded-3xl flex justify-between bg-banner mx-auto overflow-hidden hover:shadow-[0px_-4px_15px_-5px_rgba(139,92,246,0.5),0px_4px_15px_-5px_rgba(236,72,153,0.5)]"
-            >
-              <div class="lg:py-12 flex flex-col mt-10 ml-10">
-                <div class="flex flex-row items-center gap-3 w-full">
-                  <h2
-                    class="text-3xl font-semibold tracking-tight text-balance gradient-text-default flex-shrink-0"
-                  >
-                    Clipboard
-                  </h2>
-                </div>
-                <p class="mt-6 text-lg/8 text-pretty text-gray-300">
-                  Manage your Laravel<br />
-                  Job Queues in<br />
-                  Filament.
-                </p>
-                <div
-                  class="mt-10 flex items-center justify-center gap-x-6 lg:justify-start"
+          <div
+            class="-px-10 -my-10 rounded-3xl flex justify-between bg-banner mx-auto overflow-hidden hover:shadow-[0px_-4px_15px_-5px_rgba(139,92,246,0.5),0px_4px_15px_-5px_rgba(236,72,153,0.5)]"
+          >
+            <div class="lg:py-12 flex flex-col mt-10 ml-10">
+              <div class="flex flex-row items-center gap-3 w-full">
+                <h2
+                  class="text-3xl font-semibold tracking-tight text-balance gradient-text-default flex-shrink-0"
                 >
-                  <a
-                    href="/"
-                    class="animated-gradient-border flex rounded items-center gap-2 group text-gray-200 hover:text-pink-500 mb-10"
-                  >
-                    <div
-                      class="bg-indigo-950/90 rounded px-4 py-2 flex items-center gap-2"
-                    >
-                      <x-gmdi-token class="w-6 h-6" />
-                      Learn more
-                    </div>
-                  </a>
-                </div>
+                  Progress
+                </h2>
               </div>
-              <img
-                src="{{ asset('/screenshots/build.jpg') }}"
-                alt="Screenshot"
-                class="transform shadow-2xl animated-screenshot w-2/3 hidden lg:block ml-auto -mr-3"
-                style="transform: perspective(1000px) rotateY(-30deg)"
-              />
+              <p class="mt-6 text-lg/8 text-pretty text-gray-300">
+                A simple progress<br />
+                bar for Filament<br />
+                and Moox.
+              </p>
+              <div
+                class="mt-10 flex items-center justify-center gap-x-6 lg:justify-start"
+              >
+                <a
+                  href="/"
+                  class="animated-gradient-border flex rounded items-center gap-2 group text-gray-200 hover:text-pink-500 mb-10"
+                >
+                  <div
+                    class="bg-indigo-950/90 rounded px-4 py-2 flex items-center gap-2"
+                  >
+                    <x-gmdi-token class="w-6 h-6" />
+                    Learn more
+                  </div>
+                </a>
+              </div>
             </div>
+            <img
+              src="{{ asset('/screenshots/jobs-main.jpg') }}"
+              alt="Screenshot"
+              class="transform shadow-2xl animated-screenshot w-2/3 hidden lg:block ml-auto -mr-3"
+              style="transform: perspective(1000px) rotateY(-30deg)"
+            />
           </div>
+        </div>
+
 
         <br />
       </div>
