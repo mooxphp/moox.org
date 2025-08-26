@@ -18,7 +18,7 @@ x-data="{ mobileMenu: false, desktopProduct: false, desktopCompany: false, mobil
     </a>
   </div>
 
-  <div class="hidden lg:flex lg:flex-1 lg:justify-end">
+  <div class="lg:flex lg:flex-1 lg:justify-end">
     <a href="https://github.com/mooxphp/" target="_blank">
         <x-si-github class="mt-1 h-7 w-7 text-gray-300 hover:text-violet-700" />
     </a>

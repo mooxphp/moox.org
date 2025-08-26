@@ -50,7 +50,7 @@
               </div>
               <div class="w-3/5 -mt-10 lg:mr-20 lg:pr-20">
                 <div class="mt-24 sm:mt-32 lg:mt-16 mb-10">
-                    <span class="mr-3 rounded-full bg-indigo-500/10 px-3 py-1 text-sm/6 font-semibold text-indigo-400 ring-1 ring-indigo-500/25 ring-inset hidden lg:block">News</span>
+                    <span class="mr-3 rounded-full bg-indigo-500/10 px-3 py-1 text-sm/6 font-semibold text-indigo-400 ring-1 ring-indigo-500/25 ring-inset hidden md:inline-flex">News</span>
                     <span class="inline-flex items-center space-x-2 text-sm/6 font-medium text-gray-300 hover:text-pink-500">
                         <span>Tailwind 4.0 compatible now!</span>
                     </span>
