@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="de">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Logo Animation</title>
+        <style>
+            * {
+                margin: 0;
+                padding: 0;
+                box-sizing: border-box;
+            }
+
+            body {
+                background: #270245;
+                display: grid;
+                place-content: center;
+                min-height: 100vh;
+                font-family: Arial, sans-serif;
+                overflow: hidden;
+            }
+
+            .dotted {
+                width: 100vw;
+                height: 100vh;
+                position: fixed;
+                top: 0;
+                left: 0;
+                background: repeating-linear-gradient(
+                    to bottom,
+                    transparent,
+                    transparent 0.125rem,
+                    #270245 0.125rem,
+                    #270245 0.25rem
+                );
+                opacity: 0.8;
+                z-index: 1;
+            }
+            .dotted::before {
+                opacity: 0.5;
+                content: "";
+                width: 100%;
+                height: 100%;
+                display: block;
+                background: repeating-linear-gradient(
+                    to right,
+                    transparent,
+                    transparent 0.125rem,
+                    #270245 0.125rem,
+                    #270245 0.25rem
+                );
+            }
+
+            .infinity {
+                position: relative;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                width: 100%;
+                max-width: 600px;
+                height: 400px;
+                z-index: 2;
+            }
+
+            .infinity .symbol {
+                stroke-dasharray: 3000;
+                stroke-dashoffset: 3000;
+                width: 100%;
+                max-width: 320px;
+                height: auto;
+                animation: drawPath 2s infinite cubic-bezier(0.65, 0, 0.35, 1),
+                    colorShift 10s infinite steps(1, end);
+            }
+
+            @keyframes drawPath {
+                0% {
+                    stroke-dashoffset: 3150;
+                }
+                50% {
+                    stroke-dashoffset: 0;
+                }
+                100% {
+                    stroke-dashoffset: -2850;
+                }
+            }
+
+            @keyframes colorShift {
+                0% {
+                    stroke: #fe18d3;
+                    filter: drop-shadow(0 0 12px #fe18d377)
+                        drop-shadow(0 0 4px #fe18d377)
+                        drop-shadow(0 0 36px #fe18d377)
+                        drop-shadow(0 0 64px #fe18d3dd);
+                }
+                20% {
+                    stroke: #b712b4;
+                    filter: drop-shadow(0 0 12px #871a8577)
+                        drop-shadow(0 0 4px #871a8577)
+                        drop-shadow(0 0 36px #871a8577)
+                        drop-shadow(0 0 64px #871a85dd);
+                }
+                40% {
+                    stroke: #890ef4;
+                    filter: drop-shadow(0 0 12px #4206f177)
+                        drop-shadow(0 0 4px #4206f177)
+                        drop-shadow(0 0 36px #4206f177)
+                        drop-shadow(0 0 64px #4206f1dd);
+                }
+                60% {
+                    stroke: #5d0aa6;
+                    filter: drop-shadow(0 0 12px #fe18d377)
+                        drop-shadow(0 0 4px #fe18d377)
+                        drop-shadow(0 0 36px #fe18d377)
+                        drop-shadow(0 0 64px #fe18d3dd);
+                }
+                80% {
+                    stroke: #940091;
+                    filter: drop-shadow(0 0 12px #871a8577)
+                        drop-shadow(0 0 4px #871a8577)
+                        drop-shadow(0 0 36px #871a8577)
+                        drop-shadow(0 0 64px #871a85dd);
+                }
+            }
+        </style>
+    </head>
+    <body>
+        <div class="infinity">
+            <svg
+                class="symbol"
+                viewBox="0 0 1114 498"
+                version="1.1"
+                xmlns="http://www.w3.org/2000/svg"
+                style="
+                    fill-rule: evenodd;
+                    clip-rule: evenodd;
+                    stroke-linecap: round;
+                    stroke-linejoin: round;
+                    stroke-miterlimit: 1.5;
+                    fill: none;
+                    stroke-width: 84.38px;
+                "
+            >
+                <path
+                    d="M556.639,248.609c53.406,53.406 101.683,111.534 164.527,155.683c32.351,22.727 69.175,43.083 109.585,49.008c28.958,4.245 59.488,0.613 87.317,-7.576c26.905,-7.918 52.087,-20.892 73.811,-37.871c21.56,-16.851 39.677,-37.626 53.018,-60.895c10.19,-17.771 17.616,-36.957 21.888,-56.774c4.437,-20.585 5.532,-41.765 3.304,-62.666c-8.654,-81.211 -69.752,-151.815 -152.021,-176.024c-21.015,-6.185 -42.784,-9.169 -64.773,-9.286c-20.432,-0.109 -41.041,2.144 -60.735,7.389c-60.474,16.105 -104.752,61.37 -145.625,103.912c-25.822,26.876 -51.28,54.064 -76.924,81.093c-50.066,52.771 -98.707,107.45 -153.977,155.565c-26.704,23.247 -58.379,43.63 -92.848,54.868c-68.352,22.285 -146.537,6.002 -201.788,-37.182c-21.56,-16.851 -39.676,-37.626 -53.018,-60.895c-10.19,-17.771 -17.616,-36.957 -21.887,-56.774c-20.542,-95.293 34.073,-193.859 128.699,-231.746c26.53,-10.622 55.918,-16.645 84.79,-16.23c66.027,0.948 126.189,41.423 172.681,82.451c12.721,11.225 25.299,22.604 37.509,34.327c11.528,11.07 22.61,22.551 33.684,34.029c17.75,18.398 34.689,37.5 52.783,55.594Z"
+                />
+            </svg>
+            <div class="dotted"></div>
+        </div>
+    </body>
+</html>
