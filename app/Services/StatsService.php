@@ -167,11 +167,26 @@ class StatsService
 
     private function getTotalStargazers(): int
     {
+        $total = 0;
+
+        // mooxphp/* Repositories (Organisation)
+        $total += $this->getGithubOrgStars('mooxphp');
+
+        // adrolli/* Repositories (User)
+        $total += $this->getGithubUserStars('adrolli');
+
+        return $total;
+    }
+
+    private function getGithubOrgStars(string $org): int
+    {
         try {
+            Log::info("Fetching GitHub stars for organization: {$org}");
+
             $response = Http::withHeaders([
                 'Authorization' => "token {$this->githubToken}",
                 'Accept' => 'application/vnd.github.v3+json',
-            ])->get("https://api.github.com/orgs/{$this->githubOrg}/repos", [
+            ])->get("https://api.github.com/orgs/{$org}/repos", [
                 'type' => 'all',
                 'per_page' => 100,
             ]);
@@ -181,13 +196,74 @@ class StatsService
                 $total = 0;
 
                 foreach ($repos as $repo) {
-                    $total += $repo['stargazers_count'] ?? 0;
+                    $stars = $repo['stargazers_count'] ?? 0;
+                    $fork = $repo['fork'] ?? false;
+                    $archived = $repo['archived'] ?? false;
+                    $disabled = $repo['disabled'] ?? false;
+
+                    Log::info("Repository {$org}/{$repo['name']}: stars={$stars}, fork={$fork}, archived={$archived}, disabled={$disabled}");
+
+                    // Skip only archived and disabled repos (forks are OK)
+                    if ($archived || $disabled) {
+                        Log::info("Skipping repository {$org}/{$repo['name']}");
+
+                        continue;
+                    }
+
+                    $total += $stars;
+                    Log::info("Added repository {$org}/{$repo['name']}: {$stars} stars");
                 }
 
+                Log::info("Total stars for {$org}: {$total}");
+
                 return $total;
+            } else {
+                Log::error("GitHub API failed for organization {$org}: ".$response->status());
             }
         } catch (\Exception $e) {
-            Log::error('Failed to fetch GitHub stargazers: '.$e->getMessage());
+            Log::error("Failed to fetch GitHub stars for organization {$org}: ".$e->getMessage());
+        }
+
+        return 0;
+    }
+
+    private function getGithubUserStars(string $user): int
+    {
+        try {
+            Log::info("Fetching GitHub stars for user: {$user}");
+
+            $response = Http::withHeaders([
+                'Authorization' => "token {$this->githubToken}",
+                'Accept' => 'application/vnd.github.v3+json',
+            ])->get("https://api.github.com/users/{$user}/repos", [
+                'type' => 'all',
+                'per_page' => 100,
+            ]);
+
+            if ($response->successful()) {
+                $repos = $response->json();
+                $total = 0;
+
+                foreach ($repos as $repo) {
+                    $stars = $repo['stargazers_count'] ?? 0;
+                    $fork = $repo['fork'] ?? false;
+                    $archived = $repo['archived'] ?? false;
+                    $disabled = $repo['disabled'] ?? false;
+
+                    Log::info("Repository {$user}/{$repo['name']}: stars={$stars}, fork={$fork}, archived={$archived}, disabled={$disabled}");
+
+                    $total += $stars;
+                    Log::info("Added repository {$user}/{$repo['name']}: {$stars} stars");
+                }
+
+                Log::info("Total stars for user {$user}: {$total}");
+
+                return $total;
+            } else {
+                Log::error("GitHub API failed for user {$user}: ".$response->status());
+            }
+        } catch (\Exception $e) {
+            Log::error("Failed to fetch GitHub stars for user {$user}: ".$e->getMessage());
         }
 
         return 0;
