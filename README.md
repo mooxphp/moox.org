@@ -9,3 +9,16 @@
 The Moox Website on [Moox.org](https://moox.org).
 
 More information about Moox in the [Moox Monorepo](https://github.com/mooxphp/moox).
+
+## Stats
+
+```bash
+# Manually fetch
+php artisan stats:update
+php artisan queue:work --once --queue=stats
+
+# then schedule
+php artisan schedule:work
+```
+
+More information about [configuring stats](STATS_SETUP.md).

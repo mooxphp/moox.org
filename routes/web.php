@@ -1,13 +1,21 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use Illuminate\Support\Facades\Storage;
 
 Route::get('/', function () {
     return view('welcome');
 })->name('welcome');
 
 Route::get('/v2', function () {
-    return view('welcomev2');
+    $stats = [];
+
+    if (Storage::disk('local')->exists('stats.json')) {
+        $jsonData = Storage::disk('local')->get('stats.json');
+        $stats = json_decode($jsonData, true) ?: [];
+    }
+
+    return view('welcomev2', compact('stats'));
 })->name('welcomev2');
 
 Route::get('/about', function () {
@@ -97,3 +105,6 @@ Route::get('/help-moox', function () {
 Route::get('/docs-installation', function () {
     return redirect('https://github.com/mooxphp/moox#installation');
 })->name('docs-installation');
+
+Route::get('/api/stats', [App\Http\Controllers\StatsController::class, 'index'])->name('api.stats');
+Route::post('/api/stats/update', [App\Http\Controllers\StatsController::class, 'update'])->name('api.stats.update');

@@ -1,6 +1,103 @@
-@extends('layouts.web')
+<!DOCTYPE html>
+<html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Moox - CMS for Filament, Laravel and PHP</title>
+    <link
+      rel="icon"
+      href="{{ asset('/images/moox-icon.png') }}"
+      type="image/png"
+    />
 
-@section('content')
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Exo+2:wght@400;600;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/simple-icons-font@v15/font/simple-icons.min.css"
+      type="text/css"
+    />
+
+    @vite(['resources/css/app.css', 'resources/js/app.js'])
+
+    <script
+      defer
+      src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"
+    ></script>
+
+    <script src="https://unpkg.com/motion@10.16.2/dist/motion.min.js"></script>
+  </head>
+  <body
+    class="font-sans bg-gradient-to-br from-mooxdark to-mooxblue min-h-screen text-white relative"
+  >
+    <canvas
+      id="starfield"
+      class="fixed inset-0 w-full h-full pointer-events-none -z-10"
+    ></canvas>
+
+    <div
+    class="absolute inset-x-0 -top-40 -z-10 transform-gpu overflow-hidden blur-3xl sm:-top-80"
+    aria-hidden="true"
+  >
+    <div
+      class="relative left-[calc(50%-11rem)] aspect-1155/678 w-255 -translate-x-1/2 rotate-30 bg-linear-to-tr from-pink-600 to-violet-600 opacity-20 sm:left-[calc(50%-30rem)] sm:w-288.75"
+      style="
+        clip-path: polygon(
+          74.1% 44.1%,
+          100% 61.6%,
+          97.5% 26.9%,
+          85.5% 0.1%,
+          80.7% 2%,
+          72.5% 32.5%,
+          60.2% 62.4%,
+          52.4% 68.1%,
+          47.5% 58.3%,
+          45.2% 34.5%,
+          27.5% 76.7%,
+          0.1% 64.9%,
+          17.9% 100%,
+          27.6% 76.8%,
+          76.1% 97.7%,
+          74.1% 44.1%
+        );
+      "
+    ></div>
+  </div>
+
+    <header
+    x-data="{ mobileMenu: false, desktopProduct: false, desktopCompany: false, mobileProduct: false, mobileCompany: false }"
+    >
+    <nav
+    class="mx-auto flex max-w-7xl items-center justify-between p-6 lg:px-8 pt-12"
+    aria-label="Global"
+    >
+    <div class="flex lg:flex-1">
+        <a href="{{ route('welcome') }}" class="-m-1.5 p-1.5">
+        <span class="sr-only"
+            >Moox - CMS for Filament, Laravel and PHP</span
+        >
+        <img
+            class="h-10 w-auto"
+            src="{{ asset('/images/moox-logo.png') }}"
+            alt="Moox Logo"
+        />
+        </a>
+    </div>
+
+    <div class="lg:flex lg:flex-1 lg:justify-end">
+        <a href="https://github.com/mooxphp/" target="_blank">
+            <x-si-github class="mt-1 h-7 w-7 text-gray-300 hover:text-violet-700" />
+        </a>
+    </div>
+    </nav>
+
+    </header>
+
     <img
       src="{{ asset('/images/polygon.png') }}"
       alt=""
@@ -528,4 +625,73 @@
         </div>
       </div>
     </div>
-@endsection
+
+    <footer id="contact" class="bg-black/50 mt-40">
+        <div class="mx-auto max-w-7xl px-6 pt-2 pb-8 lg:px-8">
+          <div
+            class="mt-6 md:flex md:items-center md:justify-between"
+          >
+            <div class="flex gap-x-6 md:order-2">
+              <a
+                href="https://github.com/mooxphp/"
+                target="_blank"
+                class="text-gray-400 hover:text-indigo-500"
+              >
+                <span class="sr-only">GitHub</span>
+                <x-si-github class="h-6 w-6 text-gray-400 hover:text-indigo-500" />
+            </a>
+              <a
+                href="https://packagist.org/packages/moox"
+                target="_blank"
+                class="text-gray-400 hover:text-orange-700"
+              >
+                <span class="sr-only">Packagist</span>
+                <x-si-packagist class="h-6 w-6 text-gray-400 hover:text-orange-700" style="stroke-width: 0.5; stroke: currentColor; fill: currentColor;" />
+              </a>
+              <a
+                href="https://x.com/mooxphp"
+                target="_blank"
+                class="text-gray-400 hover:text-violet-700"
+              >
+                <span class="sr-only">X</span>
+                <x-si-x class="h-6 w-6 text-gray-400 hover:text-violet-700" />
+              </a>
+              <a
+                href="https://www.youtube.com/@mooxphp"
+                target="_blank"
+                class="text-gray-400 hover:text-red-700"
+              >
+                <span class="sr-only">YouTube</span>
+                <x-si-youtube class="h-6 w-6 text-gray-400 hover:text-red-700" />
+              </a>
+              <a
+                href="https://mooxphp.slack.com/"
+                target="_blank"
+                class="text-gray-400 hover:text-pink-500"
+              >
+                <span class="sr-only">Slack</span>
+                <x-si-slack class="h-6 w-6 text-gray-400 hover:text-pink-500" />
+              </a>
+              <a
+                href="https://app.codacy.com/gh/mooxphp/moox/dashboard"
+                target="_blank"
+                class="text-gray-400 hover:text-blue-700"
+              >
+                <span class="sr-only">Codacy</span>
+                <x-si-codacy class="h-6 w-6 text-gray-400 hover:text-blue-700" />
+              </a>
+              <a
+              href="https://hosted.weblate.org/projects/moox/"
+              target="_blank"
+              class="text-gray-400 hover:text-violet-700"
+            >
+              <span class="sr-only">Weblate</span>
+              <x-si-weblate class="h-6 w-6 text-gray-400 hover:text-violet-700" />
+            </a>
+            </div>
+            <p class="mt-8 text-sm/6 text-gray-400 md:order-1 md:mt-0">
+              &copy; 2025 Moox. All rights reserved.
+            </p>
+          </div>
+        </div>
+      </footer>

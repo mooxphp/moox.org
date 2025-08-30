@@ -132,10 +132,10 @@
                         </dt>
                         <dd
                           class="order-first text-5xl font-semibold tracking-tight gradient-text-default"
-                          data-count="47"
-                          data-suffix="k"
+                          data-count="{{ $stats['downloads'] ?? 0 }}"
+                          data-suffix=""
                         >
-                          0k
+                          {{ number_format($stats['downloads'] ?? 0) }}
                         </dd>
                       </div>
                       <div class="flex flex-col bg-white/5 p-8">
@@ -144,9 +144,9 @@
                         </dt>
                         <dd
                           class="order-first text-5xl font-semibold tracking-tight gradient-text-default"
-                          data-count="43"
+                          data-count="{{ $stats['packages'] ?? 0 }}"
                         >
-                          0
+                          {{ $stats['packages'] ?? 0 }}
                         </dd>
                       </div>
                       <div class="flex flex-col bg-white/5 p-8">
@@ -155,9 +155,9 @@
                         </dt>
                         <dd
                           class="order-first text-5xl font-semibold tracking-tight gradient-text-default"
-                          data-count="24"
+                          data-count="{{ $stats['contributors'] ?? 0 }}"
                         >
-                          0
+                          {{ $stats['contributors'] ?? 0 }}
                         </dd>
                       </div>
                       <div class="flex flex-col bg-white/5 p-8">
@@ -166,9 +166,9 @@
                         </dt>
                         <dd
                           class="order-first text-5xl font-semibold tracking-tight gradient-text-default"
-                          data-count="153"
+                          data-count="{{ $stats['stargazers'] ?? 0 }}"
                         >
-                          0
+                          {{ $stats['stargazers'] ?? 0 }}
                         </dd>
                       </div>
                     </dl>
