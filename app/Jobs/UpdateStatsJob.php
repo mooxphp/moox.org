@@ -18,10 +18,14 @@ class UpdateStatsJob implements ShouldQueue
     public function __construct()
     {
         $this->onQueue('stats');
+        $this->timeout = 60;
+        $this->tries = 1;
     }
 
     public function handle(StatsService $statsService): void
     {
+        Log::info('UpdateStatsJob started');
+
         try {
             $stats = $statsService->getStats();
 
@@ -37,7 +41,9 @@ class UpdateStatsJob implements ShouldQueue
             ]);
 
         } catch (\Exception $e) {
-            Log::error('Failed to update stats: '.$e->getMessage());
+            Log::error('Failed to update stats: '.$e->getMessage(), [
+                'exception' => $e->getTraceAsString(),
+            ]);
             throw $e;
         }
     }

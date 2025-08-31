@@ -15,9 +15,18 @@ class UpdateStatsCommand extends Command
     {
         $this->info('Dispatching stats update job...');
 
-        UpdateStatsJob::dispatch();
+        try {
+            UpdateStatsJob::dispatch();
+            $this->info('Stats update job has been queued successfully!');
 
-        $this->info('Stats update job has been queued successfully!');
+            $this->info('You can check the queue status with: php artisan queue:work --once');
+            $this->info('Or check logs in storage/logs/laravel.log');
+
+        } catch (\Exception $e) {
+            $this->error('Failed to dispatch job: '.$e->getMessage());
+
+            return Command::FAILURE;
+        }
 
         return Command::SUCCESS;
     }
