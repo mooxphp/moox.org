@@ -27,7 +27,7 @@ class UpdateStatsJob implements ShouldQueue
     public function handle(StatsService $statsService): void
     {
         Log::info('UpdateStatsJob started', [
-            'queue' => 'stats',
+            'queue' => 'default',
             'attempt' => $this->attempts(),
             'max_tries' => $this->tries,
         ]);
