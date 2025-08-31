@@ -10,6 +10,7 @@
         "codeat3/blade-google-material-design-icons": "^1.20",
         "codeat3/blade-simple-icons": "^7.9",
         "laravel/framework": "^12.0",
+        "laravel/horizon": "^5.33",
         "laravel/tinker": "^2.10.1",
         "spatie/browsershot": "^5.0",
         "spatie/image": "^3.8"
