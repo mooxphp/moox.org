@@ -53,7 +53,7 @@
                     <a href="{{ route('blog') }}" class="inline-flex space-x-6">
                       <span class="rounded-full bg-indigo-500/10 px-3 py-1 text-sm/6 font-semibold text-indigo-400 ring-1 ring-indigo-500/25 ring-inset">News</span>
                       <span class="inline-flex items-center space-x-2 text-sm/6 font-medium text-gray-300 hover:text-pink-500">
-                        <span>Tailwind 4.0 compatible now!</span>
+                        <span>Filament 4.0 compatible now!</span>
                         <svg viewBox="0 0 20 20" fill="currentColor" data-slot="icon" aria-hidden="true" class="size-5">
                           <path d="M8.22 5.22a.75.75 0 0 1 1.06 0l4.25 4.25a.75.75 0 0 1 0 1.06l-4.25 4.25a.75.75 0 0 1-1.06-1.06L11.94 10 8.22 6.28a.75.75 0 0 1 0-1.06Z" clip-rule="evenodd" fill-rule="evenodd" />
                         </svg>
