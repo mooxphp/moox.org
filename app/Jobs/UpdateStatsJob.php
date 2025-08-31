@@ -21,7 +21,7 @@ class UpdateStatsJob implements ShouldQueue
 
     public function __construct()
     {
-        $this->onQueue('stats');
+        $this->onQueue('default');
     }
 
     public function handle(StatsService $statsService): void
