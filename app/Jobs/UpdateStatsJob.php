@@ -15,23 +15,33 @@ class UpdateStatsJob implements ShouldQueue
 {
     use Dispatchable, InteractsWithQueue, Queueable, SerializesModels;
 
+    public int $tries = 1;
+
+    public int $timeout = 60;
+
     public function __construct()
     {
         $this->onQueue('stats');
-        $this->timeout = 60;
-        $this->tries = 1;
     }
 
     public function handle(StatsService $statsService): void
     {
-        Log::info('UpdateStatsJob started');
+        Log::info('UpdateStatsJob started', [
+            'queue' => 'stats',
+            'attempt' => $this->attempts(),
+            'max_tries' => $this->tries,
+        ]);
 
         try {
+            Log::info('Calling StatsService->getStats()');
             $stats = $statsService->getStats();
+            Log::info('StatsService returned data', ['stats_keys' => array_keys($stats)]);
 
             $jsonData = json_encode($stats, JSON_PRETTY_PRINT | JSON_UNESCAPED_SLASHES);
+            Log::info('JSON data created', ['size' => strlen($jsonData)]);
 
             Storage::disk('local')->put('stats.json', $jsonData);
+            Log::info('Stats file written to storage');
 
             Log::info('Stats updated successfully', [
                 'downloads' => $stats['downloads'],
@@ -43,6 +53,8 @@ class UpdateStatsJob implements ShouldQueue
         } catch (\Exception $e) {
             Log::error('Failed to update stats: '.$e->getMessage(), [
                 'exception' => $e->getTraceAsString(),
+                'file' => $e->getFile(),
+                'line' => $e->getLine(),
             ]);
             throw $e;
         }
