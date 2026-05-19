@@ -45,5 +45,6 @@ The package provides these MCP servers:
 - PackageServer - lookup packages, make wise decisions about installing or building with them
 - BuildServer - create Entities, Taxonomies, Modules and more
 - JobsServer - see Job status, advanced control over jobs in Laravel
+- MediaServer - work with files and media in Moox Media
 
 for shipping scoped tools, resources and prompts inside.
