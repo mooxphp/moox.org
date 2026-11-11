@@ -25,3 +25,14 @@ _ide_helper.php
 Homestead.json
 Homestead.yaml
 Thumbs.db
+
+
+# Devlink
+# ignore symlinks in packages/
+packages/*
+!packages/**/
+!packages/*/.gitkeep
+# and for windows
+/packageslocal/*
+# optional:
+composer.json-deploy
