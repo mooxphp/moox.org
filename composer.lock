@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "d4b14c3eb139c72cec2515e532b4aee3",
+    "content-hash": "e896b9cdc0d31f23e07c9c8a5226a53b",
     "packages": [
         {
             "name": "brick/math",
@@ -2167,6 +2167,62 @@
             ],
             "time": "2026-09-29T19:21:12+00:00",
             "published-time": "2026-09-29T19:21:44+00:00"
+        },
+        {
+            "name": "moox/devlink",
+            "version": "5.0.12",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/mooxphp/devlink.git",
+                "reference": "20a17dc1bfcfc7db1e07764d9b7cb85a6cadbeef"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/mooxphp/devlink/zipball/20a17dc1bfcfc7db1e07764d9b7cb85a6cadbeef",
+                "reference": "20a17dc1bfcfc7db1e07764d9b7cb85a6cadbeef",
+                "shasum": ""
+            },
+            "require-dev": {
+                "moox/devtools": "self.version"
+            },
+            "type": "library",
+            "extra": {
+                "moox": {
+                    "stability": "stable"
+                },
+                "laravel": {
+                    "providers": [
+                        "Moox\\Devlink\\DevlinkServiceProvider"
+                    ]
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Moox\\Devlink\\": "src"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Moox Developer",
+                    "email": "dev@moox.org",
+                    "role": "Developer"
+                }
+            ],
+            "description": "This package is only for internal use. It allows Moox developers to link packages from moox to their projects.",
+            "homepage": "https://moox.org/",
+            "keywords": [
+                "MOOX"
+            ],
+            "support": {
+                "issues": "https://github.com/mooxphp/devlink/issues",
+                "source": "https://github.com/mooxphp/devlink/tree/5.0.12"
+            },
+            "time": "2026-02-20T14:26:19+00:00",
+            "published-time": "2026-02-20T14:56:32+00:00"
         },
         {
             "name": "nesbot/carbon",
