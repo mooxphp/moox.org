@@ -70,7 +70,7 @@ return [
             'type' => 'public',
         ],
         'backup-server' => [
-            'active' => true,
+            'active' => false,
             'path' => $public_base_path.'/backup-server',
             'type' => 'public',
         ],
@@ -143,7 +143,7 @@ return [
             'dev' => true,
         ],
         'devops' => [
-            'active' => true,
+            'active' => false,
             'path' => $public_base_path.'/devops',
             'type' => 'public',
         ],
@@ -173,7 +173,7 @@ return [
             'type' => 'public',
         ],
         'firewall' => [
-            'active' => true,
+            'active' => false,
             'path' => $public_base_path.'/firewall',
             'type' => 'public',
         ],
