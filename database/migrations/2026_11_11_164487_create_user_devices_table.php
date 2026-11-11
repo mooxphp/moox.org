@@ -1,0 +1,43 @@
+<?php
+
+use Illuminate\Database\Migrations\Migration;
+use Illuminate\Database\Schema\Blueprint;
+use Illuminate\Support\Facades\Schema;
+use Illuminate\Support\Str;
+
+return new class extends Migration
+{
+    public function up()
+    {
+        Schema::create('user_devices', function (Blueprint $table) {
+            $table->id();
+            $table->string('title');
+            $table->string('slug')->unique();
+            $table->string('scope')->nullable()->index();
+
+            // string morph: supports bigint user ids and UUID authenticatables (e.g. contacts)
+            $table->string('user_id');
+            $table->string('user_type');
+            $table->index(['user_id', 'user_type']);
+
+            $table->text('user_agent')->nullable();
+            $table->string('os')->nullable();
+            $table->string('browser')->nullable();
+            $table->string('platform')->nullable();
+            $table->string('country')->nullable();
+            $table->string('city')->nullable();
+            $table->json('location')->nullable();
+            $table->boolean('whitelisted')->default(false);
+            $table->boolean('active')->default(false);
+            $table->ipAddress('ip_address')->nullable();
+            $table->timestamps();
+
+            $table->unique(['user_id', 'user_type', 'ip_address'], 'user_devices_user_ip_unique');
+        });
+    }
+
+    public function down()
+    {
+        Schema::dropIfExists('user_devices');
+    }
+};

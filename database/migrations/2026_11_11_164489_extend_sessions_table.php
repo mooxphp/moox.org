@@ -1,0 +1,60 @@
+<?php
+
+use Illuminate\Database\Migrations\Migration;
+use Illuminate\Database\Schema\Blueprint;
+use Illuminate\Support\Facades\Schema;
+
+return new class extends Migration
+{
+    public function up(): void
+    {
+        if (! Schema::hasTable('sessions')) {
+            return;
+        }
+
+        if (Schema::hasColumn('sessions', 'whitlisted') && ! Schema::hasColumn('sessions', 'whitelisted')) {
+            Schema::table('sessions', function (Blueprint $table): void {
+                $table->renameColumn('whitlisted', 'whitelisted');
+            });
+        }
+
+        Schema::table('sessions', function (Blueprint $table): void {
+            if (! Schema::hasColumn('sessions', 'user_type')) {
+                $table->string('user_type')->nullable()->after('id');
+            }
+
+            if (! Schema::hasColumn('sessions', 'device_id')) {
+                $table->unsignedBigInteger('device_id')->nullable()->after('user_id');
+            }
+
+            if (! Schema::hasColumn('sessions', 'whitelisted')) {
+                $table->boolean('whitelisted')->nullable()->after('last_activity');
+            }
+
+            if (! Schema::hasColumn('sessions', 'created_at')) {
+                $table->timestamps();
+            }
+        });
+    }
+
+    public function down(): void
+    {
+        if (! Schema::hasTable('sessions')) {
+            return;
+        }
+
+        Schema::table('sessions', function (Blueprint $table): void {
+            $columns = array_filter([
+                Schema::hasColumn('sessions', 'user_type') ? 'user_type' : null,
+                Schema::hasColumn('sessions', 'device_id') ? 'device_id' : null,
+                Schema::hasColumn('sessions', 'whitelisted') ? 'whitelisted' : null,
+                Schema::hasColumn('sessions', 'created_at') ? 'created_at' : null,
+                Schema::hasColumn('sessions', 'updated_at') ? 'updated_at' : null,
+            ]);
+
+            if ($columns !== []) {
+                $table->dropColumn($columns);
+            }
+        });
+    }
+};

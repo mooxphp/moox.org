@@ -105,7 +105,7 @@ return [
             'type' => 'public',
         ],
         'components' => [
-            'active' => true,
+            'active' => false,
             'path' => $public_base_path.'/components',
             'type' => 'public',
         ],
@@ -153,17 +153,17 @@ return [
             'type' => 'public',
         ],
         'draft' => [
-            'active' => true,
+            'active' => false,
             'path' => $public_base_path.'/draft',
             'type' => 'public',
         ],
         'expiry' => [
-            'active' => true,
+            'active' => false,
             'path' => $public_base_path.'/expiry',
             'type' => 'public',
         ],
         'featherlight' => [
-            'active' => true,
+            'active' => false,
             'path' => $public_base_path.'/featherlight',
             'type' => 'public',
         ],
@@ -183,22 +183,22 @@ return [
             'type' => 'public',
         ],
         'flag-icons-origin' => [
-            'active' => true,
+            'active' => false,
             'path' => $public_base_path.'/flag-icons-origin',
             'type' => 'public',
         ],
         'flag-icons-rect' => [
-            'active' => true,
+            'active' => false,
             'path' => $public_base_path.'/flag-icons-rect',
             'type' => 'public',
         ],
         'flag-icons-square' => [
-            'active' => true,
+            'active' => false,
             'path' => $public_base_path.'/flag-icons-square',
             'type' => 'public',
         ],
         'forge' => [
-            'active' => true,
+            'active' => false,
             'path' => $public_base_path.'/forge',
             'type' => 'public',
         ],
@@ -223,7 +223,7 @@ return [
             'type' => 'public',
         ],
         'item' => [
-            'active' => true,
+            'active' => false,
             'path' => $public_base_path.'/item',
             'type' => 'public',
         ],
@@ -238,7 +238,7 @@ return [
             'type' => 'public',
         ],
         'laravel-icons' => [
-            'active' => true,
+            'active' => false,
             'path' => $public_base_path.'/laravel-icons',
             'type' => 'public',
         ],
@@ -279,17 +279,17 @@ return [
             'type' => 'public',
         ],
         'news' => [
-            'active' => true,
+            'active' => false,
             'path' => $public_base_path.'/news',
             'type' => 'public',
         ],
         'notifications' => [
-            'active' => true,
+            'active' => false,
             'path' => $public_base_path.'/notifications',
             'type' => 'public',
         ],
         'packages' => [
-            'active' => true,
+            'active' => false,
             'path' => $public_base_path.'/packages',
             'type' => 'public',
         ],
@@ -299,17 +299,17 @@ return [
             'type' => 'public',
         ],
         'page' => [
-            'active' => true,
+            'active' => false,
             'path' => $public_base_path.'/page',
             'type' => 'public',
         ],
         'passkey' => [
-            'active' => true,
+            'active' => false,
             'path' => $public_base_path.'/passkey',
             'type' => 'public',
         ],
         'permission' => [
-            'active' => false,
+            'active' => true,
             'path' => $public_base_path.'/permission',
             'type' => 'public',
         ],
@@ -319,17 +319,17 @@ return [
             'type' => 'public',
         ],
         'press' => [
-            'active' => true,
+            'active' => false,
             'path' => $public_base_path.'/press',
             'type' => 'public',
         ],
         'press-trainings' => [
-            'active' => true,
+            'active' => false,
             'path' => $public_base_path.'/press-trainings',
             'type' => 'public',
         ],
         'press-wiki' => [
-            'active' => true,
+            'active' => false,
             'path' => $public_base_path.'/press-wiki',
             'type' => 'public',
         ],
@@ -359,7 +359,7 @@ return [
             'type' => 'public',
         ],
         'restore' => [
-            'active' => true,
+            'active' => false,
             'path' => $public_base_path.'/restore',
             'type' => 'public',
         ],
@@ -389,7 +389,7 @@ return [
             'type' => 'public',
         ],
         'skeleton' => [
-            'active' => true,
+            'active' => false,
             'path' => $public_base_path.'/skeleton',
             'type' => 'public',
         ],
@@ -414,7 +414,7 @@ return [
             'type' => 'public',
         ],
         'trainings' => [
-            'active' => true,
+            'active' => false,
             'path' => $public_base_path.'/trainings',
             'type' => 'public',
         ],
